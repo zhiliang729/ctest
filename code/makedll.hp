@@ -1,0 +1,15 @@
+.SUFFIXES:.c
+HOMEDIR=/home/zyx/code
+COMDIR=$(HOMEDIR)/comlib
+INCDIRS=-I$(COMDIR)/include 
+LIBDIRS=-L$(COMDIR)/lib 
+LIB=  -lcom 
+CC=cc
+CFLAGS=-O +z -c -DUNIX -DDEBUG -DTRACE_FILE='"./trace"' -D__PATH__='"$(PWD)/"'
+EDF=
+.c:
+	$(CC) -o $@.o $< $(CFLAGS) $(INCDIRS) $(LIBDIRS) $(LIB)
+	ld -o $@.so -b  $@.o
+
+
+
