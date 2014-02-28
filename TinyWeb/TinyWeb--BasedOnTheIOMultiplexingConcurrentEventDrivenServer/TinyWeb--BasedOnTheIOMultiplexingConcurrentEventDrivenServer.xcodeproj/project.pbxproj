@@ -1,0 +1,221 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C6BEF0CC1835EEE30074640D /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C6BEF0CB1835EEE30074640D /* main.c */; };
+		C6BEF0CE1835EEE30074640D /* TinyWeb__BasedOnTheIOMultiplexingConcurrentEventDrivenServer.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6BEF0CD1835EEE30074640D /* TinyWeb__BasedOnTheIOMultiplexingConcurrentEventDrivenServer.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C6BEF0C61835EEE30074640D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				C6BEF0CE1835EEE30074640D /* TinyWeb__BasedOnTheIOMultiplexingConcurrentEventDrivenServer.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C6BEF0C81835EEE30074640D /* TinyWeb--BasedOnTheIOMultiplexingConcurrentEventDrivenServer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "TinyWeb--BasedOnTheIOMultiplexingConcurrentEventDrivenServer"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6BEF0CB1835EEE30074640D /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		C6BEF0CD1835EEE30074640D /* TinyWeb__BasedOnTheIOMultiplexingConcurrentEventDrivenServer.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = TinyWeb__BasedOnTheIOMultiplexingConcurrentEventDrivenServer.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C6BEF0C51835EEE30074640D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C6BEF0BF1835EEE30074640D = {
+			isa = PBXGroup;
+			children = (
+				C6BEF0CA1835EEE30074640D /* TinyWeb--BasedOnTheIOMultiplexingConcurrentEventDrivenServer */,
+				C6BEF0C91835EEE30074640D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C6BEF0C91835EEE30074640D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C6BEF0C81835EEE30074640D /* TinyWeb--BasedOnTheIOMultiplexingConcurrentEventDrivenServer */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6BEF0CA1835EEE30074640D /* TinyWeb--BasedOnTheIOMultiplexingConcurrentEventDrivenServer */ = {
+			isa = PBXGroup;
+			children = (
+				C6BEF0CB1835EEE30074640D /* main.c */,
+				C6BEF0CD1835EEE30074640D /* TinyWeb__BasedOnTheIOMultiplexingConcurrentEventDrivenServer.1 */,
+			);
+			path = "TinyWeb--BasedOnTheIOMultiplexingConcurrentEventDrivenServer";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C6BEF0C71835EEE30074640D /* TinyWeb--BasedOnTheIOMultiplexingConcurrentEventDrivenServer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6BEF0D11835EEE30074640D /* Build configuration list for PBXNativeTarget "TinyWeb--BasedOnTheIOMultiplexingConcurrentEventDrivenServer" */;
+			buildPhases = (
+				C6BEF0C41835EEE30074640D /* Sources */,
+				C6BEF0C51835EEE30074640D /* Frameworks */,
+				C6BEF0C61835EEE30074640D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TinyWeb--BasedOnTheIOMultiplexingConcurrentEventDrivenServer";
+			productName = "TinyWeb--BasedOnTheIOMultiplexingConcurrentEventDrivenServer";
+			productReference = C6BEF0C81835EEE30074640D /* TinyWeb--BasedOnTheIOMultiplexingConcurrentEventDrivenServer */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C6BEF0C01835EEE30074640D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = com.gooagoo.Gooagoo;
+			};
+			buildConfigurationList = C6BEF0C31835EEE30074640D /* Build configuration list for PBXProject "TinyWeb--BasedOnTheIOMultiplexingConcurrentEventDrivenServer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C6BEF0BF1835EEE30074640D;
+			productRefGroup = C6BEF0C91835EEE30074640D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C6BEF0C71835EEE30074640D /* TinyWeb--BasedOnTheIOMultiplexingConcurrentEventDrivenServer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C6BEF0C41835EEE30074640D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6BEF0CC1835EEE30074640D /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C6BEF0CF1835EEE30074640D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C6BEF0D01835EEE30074640D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C6BEF0D21835EEE30074640D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C6BEF0D31835EEE30074640D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C6BEF0C31835EEE30074640D /* Build configuration list for PBXProject "TinyWeb--BasedOnTheIOMultiplexingConcurrentEventDrivenServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6BEF0CF1835EEE30074640D /* Debug */,
+				C6BEF0D01835EEE30074640D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6BEF0D11835EEE30074640D /* Build configuration list for PBXNativeTarget "TinyWeb--BasedOnTheIOMultiplexingConcurrentEventDrivenServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6BEF0D21835EEE30074640D /* Debug */,
+				C6BEF0D31835EEE30074640D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C6BEF0C01835EEE30074640D /* Project object */;
+}

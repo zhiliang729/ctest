@@ -1,0 +1,135 @@
+10
+
+dir
+12436
+http://192.168.3.200/svn/gooagoo/trunk/gooagoo-doc/db/platform
+http://192.168.3.200/svn/gooagoo
+
+
+
+2013-09-24T06:29:35.376669Z
+12406
+jiangshiqian
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6546c589-0bc2-e64c-84de-df1aef16c20e
+
+商家管理gooagoo_shop
+dir
+
+保存在mongodb中的信息
+file
+
+
+
+
+2013-07-23T02:30:07.867043Z
+b27fb728413ba88b74d026f485b39d5f
+2013-07-22T05:44:18.623015Z
+2102
+feizhigao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12
+
+后台管理gooagoo_sys
+dir
+
+日志信息gooagoo_log
+dir
+
+用户管理gooagoo_user
+dir
+
+mongodb
+dir
+
+用户行为gooagoo_behave
+dir
+
+账单系统gooagoo_bill
+dir
+
+初始数据
+dir
+
+商品管理gooagoo_goods
+dir
+
+进度.txt
+file
+
+
+
+
+2013-07-23T02:30:07.886044Z
+e53709fc7ab1581105818dbf140b2c9f
+2013-07-22T05:45:07.575901Z
+2103
+feizhigao
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+500
+
+基础数据gooagoo_base
+dir
+
+redis
+dir
+
+营销管理gooagoo_marketing
+dir
+
+会员管理gooagoo_member
+dir
+

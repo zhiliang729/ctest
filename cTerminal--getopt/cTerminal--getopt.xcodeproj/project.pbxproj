@@ -1,0 +1,221 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C6F96397183071E200BF751A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F96396183071E200BF751A /* main.c */; };
+		C6F96399183071E200BF751A /* cTerminal__getopt.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6F96398183071E200BF751A /* cTerminal__getopt.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C6F96391183071E200BF751A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				C6F96399183071E200BF751A /* cTerminal__getopt.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C6F96393183071E200BF751A /* cTerminal--getopt */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "cTerminal--getopt"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6F96396183071E200BF751A /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		C6F96398183071E200BF751A /* cTerminal__getopt.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = cTerminal__getopt.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C6F96390183071E200BF751A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C6F9638A183071E200BF751A = {
+			isa = PBXGroup;
+			children = (
+				C6F96395183071E200BF751A /* cTerminal--getopt */,
+				C6F96394183071E200BF751A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C6F96394183071E200BF751A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C6F96393183071E200BF751A /* cTerminal--getopt */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6F96395183071E200BF751A /* cTerminal--getopt */ = {
+			isa = PBXGroup;
+			children = (
+				C6F96396183071E200BF751A /* main.c */,
+				C6F96398183071E200BF751A /* cTerminal__getopt.1 */,
+			);
+			path = "cTerminal--getopt";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C6F96392183071E200BF751A /* cTerminal--getopt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6F9639C183071E200BF751A /* Build configuration list for PBXNativeTarget "cTerminal--getopt" */;
+			buildPhases = (
+				C6F9638F183071E200BF751A /* Sources */,
+				C6F96390183071E200BF751A /* Frameworks */,
+				C6F96391183071E200BF751A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "cTerminal--getopt";
+			productName = "cTerminal--getopt";
+			productReference = C6F96393183071E200BF751A /* cTerminal--getopt */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C6F9638B183071E200BF751A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = com.gooagoo.Gooagoo;
+			};
+			buildConfigurationList = C6F9638E183071E200BF751A /* Build configuration list for PBXProject "cTerminal--getopt" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C6F9638A183071E200BF751A;
+			productRefGroup = C6F96394183071E200BF751A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C6F96392183071E200BF751A /* cTerminal--getopt */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C6F9638F183071E200BF751A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6F96397183071E200BF751A /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C6F9639A183071E200BF751A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C6F9639B183071E200BF751A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C6F9639D183071E200BF751A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C6F9639E183071E200BF751A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C6F9638E183071E200BF751A /* Build configuration list for PBXProject "cTerminal--getopt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6F9639A183071E200BF751A /* Debug */,
+				C6F9639B183071E200BF751A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6F9639C183071E200BF751A /* Build configuration list for PBXNativeTarget "cTerminal--getopt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6F9639D183071E200BF751A /* Debug */,
+				C6F9639E183071E200BF751A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C6F9638B183071E200BF751A /* Project object */;
+}

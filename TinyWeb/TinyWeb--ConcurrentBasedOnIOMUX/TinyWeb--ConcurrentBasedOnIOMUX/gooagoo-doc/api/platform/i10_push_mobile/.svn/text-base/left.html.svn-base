@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../css/gooagoo_base.css" rel="stylesheet" type="text/css" />
+<title>推送功能点目录</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #FFFFCC;
+}
+-->
+</style>
+</head>
+<body>
+<table id="mytable" cellspacing="0">
+<tr> 
+<td height="5" align="left" onclick="top.location.href='index.html'" style="cursor: pointer;color:red;"><strong>【手机推送注意事项】</strong> </td>
+</tr> 
+</table>
+<table id="lefttable" cellspacing="0" summary="The technical specifications of the Apple PowerMac G5 series">  
+<tr>
+<th scope="col">1.会员卡</th> 
+</tr> 
+<tr> <td class="row"><a	href="html/moba01.html "target="mainFrame">功能：申请会员卡</a></td> </tr>
+<tr> <td class="row"><a	href="html/moba02.html "target="mainFrame">功能：积分提醒	 </a></td> </tr>
+<tr> <td class="row"><a	href="html/moba04.html "target="mainFrame">功能：商家通知	 </a></td> </tr>
+<tr> <td class="row"><a	href="html/moba05.html "target="mainFrame">功能：音频信息提醒	 </a></td> </tr>
+<tr> <td class="row"><a	href="html/moba06.html "target="mainFrame">功能：到店发卡	 </a></td> </tr>
+<tr> <td class="row"><a	href="html/moba03.html "target="mainFrame">功能：排号提醒               </a></td> </tr>
+<tr>
+<th scope="col">2.消费账单</th> 
+</tr> 
+<tr> <td class="row"><a	href="html/mobb01.html "target="mainFrame">功能：消费账单	 </a></td> </tr>
+<tr>
+<th scope="col">3.购好奇</th>  
+</tr> 
+<tr> <td class="row"><a	href="html/mobd01.html "target="mainFrame">功能：商家购好奇	 </a></td> </tr>
+<tr>
+<th scope="col">4.收藏</th>  
+</tr> 
+<tr> <td class="row"><a	href="html/mobe01.html "target="mainFrame">功能：收藏同步 	 </a></td> </tr>
+<tr>
+<th scope="col">5.吆喝</th>  
+</tr>
+<tr> <td class="row"><a	href="html/mobf01.html "target="mainFrame">功能：商家吆喝	 </a></td> </tr>
+<tr>
+<th scope="col">6.定位</th>  
+</tr>
+<tr> <td class="row"><a	href="html/mobg01.html "target="mainFrame">功能：用户到店时推送定位信息 </a></td> </tr>
+<tr> <td class="row"><a	href="html/mobg02.html "target="mainFrame">功能：用户离店时推送定位信息 </a></td> </tr>
+<tr> <td class="row"><a	href="html/mobg03.html "target="mainFrame">功能：用户打开手机地图导航时推送定位信息 </a></td> </tr>
+<tr>
+<th scope="col">7.店员助理</th>  
+</tr>
+<tr> <td class="row"><a	href="html/mobh01.html "target="mainFrame">功能：店员助理结账扫一维码成功时</a></td> </tr>
+<tr> <td class="row"><a	href="html/mobh02.html "target="mainFrame">功能：店员助理提交订单成功时 </a></td> </tr>
+</table> 
+</body>
+</html>

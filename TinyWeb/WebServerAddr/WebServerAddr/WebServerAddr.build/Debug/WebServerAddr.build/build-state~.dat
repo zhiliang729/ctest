@@ -1,0 +1,102 @@
+TWebServerAddr
+v5
+r1
+cCheck dependencies
+cCompileC WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/main.o /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/main.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/csapp.o /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/csapp.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/Debug/WebServerAddr normal i386
+
+N/Applications/Xcode4.6.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
+c00000000503F1B7700000000000000AA
+t1346313079
+s170
+
+N/Applications/Xcode4.6.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include/stdio.h
+c0000000050F4C7B50000000000004523
+t1358219189
+s17699
+
+N/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/Debug/WebServerAddr
+t2
+s0
+
+N/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/WebServerAddr.LinkFileList
+c00000000527CB61C000000000000010D
+t1383904796
+s269
+
+N/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/csapp.o
+t2
+s0
+
+N/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/main.o
+t2
+s0
+
+N/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/csapp.c
+c00000000527AF25600000000000045BF
+t1383789142
+s17855
+
+N/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/csapp.h
+c00000000527A164100000000000015CD
+t1383732801
+s5581
+
+N/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/main.c
+c00000000527CA9E40000000000003138
+t1383901668
+s12600
+i<stdio.h>
+i"csapp.h"
+
+CBuild AST from /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/csapp.c
+r0
+
+CBuild AST from /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/main.c
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies4e7c419ced2cb841^d9ce4b9ced2cb841^-278"OS X deployment target '10.9' for architecture 'i386' and variant 'normal' is greater than the maximum value '10.8' for the OS X 10.8 SDK.OS X deployment target '10.9' for architecture 'i386' and variant 'normal' is greater than the maximum value '10.8' for the OS X 10.8 SDK.2(21%IDEActivityLogMessage2@138"OS X deployment target '10.9' for architecture 'i386' and variant 'normal' is greater than the maximum value '10.8' for the OS X 10.8 SDK.-405597596#18446744073709551615#0#-1#27"com.apple.dt.IDE.LogMessage-27"Dependency Analysis Warning--2@138"OS X deployment target '10.9' for architecture 'i386' and variant 'normal' is greater than the maximum value '10.8' for the OS X 10.8 SDK.-405597596#18446744073709551615#0#-1#27"com.apple.dt.IDE.LogMessage-27"Dependency Analysis Warning--0#1#0#--18"Check dependencies36"0150FAFA-3D5C-4BBB-B785-6A66524E88C4-
+
+CCompileC WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/csapp.o /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/csapp.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
+s405597596.296889
+e405597598.005073
+r1
+xCompileC
+xWebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/csapp.o
+x/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/csapp.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/csapp.c:96:28: warning: comparison of unsigned expression < 0 is always false [-Wtautological-compare]
+o    if ((rc = sleep(secs)) < 0)
+o        ~~~~~~~~~~~~~~~~~~ ^ ~
+o1 warning generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection76"Compile /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/csapp.cff224c9ced2cb841^6a4b019eed2cb841^-248"/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/csapp.c:96:28: warning: comparison of unsigned expression < 0 is always false [-Wtautological-compare]    if ((rc = sleep(secs)) < 0)        ~~~~~~~~~~~~~~~~~~ ^ ~1 warning generated.1(36%IDEClangDiagnosticActivityLogMessage2@53"Comparison of unsigned expression < 0 is always false-405597598#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@96"file://localhost/Users/zhangliang/Desktop/%E5%AE%9E%E8%B7%B5/WebServerAddr/WebServerAddr/csapp.c0000000000000000^95#27#95#27#1775#0#14"Semantic Issue2(3@96"file://localhost/Users/zhangliang/Desktop/%E5%AE%9E%E8%B7%B5/WebServerAddr/WebServerAddr/csapp.c0000000000000000^95#8#95#26#1756#17#3@96"file://localhost/Users/zhangliang/Desktop/%E5%AE%9E%E8%B7%B5/WebServerAddr/WebServerAddr/csapp.c0000000000000000^95#29#95#30#1777#0#-0#0#0#-19%DVTDocumentLocation4@96"file://localhost/Users/zhangliang/Desktop/%E5%AE%9E%E8%B7%B5/WebServerAddr/WebServerAddr/csapp.c0000000000000000^2896"CompileC WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/csapp.o WebServerAddr/csapp.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/zhangliang/Desktop/实践/WebServerAddr    setenv LANG en_US.US-ASCII    /Applications/Xcode4.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch i386 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DDEBUG=1 -isysroot /Applications/Xcode4.6.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/WebServerAddr-generated-files.hmap -I/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/WebServerAddr-own-target-headers.hmap -I/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/WebServerAddr-all-target-headers.hmap -iquote /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/WebServerAddr-project-headers.hmap -I/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/Debug/include -I/Applications/Xcode4.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode4.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode4.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/DerivedSources/i386 -I/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/DerivedSources -F/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/Debug -MMD -MT dependencies -MF /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/csapp.d --serialize-diagnostics /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/csapp.dia -c /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/csapp.c -o /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/csapp.o36"D1F88A94-FA21-4170-80E9-27F6033C623C-
+
+CCompileC WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/main.o /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/main.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
+s405597596.296884
+e405597597.958709
+r1
+xCompileC
+xWebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/main.o
+x/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/main.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection75"Compile /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/main.c791e4c9ced2cb841^2b6df59ded2cb841^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Users/zhangliang/Desktop/%E5%AE%9E%E8%B7%B5/WebServerAddr/WebServerAddr/main.c0000000000000000^2890"CompileC WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/main.o WebServerAddr/main.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/zhangliang/Desktop/实践/WebServerAddr    setenv LANG en_US.US-ASCII    /Applications/Xcode4.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch i386 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DDEBUG=1 -isysroot /Applications/Xcode4.6.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/WebServerAddr-generated-files.hmap -I/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/WebServerAddr-own-target-headers.hmap -I/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/WebServerAddr-all-target-headers.hmap -iquote /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/WebServerAddr-project-headers.hmap -I/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/Debug/include -I/Applications/Xcode4.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode4.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode4.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/DerivedSources/i386 -I/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/DerivedSources -F/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/Debug -MMD -MT dependencies -MF /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/main.dia -c /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/main.c -o /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/main.o36"9AEB4AAE-FD30-4907-9583-E7BA59594719-
+
+CLd /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/Debug/WebServerAddr normal i386
+s405597598.005208
+e405597598.500476
+r1
+xLd
+x/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/Debug/WebServerAddr
+xnormal
+xi386
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection85"Link /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/Debug/WebServerAddrb96f019eed2cb841^e23a829eed2cb841^---0#0#0#--779"Ld WebServerAddr/Debug/WebServerAddr normal i386    cd /Users/zhangliang/Desktop/实践/WebServerAddr    setenv MACOSX_DEPLOYMENT_TARGET 10.9    /Applications/Xcode4.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode4.6.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/Debug -F/Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/Debug -filelist /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/WebServerAddr.build/Debug/WebServerAddr.build/Objects-normal/i386/WebServerAddr.LinkFileList -mmacosx-version-min=10.9 -o /Users/zhangliang/Desktop/实践/WebServerAddr/WebServerAddr/Debug/WebServerAddr36"B9BEDFC4-F68F-4F20-8F7C-47098208A09B-
+

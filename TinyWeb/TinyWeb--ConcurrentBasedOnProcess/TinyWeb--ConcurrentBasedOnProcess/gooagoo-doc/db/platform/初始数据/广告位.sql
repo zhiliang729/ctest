@@ -1,0 +1,23 @@
+delete from gooagoo_sys.shop_ad;
+INSERT INTO gooagoo_sys.shop_ad VALUES ('10101', '1', '广告位一', '首页左侧第一个广告位','','','http://html.gooagoo.com/common/images/ad/10101.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('10102', '1', '广告位二', '首页左侧第二个广告位','','','http://html.gooagoo.com/common/images/ad/10102.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('10103', '1', '广告位三', '首页左侧第三个广告位','','','http://html.gooagoo.com/common/images/ad/10103.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('10201', '1', '广告位四', '首页右侧顶部第一个轮换广告位','','','http://html.gooagoo.com/common/images/ad/10201.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('10202', '1', '广告位五', '首页右侧顶部第二个轮换广告位','','','http://html.gooagoo.com/common/images/ad/10202.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('10203', '1', '广告位六', '首页右侧顶部第三个轮换广告位','','','http://html.gooagoo.com/common/images/ad/10203.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('20101', '2', '广告位一', '我的商家页面左侧第一个广告位','','','http://html.gooagoo.com/common/images/ad/20101.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('20102', '2', '广告位二', '我的商家页面左侧第二个广告位','','','http://html.gooagoo.com/common/images/ad/20102.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('20103', '2', '广告位三', '我的商家页面左侧第三个广告位','','','http://html.gooagoo.com/common/images/ad/20103.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('30101', '3', '广告位一', '优惠凭证页面右侧顶部第一个轮换广告位','','','http://html.gooagoo.com/common/images/ad/30101.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('30102', '3', '广告位二', '优惠凭证页面右侧顶部第二个轮换广告位','','','http://html.gooagoo.com/common/images/ad/30102.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('30103', '3', '广告位三', '优惠凭证页面右侧顶部第三个轮换广告位','','','http://html.gooagoo.com/common/images/ad/30103.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('40101', '4', '广告位一', '购物清单首页右侧顶部广告位','','','http://html.gooagoo.com/common/images/ad/40101.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('40102', '4', '广告位二', '购物清单首页右侧中部第一个广告位','','','http://html.gooagoo.com/common/images/ad/40102.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('40103', '4', '广告位三', '购物清单首页右侧中部第二个广告位','','','http://html.gooagoo.com/common/images/ad/40103.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('40104', '4', '广告位四', '购物清单首页右侧中部第三个广告位','','','http://html.gooagoo.com/common/images/ad/40104.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('40105', '4', '广告位五', '购物清单首页右侧中部第三个广告位','','','http://html.gooagoo.com/common/images/ad/40105.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('50101', '5', '广告位一', '吆喝广场页面右侧顶部第一个轮换广告位','','','http://html.gooagoo.com/common/images/ad/50101.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('50102', '5', '广告位二', '吆喝广场页面右侧顶部第二个轮换广告位','','','http://html.gooagoo.com/common/images/ad/50102.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+INSERT INTO gooagoo_sys.shop_ad VALUES ('50103', '5', '广告位三', '吆喝广场页面右侧顶部第三个轮换广告位','','','http://html.gooagoo.com/common/images/ad/50103.jpg', 'N', '2000-01-01 00:00:00','2000-01-01 00:00:00');
+
+COMMIT;
