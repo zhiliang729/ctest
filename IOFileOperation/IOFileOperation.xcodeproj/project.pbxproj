@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C64788A318EE96190080C2B9 /* read.c in Sources */ = {isa = PBXBuildFile; fileRef = C64788A218EE96190080C2B9 /* read.c */; };
+		C64788A518EE97610080C2B9 /* write.c in Sources */ = {isa = PBXBuildFile; fileRef = C64788A418EE97610080C2B9 /* write.c */; };
+		C64788A718EE9A300080C2B9 /* lseek.c in Sources */ = {isa = PBXBuildFile; fileRef = C64788A618EE9A300080C2B9 /* lseek.c */; };
 		C6FFAEF118ED5429001A91F0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C6FFAEF018ED5429001A91F0 /* main.c */; };
 		C6FFAEF318ED5429001A91F0 /* IOFileOperation.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6FFAEF218ED5429001A91F0 /* IOFileOperation.1 */; };
 /* End PBXBuildFile section */
@@ -25,6 +28,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C64788A218EE96190080C2B9 /* read.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = read.c; sourceTree = "<group>"; };
+		C64788A418EE97610080C2B9 /* write.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = write.c; sourceTree = "<group>"; };
+		C64788A618EE9A300080C2B9 /* lseek.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lseek.c; sourceTree = "<group>"; };
 		C6FFAEED18ED5429001A91F0 /* IOFileOperation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = IOFileOperation; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6FFAEF018ED5429001A91F0 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C6FFAEF218ED5429001A91F0 /* IOFileOperation.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = IOFileOperation.1; sourceTree = "<group>"; };
@@ -62,6 +68,9 @@
 			children = (
 				C6FFAEF018ED5429001A91F0 /* main.c */,
 				C6FFAEF218ED5429001A91F0 /* IOFileOperation.1 */,
+				C64788A218EE96190080C2B9 /* read.c */,
+				C64788A418EE97610080C2B9 /* write.c */,
+				C64788A618EE9A300080C2B9 /* lseek.c */,
 			);
 			path = IOFileOperation;
 			sourceTree = "<group>";
@@ -117,7 +126,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C64788A518EE97610080C2B9 /* write.c in Sources */,
 				C6FFAEF118ED5429001A91F0 /* main.c in Sources */,
+				C64788A318EE96190080C2B9 /* read.c in Sources */,
+				C64788A718EE9A300080C2B9 /* lseek.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +239,7 @@
 				C6FFAEF818ED5429001A91F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

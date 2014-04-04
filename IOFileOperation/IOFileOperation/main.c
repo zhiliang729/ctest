@@ -13,7 +13,7 @@
 
 #define AFILE "/Users/zhangliang/Desktop/tmpfile"
 
-int main()
+int main1()
 {
 	int fno;
 	if ((fno = open(AFILE, O_RDWR|O_CREAT| O_EXCL, 0755)) < 0)
