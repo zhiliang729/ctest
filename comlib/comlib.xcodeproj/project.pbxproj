@@ -16,8 +16,8 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		C66E3E5218C0877D000491E9 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1;
 			dstSubfolderSpec = 0;
 			files = (
 				C66E3E5A18C0877D000491E9 /* comlib.1 in CopyFiles */,
@@ -275,6 +275,7 @@
 				C66E3E5F18C0877D000491E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
