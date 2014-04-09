@@ -7,9 +7,8 @@
 //
 
 #include "comlib.h"
-#include <stdio.h>
 
-int main(int argc, char * argv[])
+int main1(int argc, char * argv[])
 {
     int i = 100000;
     PrintLog(stderr, "this is test[%d]", i);
@@ -23,5 +22,21 @@ int main(int argc, char * argv[])
     PrintTraceLog("-----------------");
     VERIFY(1);
 
+    return 0;
+}
+
+int main2(int argc, char * argv[])
+{
+    char buf[11];
+    ssize_t size = sizeof(buf);
+    ReadFile(0, buf, &size);
+    printf("%ld", size);
+    return 0;
+}
+
+int main(int argc, char * argv[])
+{
+    main1(argc, argv);
+    main2(argc, argv);
     return 0;
 }

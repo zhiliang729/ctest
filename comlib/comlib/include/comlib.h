@@ -59,6 +59,10 @@ int PrintHexLog(FILE * pfile, void * pData, int nSize);
 int PrintTraceHexLog(void * pData, int nSize);
 int Verify(int bStatus, const char * szBuf, const char * szFile, int nLine);
 
-
+/*读写功能库*/
+int ReadFile(int nFile, void * pData, ssize_t * pSize);
+int WriteFile(int nFile, void* pData, ssize_t nSize);
+int ReadFileExt(int nFile, void * pData, int pnSize, int nTimeout);
+int WriteFileExt(int nFile, void* pData, int nSize, int nTimeout);
 
 #endif

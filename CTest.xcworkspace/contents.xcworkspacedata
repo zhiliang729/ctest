@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:DeviceFile/DeviceFile.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DirectoryFile/DirectoryFile.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:filelock/filelock.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:IOFileOperation/IOFileOperation.xcodeproj">
    </FileRef>
    <FileRef

@@ -11,6 +11,7 @@
 		C66E3E6318C08812000491E9 /* debug.c in Sources */ = {isa = PBXBuildFile; fileRef = C66E3E6218C08812000491E9 /* debug.c */; };
 		C66E3E6D18C08970000491E9 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C66E3E6C18C08970000491E9 /* main.c */; };
 		C66E3E6F18C08D9D000491E9 /* time.c in Sources */ = {isa = PBXBuildFile; fileRef = C66E3E6E18C08D9D000491E9 /* time.c */; };
+		C6E7D25518F3C4EF00BF93D8 /* file.c in Sources */ = {isa = PBXBuildFile; fileRef = C6E7D25418F3C4EF00BF93D8 /* file.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,7 @@
 		C66E3E6B18C088D3000491E9 /* comlib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = comlib.h; sourceTree = "<group>"; };
 		C66E3E6C18C08970000491E9 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C66E3E6E18C08D9D000491E9 /* time.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = time.c; sourceTree = "<group>"; };
+		C6E7D25418F3C4EF00BF93D8 /* file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = file.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				C66E3E6218C08812000491E9 /* debug.c */,
 				C66E3E6E18C08D9D000491E9 /* time.c */,
+				C6E7D25418F3C4EF00BF93D8 /* file.c */,
 			);
 			path = libsrc;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				C66E3E6D18C08970000491E9 /* main.c in Sources */,
 				C66E3E6318C08812000491E9 /* debug.c in Sources */,
 				C66E3E6F18C08D9D000491E9 /* time.c in Sources */,
+				C6E7D25518F3C4EF00BF93D8 /* file.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
