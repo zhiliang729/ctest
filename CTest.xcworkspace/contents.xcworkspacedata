@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:2048/2048.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:DeviceFile/DeviceFile.xcodeproj">
    </FileRef>
    <FileRef
