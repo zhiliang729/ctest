@@ -28,6 +28,7 @@
 		C6B8D67118F678C000473D1B /* ConcurrentProgramming */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ConcurrentProgramming; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B8D67418F678C000473D1B /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C6B8D67618F678C000473D1B /* ConcurrentProgramming.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ConcurrentProgramming.1; sourceTree = "<group>"; };
+		C6EC894018F7F7BC00783D37 /* vfork,fork,exec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vfork,fork,exec"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +63,7 @@
 			children = (
 				C6B8D67418F678C000473D1B /* main.c */,
 				C6B8D67618F678C000473D1B /* ConcurrentProgramming.1 */,
+				C6EC894018F7F7BC00783D37 /* vfork,fork,exec */,
 			);
 			path = ConcurrentProgramming;
 			sourceTree = "<group>";
@@ -227,6 +229,7 @@
 				C6B8D67C18F678C000473D1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
