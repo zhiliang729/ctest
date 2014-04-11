@@ -30,3 +30,168 @@ fork函数与vfork函数
     
     
     
+    vfork用于创建一个新进程，而该新进程的目的是exec一个新进程，vfork和fork一样都创建一个子进程，但是它并不将父进程的地址空间完全复制到子进程中，不会复制页表。因为子进程会立即调用exec，于是也就不会存放该地址空间。不过在子进程中调用exec或exit之前，他在父进程的空间中运行。
+为什么会有vfork，因为以前的fork当它创建一个子进程时，将会创建一个新的地址空间，并且拷贝父进程的资源，而往往在子进程中会执行exec调用，这样，前面的拷贝工作就是白费力气了，这种情况下，聪明的人就想出了vfork，它产生的子进程刚开始暂时与父进程共享地址空间（其实就是线程的概念了），因为这时候子进程在父进程的地址空间中运行，所以子进程不能进行写操作，并且在儿子“霸占”着老子的房子时候，要委屈老子一下了，让他在外面歇着（阻塞），一旦儿子执行了exec或者exit后，相当于儿子买了自己的房子了，这时候就相当于分家了。
+vfork和fork之间的另一个区别是： vfork保证子进程先运行，在她调用exec或exit之后父进程才可能被调度运行。如果在调用这两个函数之前子进程依赖于父进程的进一步动作，则会导致死锁。
+由此可见，这个系统调用是用来启动一个新的应用程序。其次，子进程在vfork()返回后直接运行在父进程的栈空间，并使用父进程的内存和数据。这意味着子进程可能破坏父进程的数据结构或栈，造成失败。
+为了避免这些问题，需要确保一旦调用vfork()，子进程就不从当前的栈框架中返回，并且如果子进程改变了父进程的数据结构就不能调用exit函数。子进程还必须避免改变全局数据结构或全局变量中的任何信息，因为这些改变都有可能使父进程不能继续。
+通常，如果应用程序不是在fork()之后立即调用exec()，就有必要在fork()被替换成vfork()之前做仔细的检查。
+用fork函数创建子进程后，子进程往往要调用一种exec函数以执行另一个程序，当进程调用一种exec函数时，该进程完全由新程序代换，而新程序则从其main函数开始执行，因为调用exec并不创建新进程，所以前后的进程id 并未改变，exec只是用另一个新程序替换了当前进程的正文，数据，堆和栈段。
+
+
+fork与vfork函数 (2012-05-08 23:45:23)转载▼
+标签： 杂谈	
+转发：  http://doc.chinaunix.net/linux/201010/996271.shtml
+Linux fork与vfork的深入分析
+ 一)fork的概述
+　　.操作系统对进程的管理,是通过进程表完成的.进程表中的每一个表项,记录的是当前操作系统中一个进程的信息.
+　　.进程在系统的唯一标识是PID,PID是一个从1到32768的正整数,其中1一般是特殊进程init,其它进程从2开始依次编号.当用完32768后,从2重新开始.
+　　.一个称为“程序计数器（program counter, pc）”的寄存器，指出当前占用 CPU的进程要执行的下一条指令的位置
+　　.当分给某个进程的 CPU时间已经用完,操作系统将该进程相关的寄存器的值,保存到该进程在进程表中对应的表项里面,把将要接替这个进程占用 CPU的那个进程的上下文,从进程表中读出,并更新相应的寄存器.
+　　二)fork的一个例子:
+　　#include <sys/types.h>
+　　#include <sys/types.h>
+　　#include <unistd.h>
+　　#include <stdio.h>
+　　int main()
+　　{
+　　pid_t pid;
+　　pid=fork();
+　　if(pid<0)
+　　printf("error in fork!");
+　　else if(pid==0)
+　　printf("I am the child process,ID is %d\n",getpid());
+　　else
+　　printf("I am the parent process,ID is %d\n",getpid());
+　　}
+　　gcc test1.c -o test1
+　　debian:/tmp# ./test1
+　　I am the child process,ID is 2723
+　　I am the parent process,ID is 2722
+　　程序分析:
+　　1)pid=fork();
+　　先来看看子进程的表现:
+　　操作系统调用fork()函数创建一个新的进程(子进程),并且在进程表中相应为它建立一个新的表项,
+　　此时子进程得到CPU的调度,它的上下文被换入，占据 CPU，操作系统对fork的实现，使得子进程中fork调用返回0
+　　所以在这个进程中pid=0，这个进程继续执行的过程中，if语句中 pid<0不满足，但是pid= =0是true。所以输出i am the child process...
+　　父进程的表现:
+　　操作系统对fork的实现,使这个调用在父进程中返回刚刚创建的子进程的pid(一个正整数),所以下面的if语句中pid<0,pid==0的两个分支都不会执行。所以输出i am the parent process...
+　　2)对子进程来说,fork返回给它0,但它的pid绝对不会是0,之所以fork返回0给它,是因为它随时可以调用getpid()来获取自己的pid
+　　3)fork之后父子进程除非采用了同步手段,否则不能确定谁先运行,也不能确定谁先结束.认为子进程结束后父进程才从fork返回的,这是不对的,fork不是这样的,vfork才这样。
+　　4)父进程执行了所有的进程,而子进程只执行了fork()后面的程序,这是因为子进程继承了父进程的PC(程序计数器).
+　　三)fork的另一个例子:
+　　#include <stdio.h>
+　　#include <sys/types.h>
+　　#include <unistd.h>
+　　int main()
+　　{
+　　pid_t pid1;
+　　pid_t pid2;
+　　pid1 = fork();
+　　pid2 = fork();
+　　printf("pid1:%d, pid2:%d\n", pid1, pid2);
+　　}
+　　gcc test2.c -o test2
+　　./test2
+　　pid1:18938, pid2:0
+　　pid1:0, pid2:0
+　　pid1:18938, pid2:18939
+　　pid1:0, pid2:18940
+　　程序分析:
+　　1)执行test2时，启动一个进程，设这个进程为P0，PID为xxxxx
+　　2)当执行到pid1 = fork();时，P0启动了一个进程,设这个进程为P1,它的PID为18938,暂且不管P1.
+　　3)P0中的fork返回18938给pid1,继续执行到pid2 = fork();此时启动另一个新的进程,设为P2，P2的PID为18939 ,同样暂且不管P2.
+　　4)P0的第二个fork返回18939给p2,最后P0的执行结果为pid1:18938, pid2:18939
+　　5)再看P2,P2生成时,P0中的pid1=18938,所以P2中的pid1继承P0的pid1=18938,而作为子进程pid2=0,P2从第二个fork后开始执行,
+　　最后输出pid1:18938, pid2:0.
+　　6)回头看P1,P1中第一条fork返回0给pid1,然后接着执行后面的语句.而后面接着的语句是pid2 = fork();执行到这里,P1又产生了一个新进程,设为P3,先不管P3.
+　　7)P1中第二条fork将P3的PID返回给pid2,P3的PID为18940,所以P1的pid2=18940。P1继续执行后续程序，结束，输出“pid1:0, pid2:18940”.
+　　8)P3作为P1的子进程，继承P1中pid1=0，并且第二条fork将0返回给pid2，所以P3最后输出“pid1:0, pid2:0”.
+　　9)所有的进程都执行完毕.
+　　四)vfork与fork的区别
+　　vfork与fork主要有三点区别:
+　　.fork():子进程拷贝父进程的数据段，堆栈段
+　　vfork():子进程与父进程共享数据段
+　　.fork()父子进程的执行次序不确定vfork 保证子进程先运行,在调用 exec 或 exit 之前与父进程数据是共享的,在它调用 exec或 exit 之后父进程才可能被调度运行。
+　　.vfork()保证子进程先运行,在它调用 exec 或 exit 之后父进程才可能被调度运行.如果在调用这两个函数之前子进程依赖于父进程的进一步动作,则会导致死锁。
+　　1)先用fork()进行试验
+　　#include <unistd.h>
+　　#include <stdio.h>
+　　int main(void)
+　　{
+　　pid_t pid;
+　　int count=0;
+　　pid=fork();
+　　count++;
+　　printf("count= %d\n",count);
+　　return 0;
+　　}
+ 
+　　分析:
+　　通过上面fork()的说明,这个程序的输出应该是:
+　　./test
+　　count= 1
+　　count= 1
+　　2)而将fork()换成vfork()呢,程序如下
+　　#include <unistd.h>
+　　#include <stdio.h>
+　　int main(void)
+　　{
+　　pid_t pid;
+　　int count=0;
+　　pid=vfork();
+　　count++;
+　　printf("count= %d\n",count);
+　　return 0;
+　　}
+　　执行结果:
+　　./test
+　　count= 1
+　　count= 1
+　　Segmentation fault (core dumped)
+　　分析:
+　　通过将fork()换成vfork(),由于vfork()是共享数据段,为什么结果不是2呢,答案是:
+　　vfork保证子进程先运行,在它调用 exec 或 exit 之后父进程才可能被调度运行.如果在调用这两个函数之前子进程依赖于父进程的进一步动作,则会导致死锁.
+　　3)做最后的修改,在子进程执行时,调用_exit(),程序如下:
+　　#include <unistd.h>
+　　#include <stdio.h>
+　　#include <sys/types.h>
+　　int main(void)
+　　{
+　　pid_t pid;
+　　int count=0;
+　　pid=vfork();
+　　if(pid==0)
+　　{
+　　count++;
+　　_exit(0);
+　　}
+　　else
+　　{
+　　count++;
+　　}
+　　printf("count= %d\n",count);
+　　return 0;
+　　}
+　　执行结果:
+　　./test
+　　count= 2
+　　分析:如果子进程中如果没有调用_exit(0),则父进程不可能被执行,在子进程调用exec(),exit()之后父进程才可能被调用.
+　　所以加上_exit(0),使子进程退出,父进程执行.
+　　这样 else 后的语句就会被父进程执行,又因在子进程调用 exec 或 exit 之前与父进程数据是共享的,
+　　所以子进程退出后把父进程的数据段 count 改成1了,子进程退出后,父进程又执行,最终就将count 变成了 2.
+　　五)写拷贝技术
+　　写拷贝或叫做写时拷贝,就是子进程在创建后共享父进程的虚存内存空间,只是在两个进程中某一个进程需要向虚拟内存写入数据时才拷贝相应部分的虚拟内存.
+　　写拷贝的目的是通过消除不必要的复制来提高效率,当运行一个fork进程时,两个进程将尽可能长地共享相同的物理内存,也就是说内核只复制页表入口地址和标记所有写拷贝的页面.
+　　当有一个进程修改内存时,将会引起缺页,这时内核将分配一个新的物理存储页,并在它被修改之前复制该页.
+　　这样对像init,xinetd,sshd这样的进程将非常有用，因为他们的工作也只是调用fork和exec.
+　　六)clone
+　　.clone函数是Linux所特有的,可以用于创建进程和线程,所有可移植代码从来不使用clone系统调用.
+　　.clone是一个复杂的系统调用,它给予应用程序很大的权限,可以控制父进程共享哪些子进程,它可以将一个线程当作一个特定进程,与其父进程共享用户共间.
+　　七)最后的总结:
+　　1)fork()系统调用是创建一个新进程的首选方式,fork的返回值要么是0，要么是非0，父进程与子进程的根本区别在于fork函数的返回值.
+　　2)vfork()系统调用除了能保证用户空间内存不会被复制之外,它与fork几乎是完全相同的.vfork存在的问题是它要求子进程立即调用exec,
+　　而不用修改任何内存,这在真正实现的时候要困难的多,尤其是考虑到exec调用有可能失败.
+　　3)vfork()的出现是为了解决当初fork()浪费用户空间内存的问题,因为在fork()后,很有可能去执行exec(),vfork()的思想就是取消这种复制.
+　　4)现在的所有unix变量都使用一种写拷贝的技术(copy on write)，它使得一个普通的fork调用非常类似于vfork.因此vfork变得没有必要.
+    
