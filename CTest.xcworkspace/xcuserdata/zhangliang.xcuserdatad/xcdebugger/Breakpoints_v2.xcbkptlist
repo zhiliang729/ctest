@@ -25,12 +25,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ExternalDevice/ExternalDevice/main.c"
-            timestampString = "418804919.309473"
+            filePath = "ConcurrentProgramming/ConcurrentProgramming/main.c"
+            timestampString = "418903387.877046"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "main()"
             landmarkType = "7">
          </BreakpointContent>
