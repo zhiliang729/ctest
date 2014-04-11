@@ -88,8 +88,9 @@ void main8(int argc, const char * argv[])
     //#include <unistd.h>
     //pid_t vfork();
 
-    
-    
+    //system模式
+    char cmd[] = {"/bin/ls -l ./"};
+    system(cmd);
 }
 
 
