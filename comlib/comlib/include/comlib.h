@@ -40,7 +40,7 @@
 
 typedef struct structTIMESTRU
 {
-    int nYear; /* From  2001 */
+    int nYear; /* From  1900 */
     int nMon;
     int nDay;
     int nHour; /* From 0 to 23 */
@@ -50,6 +50,7 @@ typedef struct structTIMESTRU
 typedef TIMESTRU * PTIMESTRU;
 
 TIMESTRU GetTime();
+TIMESTRU GetOffsetTime(TIMESTRU timestru, int nOffsetSec);
 
 #define BYTESIZE 1024
 
