@@ -11,6 +11,7 @@
 
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
 #include <sys/time.h>
@@ -65,4 +66,9 @@ int WriteFile(int nFile, void* pData, ssize_t nSize);
 int ReadFileExt(int nFile, void * pData, int pnSize, int nTimeout);
 int WriteFileExt(int nFile, void* pData, int nSize, int nTimeout);
 
+
+
+
+/*守护进程生成器*/
+int InitServer();
 #endif

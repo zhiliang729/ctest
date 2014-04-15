@@ -34,9 +34,19 @@ int main2(int argc, char * argv[])
     return 0;
 }
 
+/*守护进程实例*/
+int main3(int argc, char * argv[])
+{
+    InitServer();
+    sleep(10);
+    return 0;
+}
+
 int main(int argc, char * argv[])
 {
-    main1(argc, argv);
-    main2(argc, argv);
+//    main1(argc, argv);
+//    main2(argc, argv);
+    
+    main3(argc, argv);
     return 0;
 }
