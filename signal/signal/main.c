@@ -85,6 +85,22 @@
                     SIG_IGN             忽略信号处理
                     函数地址              调用信号捕获函数执行处理
             函数调用成功时，返回信号捕获函数的地址，即参数f的取值，否则返回SIG_ERR.参数sig取值非法是导致调用失败的常见原因：或者sig不是一个信号值，或者妄图更改信号SIGKILL或SIGSTOP的默认处理方式。//虽然参数f的类型是指向函数的指针，但它的取值SIG_IGN和SIG_DFL居然都是整型！其实指针在内存中表示为4字节字符，从本质上讲它可以用一个整型描述，而一般unix定义常数SIG_DFL值为0，常数SIG_IGN为1，不会与普通的函数地址发生冲突，这样就完全可以使用一个4字节字符来表示，它即表示整型又可描述函数地址。比如空指针null的取值就是整型0
+        2.信号的显式发送 unix应用程序可以向进程发送任意信号，这些信号发送函数的原型如下：
+            #include <sys/types.h>
+            #include <signal.h>
+ 
+            int kill(pid_t pid, int signo);
+            int raise(int signo);
+ 
+            函数kill发送信号signo到参数pid决定的特定进程中，其中pid的取值含义如下：
+                取值                                  含义
+                > 0                                 发送信号signo到进程pid中
+                0                                   发送信号到signo到与调用进程同组进程中
+                -1                                  发送信号signo到实际用户id等于调用进程的有效用户id的进程中
+                <-1                                 发送信号signo到进程组id等于pid绝对值的进程中
+ 
+                函数kill调用成功时返回0，否则返回-1；
+                函数raise向调用进程自身发送信号signo，成功时返回0，否则返回-1.
  */
 int usr1 = 0, usr2 = 0;
 void func(int);
