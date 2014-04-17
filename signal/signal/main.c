@@ -7,6 +7,8 @@
 //
 
 #include <stdio.h>
+#include <unistd.h>
+#include <signal.h>
 
 /*
     信号是传送给进程的事件通知，它可以完成进程间异步事件的通信，比如用户按“Ctrl + c” 组合键，unix内核将产生程序终止号
@@ -62,11 +64,66 @@
                 SIGVTALRM：      虚拟时钟超时时产生该信号。类似于SIGALRM，但是它只计算该进程占用的CPU时间。比如函数setitimer设置的定时器到期时会产生此信号。
             5.其他信号-------包括预留信号、I/O信号等。
                 SIGCHLD：        子程序结束时，父进程会收到这个信号。如果父进程没有处理这个信号，也没有等待（wait）子进程，子进程虽然终止，但会在内核进程表中占有表项，这时的子进程称为僵死进程。为了避免这种情况，父进程可以采取忽略本信号、捕捉本信号、wait子进程或者父进程先终止，由进程init自动接管子进程等方式。
-                SIGPIPE：        Broken pipe：向一个没有读端的管道写数据。
+                SIGPIPE：        Broken pipe：向一个没有读端的管道写数据。管道错误信号，常实用于进程间通信。比如在管道未打开或已关闭时读写管道，又如向已关闭的socket中写入数据
+                SIGIO：          本信号在流设备文件描述符准备就绪，可以开始执行I/O操作时发出
+                SIGURG:         本信号在进程出现“紧急”数据或者socket中接收了外带数据时发出。
+                SIGUSR1：        预留给用户的自定义信号
+                SIGUSR2:         预留给用户的自定义信号
+                SIGWINCH:        本信号在终端（伪终端）的窗口大小改变时发出
+    4.信号操作
+        函数signal更改信号的默认处理方式，函数kill或raise可以向进程发送信号。//在实践应用中最常见的信号处理有：1.忽略SIGINT 等进程终止类信号，屏蔽用户终止进程；2.忽略或捕获子进程结束信号SIGCHLD，释放进程表项，预防僵死进程；3.捕获定时器信号，完成进程定时或并发操作；4.捕获自定义信号，完成进程特定操作。
+        1.信号的忽略与捕获
+            函数signal设置对信号的操作动作。它的原型如下：
+                void	(*signal(int, void (*)(int)))(int);
+            这是一个复杂的函数原型。分开写就是
+                typddef void (* func)(int);
+                func signal(int sig, func f);
+            首先，定义函数指针类型func, 它是一个指向参数为整型（int）且无返回值的函数指针。然后定义函数signal为具有int类型和func类型参数、返回值为func类型的函数。
+                函数signal更改进程对信号的处理方式（信号SIGKILL和SIGSTOP除外）.整型sig指定了要处理的信号，参数f指明了进程接收到信号sig后的处理动作，目前可取动作如下：
+                    取值                 描述
+                    SIG_DFL             恢复信号默认处理机制。
+                    SIG_IGN             忽略信号处理
+                    函数地址              调用信号捕获函数执行处理
+            函数调用成功时，返回信号捕获函数的地址，即参数f的取值，否则返回SIG_ERR.参数sig取值非法是导致调用失败的常见原因：或者sig不是一个信号值，或者妄图更改信号SIGKILL或SIGSTOP的默认处理方式。//虽然参数f的类型是指向函数的指针，但它的取值SIG_IGN和SIG_DFL居然都是整型！其实指针在内存中表示为4字节字符，从本质上讲它可以用一个整型描述，而一般unix定义常数SIG_DFL值为0，常数SIG_IGN为1，不会与普通的函数地址发生冲突，这样就完全可以使用一个4字节字符来表示，它即表示整型又可描述函数地址。比如空指针null的取值就是整型0
  */
+int usr1 = 0, usr2 = 0;
+void func(int);
+void main1(int argc, const char * argv[])
+{
+    signal(SIGUSR1, func);
+    signal(SIGUSR2, func);
+    
+    for (; ;) {
+        sleep(1);
+    }
+}
+
+void func(int sig)
+{
+    if (sig == SIGUSR1) {
+        usr1++;
+    }
+    
+    if (sig == SIGUSR2) {
+        usr2++;
+    }
+    
+    fprintf(stderr, "SIGUSR1[%d]; SIGUSR2[%d]\n", usr1, usr2    );
+    signal(SIGUSR1, func);
+    signal(SIGUSR2, func);
+}
 
 int main(int argc, const char * argv[])
 {
+//    //信号忽略实例   在100庙内，屏蔽SIGINT信号，即按下delete或ctrl+c键无效
+//    signal(SIGINT, SIG_IGN);//屏蔽信号SIGINT
+//    sleep(100);
+    
+    
+    //信号捕获实例
+    
+    main1(argc, argv);
+    
     return 0;
 }
 
