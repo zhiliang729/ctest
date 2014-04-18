@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:jmp/jmp.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:signal/signal.xcodeproj">
    </FileRef>
    <FileRef
