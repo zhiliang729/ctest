@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <signal.h>
+#include <stdlib.h>
 
 /*
     信号是传送给进程的事件通知，它可以完成进程间异步事件的通信，比如用户按“Ctrl + c” 组合键，unix内核将产生程序终止号
@@ -129,6 +130,40 @@ void func(int sig)
     signal(SIGUSR2, func);
 }
 
+#pragma mark - 发送和捕获SIGTERM 终止信号的例子
+/*父进程创建一个子进程，并且向其发送SIGTERM信号：子进程捕获信号SIGTERM 后退出。*/
+void childfunc(int sig)/*子进程捕获信号函数*/
+{
+    fprintf(stderr, "Get Sig\n");
+    exit(6);//收到信号后自动退出
+}
+
+void main2(int argc, const char * argv[])
+{
+    pid_t pid;
+    int status;
+    if ((pid = fork()) < 0) {
+        fprintf(stderr, "\npid = [%d]\n", pid);
+        exit(1);
+    }else if(pid == 0){/*子进程*/
+        fprintf(stderr, "\n子进程pid = [%d]\n", pid);
+        signal(SIGTERM, childfunc);/*捕获信号SIGTERM*/
+        
+//        for (;;)sleep(1);
+        sleep(20);
+        fprintf(stderr, "\nwill exit self !\n");
+        exit(0);//20秒内没收到信号，则自动退出
+    }
+    
+    fprintf(stderr, "Parent [%d] fork child pid = [%d]\n", getpid(), pid);
+    
+    sleep(10);
+    kill(pid, SIGTERM);/*10秒后向子进程发送SIGTERM信号  可以在活动监视器中退出进程即为发送SIGTERM信号*/
+    wait(&status);/*等待子进程结束*/
+    fprintf(stderr, "kill child pid = [%d], exit status [%d]\n", pid, status>>8);
+}
+
+
 int main(int argc, const char * argv[])
 {
 //    //信号忽略实例   在100庙内，屏蔽SIGINT信号，即按下delete或ctrl+c键无效
@@ -137,9 +172,10 @@ int main(int argc, const char * argv[])
     
     
     //信号捕获实例
+//    main1(argc, argv);
     
-    main1(argc, argv);
-    
+    //发送和捕获SIGTERM 终止信号
+    main2(argc, argv);
     return 0;
 }
 
