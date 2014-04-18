@@ -69,6 +69,35 @@ int main2(int argc, const char * argv[])
                 signal(SIGALRM, func);//再次设置捕获定时信号
                 alarm(1);//再次定时
             }//由于在部分unix版本中，信号的捕获只能响应一次，故函数中需要增加信号捕捉设置。同理，函数alarm设置的定时器也只能定时一次，故函数中需要重新定时。
+ 
+ 2.精确定时器设置
+    函数alarm设置的定时器只能精确到秒，而以下函数理论上可以精确到微秒：
+        #include <sys/select.h>
+        #include <sys/itimer.h>
+        int getitimer(int which, struct itimerval *value);
+        int setitimer(int which, const struct itimerval * value, struct itimerval * ovalue);
+    函数setitimer可以提供三种定时器，它们互相独立，任意一个定时完成都将发送定时信号进程，并且自动重新计时。参数which确定了定时器的类型。
+        取值           含义                                 信号发送
+        ITIMER_REAL   定时真实时间，与alarm类型相同             SIGALRM
+        ITIMER_VIRTUAL   定时进程在用户态下的实际执行时间           SIGVTALRM
+        ITIMER_PROF   定时进程在用户态和核心态下的实际执行时间      SIGPROF
+    这三个定时发送不同的信号。
+    函数alarm本质上设置的是低精确、非重载的ITIMER_REAL类定时器，它只能精确到秒，并且每次设置只能产生一次定时。函数setitimer设置的定时器则不同，它们不但可以计时到微妙（理论上），还能自动循环定时。在一个unix进程中，不能同时使用alarm和ITIMER_REAL类定时器。结构itimerval描述了定时器的组成：
+        struct itimerval
+        {
+            struct timeval it_interval; //下次定时取值
+            struct timeval it_value;//本次定时设置值
+        }
+ 
+        结构timeval描述了一个精确到微妙的时间：
+        struct timeval
+        {
+            long tv_sec;//秒（1000000微妙）
+            long tv_usec;//微妙
+        }
+        函数setitimer设置一个定时器，参数value指向一个itimerval结构，该结构决定了设置的定时器信息，结构成员it_value指定首次定时的时间，结构成员it_interval指定下次定时的时间。定时器工作时，先将it_value的时间值减到0，发送一个信号，再将it_value赋值为it_interval的值，重新开始定时，如此反复。如果it_value值被设置为0，则定时器停止定时；如果it_value值不为0但it_interval值为0，则定时器在一次定时后终止。
+        函数setitimer调用成功时返回0，否则返回-1，参数ovalue如果不为空，返回上次的定时器状态。
+        函数getitimer获取当前的定时器状态，整型参数which指定了读取的定时器类型，参数value返回定时器状态。函数调用成功返回0，否则返回-1.
  */
 
 /*每隔一秒向进程发送定时信号SIGALRM， 进程在接收到信号时将打印定时的次数，用户可以键入“ctrl+c” 或delete键来结束程序*/
@@ -102,11 +131,147 @@ void main3(int argc, const char * argv[])
     }
 }
 
+/*
+ 设置一个定时器，每2.5秒产生一个SIGALRM 信号
+ */
+#include <sys/select.h>
+#include <sys/time.h>
+void timefunc1(int sig);
+void timefunc1(int sig)
+{
+    fprintf(stderr, "Alarm sig %d\n", number++);
+    signal(sig, timefunc1);/*再次设置捕获信号*/
+}
+
+void main4(int argc, const char * argv[])
+{
+    signal(SIGALRM, timefunc1);//设置捕获信号
+    
+    struct itimerval value;
+    value.it_value.tv_sec = 2;
+    value.it_value.tv_usec = 500000;
+    value.it_interval.tv_sec = 2;
+    value.it_interval.tv_usec = 500000;
+    setitimer(ITIMER_REAL, &value, NULL);//setitimer设置的定时器可以重复定时，无需多次调用
+    
+    //前10次每2.5秒一次，后面10次0.5秒一次，之后退出
+//    int i = 0;
+//    while (1) {
+//        sleep(3);
+//        if (i < 10) {
+//            value.it_value.tv_sec = 2;
+//            value.it_value.tv_usec = 500000;
+//            value.it_interval.tv_sec = 2;
+//            value.it_interval.tv_usec = 500000;
+//            setitimer(ITIMER_REAL, &value, NULL);
+//        }else if (i < 20){
+//            value.it_value.tv_sec = 0;
+//            value.it_value.tv_usec = 500000;
+//            value.it_interval.tv_sec = 0;
+//            value.it_interval.tv_usec = 500000;
+//            setitimer(ITIMER_REAL, &value, NULL);
+//        }else{
+////            value.it_value.tv_sec = 0;
+////            value.it_value.tv_usec = 0;
+////            value.it_interval.tv_sec = 0;
+////            value.it_interval.tv_usec = 0;
+////            setitimer(ITIMER_REAL, &value, NULL);
+//            break;
+//        }
+//        i++;
+//    }
+}
+
+/*设置一个定时器，进程在用户态下执行1秒钟后发出首次信号，以后进程每在用户态下执行3秒钟，发送一个信号*/
+void timefunc3(int sig)
+{
+    fprintf(stderr, "signal %d\n", number++);
+    signal(SIGPROF, timefunc3);
+}
+
+void main5(int argc, const char * argv[])
+{
+    signal(SIGVTALRM, timefunc3);
+    struct itimerval value;
+    value.it_value.tv_sec = 10;
+    value.it_value.tv_usec = 0;
+    value.it_interval.tv_sec = 1;
+    value.it_interval.tv_usec = 0;
+    setitimer(ITIMER_VIRTUAL, &value, NULL);
+    
+    while (1) {
+        ;
+    }
+}
+
+/*取消一个ITIMER_PROF类定时器*/
+void timefunc4(int sig)
+{
+    fprintf(stderr, "signal %d\n", number++);
+    signal(SIGPROF, timefunc4);
+}
+
+void main6(int argc, const char * argv[])
+{
+    signal(SIGVTALRM, timefunc4);
+    struct itimerval value;
+    value.it_value.tv_sec = 0;
+    value.it_value.tv_usec = 0;
+    setitimer(ITIMER_PROF, &value, NULL);
+}
+
+/*设置一个定时1.5秒的真实时间定时器，它仅发送一次信号就自动取消*/
+
+void timefunc5(int sig)
+{
+    fprintf(stderr, "signal %d\n", number++);
+    signal(SIGPROF, timefunc5);
+}
+
+void main7(int argc, const char * argv[])
+{
+    signal(SIGPROF, timefunc5);
+    struct itimerval value;
+    value.it_value.tv_sec = 1;
+    value.it_value.tv_usec = 500000;
+    value.it_interval.tv_sec = 0;
+    value.it_interval.tv_usec = 0;
+    setitimer(ITIMER_PROF, &value, NULL);
+    while (1) {
+        ;
+    }
+}
+
+void timefunc6(int sig)
+{
+    fprintf(stderr, "signal %d\n", number++);
+    signal(SIGPROF, timefunc6);
+}
+
+void main8(int argc, const char * argv[])
+{
+    signal(SIGPROF, timefunc6);//捕获信号
+    struct itimerval value;
+    value.it_value.tv_sec = 1;
+    value.it_value.tv_usec = 500000;
+    value.it_interval.tv_sec = 1;
+    value.it_interval.tv_usec = 500000;
+    setitimer(ITIMER_PROF, &value, NULL);//定时开始
+    while (1) {
+        ;
+    }
+}
+
 int main(int argc, const char * argv[])
 {
 //    main1(argc, argv);
 //    main2(argc, argv);
-    main3(argc, argv);
+//    main3(argc, argv);
+//    main4(argc, argv);
+//    main5(argc, argv);
+//    main6(argc, argv);
+//    main7(argc, argv);
+    main8(argc, argv);
     return 0;
 }
 
