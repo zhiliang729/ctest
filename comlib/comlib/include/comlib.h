@@ -37,6 +37,7 @@
 
 #define VERIFY(b)        Verify((errno = 0) || (b), NULL, __FILE__, __LINE__)
 #define ASSERT(b)        if (VERIFY(b)) ; else return -1;
+#define ASSERTEXT(b, c)	 if (VERIFY(b)) ; else return(c);
 
 typedef struct structTIMESTRU
 {
@@ -61,11 +62,12 @@ int PrintHexLog(FILE * pfile, void * pData, int nSize);
 int PrintTraceHexLog(void * pData, int nSize);
 int Verify(int bStatus, const char * szBuf, const char * szFile, int nLine);
 
-/*读写功能库*/
+/*阻塞方式的读写功能库*/
 int ReadFile(int nFile, void * pData, ssize_t * pSize);
 int WriteFile(int nFile, void* pData, ssize_t nSize);
-int ReadFileExt(int nFile, void * pData, int pnSize, int nTimeout);
-int WriteFileExt(int nFile, void* pData, int nSize, int nTimeout);
+/*定时读写功能库，函数在收到足够输入或写入足够输出后返回，如果无输入输出则定时完成后函数返回*/
+int ReadFileExt(int nFile, void * pData, ssize_t * pnSize, int nTimeout);
+int WriteFileExt(int nFile, void* pData, ssize_t * nSize, int nTimeout);
 
 
 

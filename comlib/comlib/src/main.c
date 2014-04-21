@@ -56,12 +56,29 @@ int main4(int argc, char * argv[])
     return 0;
 }
 
+/*定时读取键盘输入， 如果有键盘输入就立刻返回，否则10秒钟超时后就自动退出*/
+void main5(int argc, char * argv[])
+{
+    char c;
+    ssize_t size = 1;
+    int i;
+    i = ReadFileExt(0, &c, &size, 10);
+    if (i == 0) {
+        printf("%d\n", c);
+    }else if(i == 1){
+        printf("Timeout\n");
+    }else{
+        printf("Error\n");
+    }
+}
+
 int main(int argc, char * argv[])
 {
 //    main1(argc, argv);
 //    main2(argc, argv);
     
 //    main3(argc, argv);
-    main4(argc, argv);
+//    main4(argc, argv);
+    main5(argc, argv);
     return 0;
 }
