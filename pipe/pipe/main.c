@@ -303,12 +303,115 @@ void main4(int argc, const char * argv[])
 }
 
 
+/*
+ 二。有名管道FIFO
+    管道如果无名，只能在共同血缘进程中使用；管道如果有名，就可以在整个系统中使用。FIFO管道，有名的管道，它以一种特殊的文件类型存储于文件系统中，以供无血缘关系进程访问。
+        1.有名管道的建立
+            shell命令和c程序都可以创建有名管道，其中创建有名管道的shell命令如下。    
+                1.1  命令mknod创建管道。 本命令可以创建特殊类型的文件，其使用方式如下：
+                    /etc/mknod name [b | c] major minor //创建块设备或字符设备文件
+                    /etc/mknod name p                   //创建管道文件
+                    /etc/mknod name s                   //创建信号量
+                    /etc/mknod name m                   //创建共享内存
+                    参数name为创建的文件名称，参数major和minor分别代表主、次设备号。
+                        例1.创建有名管道k1.
+                        执行shell命令：mknod k1 p   p是设备文件标志
+                1.2  命令mkfifo创建管道
+                    本命令专门创建有名管道文件，它的语法如下：mafifo [-m Mode] File ...   其中参数Mode是管道文件创建后的访问权限，File是管道文件创建后的名称。
+                        例2.创建一个用户本身可读写，其他任何用户只读的管道文件k2.  本命令要求创建一个访问权限为0644的管道，shell命令为：mkfifo -m 644 k2
+                1.3  函数mkfifo创建管道
+                    unix的c语言中，也提供了创建有名管道的函数，其原型如下：
+                        #include <sys/types.h>
+                        #include <sys/stat.h>
+                        int mkfifo(char * path, mode_t mode);
+                    函数mkfifo创建的有名管道，字符串path指定了管道的路径和名称，参数mode决定了管道文件的访问权限，它的取值类似于open函数的第三个参数，并且自带了O_CREAT和O_EXCL选项，因此本函数只能创建一个不存在的管道文件，或者返回“文件已存在”错误。如果只是希望打开而不创建文件，请使用函数open或函数fopen。
+                    函数mkfifo调用成功时创建管道文件并返回0，否则不产生任何文件并返回-1.
+ */
+
+/*
+    有名管道的应用
+        管道本身就是文件，因此对普通文件的操作也使用于管道文件，
+            1。穿件管道文件（应用mknod或mkfifo命令或者函数mkfifo）
+            2. 读进程：
+                2.1 只读打开管道文件（应用函数open或fopen）
+                2.2 读管道（应用函数read或fread等）。
+            3. 写进程：
+                3.1 只写打开管道文件（应用函数open或fopen）
+                3.2 写管道（应用函数write或fwrite等）。
+            4.关闭管道文件（应用函数close或fclose）。
+        低级文件编程库和标准文件编程库都可以操作管道，在打开管道文件前请务必先确认该管道是否存在和是否具备访问权限。
+        管道在执行读写操作前，两端必须同时打开，否则执行打开管道某端操作的进程将一直阻塞直到某个进程以相反方向打开管道为止。
+ */
+
+/*
+    本处设计一个双进程读写管道的例子，写进程创建FIFO文件，再打开其写端口，然后读取键盘输入并将此输入信息发送到管道中，当键盘输入exit或quit时程序退出, 读进程打开管道文件的读端口，然后从管道中读取信息，并将此信息打印到屏幕上。当从管道中读取到“exit”或“quit”时程序退出
+ */
+//写有名管道
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/errno.h>
+
+#define FILEPATH "/Users/zhangliang/Desktop/myfifo"
+extern int errno;
+
+void main5(int argc, const char * argv[])
+{
+    FILE * fp;
+    char buf[255];
+    /*创建管道，如果已存在则跳过*/
+    if (mkfifo(FILEPATH, S_IFIFO | 0666) < 0 && errno != EEXIST) {
+        return;
+    }
+    
+    while (1) {
+        if ((fp = fopen(FILEPATH, "w")) == NULL) {//打开管道
+            return;
+        }
+        printf("please input:\n");
+        gets(buf);
+        fputs(buf, fp);//写管道
+        fputs("\n", fp);//必须写入此回车，因为读进程fgets读取以换行符为结尾的字符串
+        if (strncmp(buf, "quit", 4) == 0 || strncmp(buf, "exit", 4) == 0) {
+            fclose(fp);
+            break;
+        }
+        fclose(fp);//关闭管道
+    }
+}
+
+//读有名管道  参见read.c
+#include <fcntl.h>
+void main6(int argc, const char * argv[])
+{
+    FILE * fp;
+    char buf[255];
+    while (1) {
+        if ((fp = fopen(FILEPATH, "r")) == NULL) {
+            return;
+        }
+        
+        fgets(buf, sizeof(buf), fp);
+        printf("gets:[%s]", buf);
+        if (strncmp(buf, "exit", 4) == 0 || strncmp(buf, "quit", 4) == 0) {
+            fclose(fp);
+            break;
+        }
+        fclose(fp);
+    }
+}
+
+//先执行main5，此时只打开了写端口，尚未打开读端口，写进程阻塞。另外登录一个unix终端，执行main6 此时管道的读写端口打开，写进程继续。切换到写进程所在的unix终端，写入管道数据。上例中，读进程采用了行输入函数fgets，它读取以换行符“\n”结尾的字符串，所以读进程单独写入了“\n”
+
+
 int main(int argc, const char * argv[])
 {
 //    main1(argc, argv);
 //    main2(argc, argv);
 //    main3(argc, argv);
-    main4(argc, argv);
+//    main4(argc, argv);
+    
+    main5(argc, argv);
+//    main6(argc, argv);
     return 0;
 }
 
