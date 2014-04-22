@@ -261,11 +261,54 @@ void main3(int argc, const char * argv[])
     return;
 }
 
+/*
+    由上可见，创建连接标准I/O的管道需要多个步骤，需要使用大量的代码，unix提供了一个函数简化这个复杂的过程，原型：
+        #include <stdio.h>
+        FILE *popen(const char * commmand, char * type);
+        int pclose(FILE * stream);
+    函数popen类似于函数system，它首先fork一个子进程，然后调用exec执行参数command中给定的shell命令。不同的是，函数popen自动在父进程和exec创建的子进程之间建立了一个管道，这个管道可以连接子进程的标准输入，也可以连接子进程的标准输出，参数type决定了管道的I/O类型，其取值及含义：
+        取值              含义
+        r                创建与子进程的标准输出连接的管道（管道数据由子进程流向父进程）
+        w                创建与子进程的标准输入连接的管道（管道数据由父进程流向子进程）
+    函数popen调用成功时返回一个标准I/O的FILE流文件，它的读写属性由参数type决定，调用失败时返回NULL.
+    函数pclose关闭由popen打开的文件流，它成功调用时返回exec进程退出时的状态，否则返回-1.
+    */
+
+/*
+    设计一个模拟shell命令 “ps -ef | grep pipe”的例子， 流程如下：
+        1.调用popen创建子进程，执行命令“grep pipe”，并创建一个写管道out连接该子进程的标准输入。此时执行命令“”grep pipe 所分析的文本内容需要从管道out中读出
+        2.调用popen创建子进程执行命令“ps -ef”, 并创建一个读通道in连接该子进程的标准输出，此时执行命令的结果将写入到管道in中。
+        3.从管道in中读取数据，并将该数据写入管道out中，即把执行命令ps -ef的结果作为输入提交给命令grep pipe执行。
+ */
+
+void main4(int argc, const char * argv[])
+{
+    FILE * out, * in;
+    char buf[255];
+    if ((out = popen("grep pipe", "w")) == NULL) {//创建写管道
+        fprintf(stderr, "error!\n");
+        return;
+    }
+    
+    if ((in = popen("ps -ef", "r")) == NULL) {//创建读管道
+        fprintf(stderr, "error!\n");
+        return;
+    }
+    
+    while (fgets(buf, sizeof(buf), in)) {//读取ps -ef结果
+        fputs(buf, out);//转发到grep pipe中
+    }
+    pclose(out);
+    pclose(in);
+}
+
+
 int main(int argc, const char * argv[])
 {
 //    main1(argc, argv);
 //    main2(argc, argv);
-    main3(argc, argv);
+//    main3(argc, argv);
+    main4(argc, argv);
     return 0;
 }
 
