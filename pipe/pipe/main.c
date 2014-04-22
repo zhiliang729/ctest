@@ -209,15 +209,63 @@ void main2(int argc, const char * argv[])
     fprintf(stderr, "[father] buf=[%s]\n", bc);/*显式输出*/
     free(bc);
 }
+
+
+/*
+ 4. 连接标准I/O的管道模型
+    管道在shell中最常见的应用是连接不同进程的输入输出，比如使用a进程的输出变成b进程的输入等。
+    例1 分别重定向标准输入、标准输出、标准错误输出到文件描述符fd1， fd2， fd3中。 
+        复制文件描述符fd1到文件描述符0中即可重定向标准输入，其他类似
+        dup2(fd1, 0); dup2(fd2, 1); dup2(fd3, 2); 当执行完dup2（fd1, 0）后，文件描述符0就对应到了fd1所对应的文件中，而标准输出函数，printf，puts等任然向描述符0中写入内容，从而达到了重定向的效果。
+    1.模型
+        使用管道将父进程标准输入连接到子进程标准输入的方法。(父进程流向子进程)
+            1.创建管道，返回两个无名管道文件描述符fildes[0]和fildes[1].
+            2.创建子进程，子进程中继承无名管道文件描述符。
+            3.父进程关闭管道的输出端，即关闭只读文件描述符fildes[0].
+            4.父进程将标准输出（stdout, 文件描述符1）重定向为文件描述符fildes[1].
+            5.子进程关闭管道的输入端，即关闭只写文件描述符fildes[1].
+            6.子进程将标准输入（stdin, 文件描述符0）重定向为fildes[0]
+ */
+//设计一个降幅进程标准输出流连接到子进程标准输入流的管道，父进程向stdout输出“Hello”直接转移到子进程的stdin，由子进程gets（buf）语句获取。
+#include <stdio.h>
+void main3(int argc, const char * argv[])
+{
+    int fildes[2];
+    pid_t pid;
+    char buf[255];
+    signal(SIGPIPE, SIG_IGN);
+    if (pipe(fildes) < 0 || (pid = fork()) < 0) {//创建管道和子进程
+        fprintf(stderr, "error!\n");
+        return;
+    }
+    
+    if (pid == 0) {//子进程
+        close(fildes[1]);
+        dup2(fildes[0],STDIN_FILENO);//重定向标准输入到fildes[0]中
+        close(fildes[0]);//关闭fildes[0],即重定向之后，关闭原来的文件描述符
+        gets(buf);//读入输入，其实就是读取父进程输出
+        fprintf(stderr, "child:[%s]\n", buf);
+        return;
+    }
+    
+    //父进程
+    close(fildes[0]);
+    dup2(fildes[1], STDOUT_FILENO);//重定向标准输出到fildes[1]中
+    close(fildes[1]);//关闭原来的
+    char bb[255];
+    scanf("%s", bb);
+    
+    printf("Hello, World!");//输出函数输出到标准输出的内容被重定向到fildes[1],通过管道传道子进程的输入端。
+    puts(bb);//输出，同时增加子进程的输入信息
+    
+    return;
+}
+
 int main(int argc, const char * argv[])
 {
 //    main1(argc, argv);
-    int i = 0;
-    while (i < 6) {
-        main2(argc, argv);
-        i++;
-        sleep(5);
-    }
+//    main2(argc, argv);
+    main3(argc, argv);
     return 0;
 }
 
