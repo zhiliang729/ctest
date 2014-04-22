@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:IPC&#x4ecb;&#x7ecd;">
+   </FileRef>
+   <FileRef
+      location = "group:IPC__messageQueue/IPC__messageQueue.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:fifo/fifo.xcodeproj">
    </FileRef>
    <FileRef
