@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:fifo/fifo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:pipe/pipe.xcodeproj">
    </FileRef>
    <FileRef
