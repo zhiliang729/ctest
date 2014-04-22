@@ -1,21 +1,18 @@
 //
-//  main.c
+//  msgrcv.c
 //  IPC__messageQueue
 //
 //  Created by zhangliang on 14-4-22.
 //  Copyright (c) 2014年 com.gooagoo.Gooagoo. All rights reserved.
 //
 
-
-//发送消息的例子
 #include <stdio.h>
-#include <sys/ipc.h>
-#include <sys/msg.h>
 #include <sys/types.h>
+#include <sys/ipc.h>
 #include <sys/errno.h>
+#include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
-
+#include <sys/msg.h>
 
 extern int errno;
 
@@ -29,6 +26,7 @@ int main(int argc, const char * argv[])
 {
     struct mymsgbuf buf;/*申请消息缓冲*/
     int msgid;
+    ssize_t ret;
     /*打开（或创建）消息队列*/
     if ((msgid = msgget(0x1234, 0666 | IPC_CREAT)) < 0) {
         fprintf(stderr, "open msg %x failed.\n", 0x1234);
@@ -36,20 +34,15 @@ int main(int argc, const char * argv[])
     }
     
     while (strncmp(buf.ctext, "exit", strlen("exit")) != 0) {
-        memset(&buf, 0, sizeof(buf));/*清空*/
-        printf("Please input:\n");
-        //从键盘输入消息数据内容
-        fgets(buf.ctext, sizeof(buf.ctext), stdin);
-        //设置消息类型为进程id
-        buf.mtype = 0;
-        //发送消息
-        while ((msgsnd(msgid, &buf, sizeof(buf.ctext), 0)) < 0) {//小于0则发送失败处理
+        memset(&buf, 0, sizeof(buf));/*清空消息缓冲区*/
+        while ((ret = msgrcv(msgid, &buf, sizeof(buf), 0, 0)) < 0) {//小于0则接收失败处理
             printf("error:%d", errno);
             if (errno == EINTR) {
-                continue;//信号中断，重新发送
+                continue;//信号中断，重新接收
             }
             return 0;//否则退出
         }
+        fprintf(stderr, "Msg: Type = %ld, Len = %ld, Text:%s\n", buf.mtype, ret, buf.ctext);
     }
     return 0;
 }
