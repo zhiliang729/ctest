@@ -56,6 +56,7 @@
 //      close(fildes[1]);//关闭输入
 // 如此，则为从父进程到子进程的管道， 子进程流向父进程的管道与上面只有3，4步相反。
 #include <stdio.h>
+#include <stdlib.h>
 
 /*创建一个管道，父进程向管道写入一行字符，子进程读取数据并打印到屏幕上*/
 #include <unistd.h>
@@ -115,9 +116,108 @@ void main1(int argc, const char * argv[])
         6.子进程关闭管道2的输出端fildes2[0], close(fildes2[0]);
  */
 
+//本处设计一个父子进程间双向管道通信的实例，父进程首先向子进程传送两次数据，再接收子进程传送过来的两次数据，为了能够正确拆分数据流，从父进程流向子进程的管道1采用“固定长度“方法传送数据，从子进程流向父进程的管道2采用”显式长度“方法回传数据
+//1固定长度    管道输入时固定写入len个字符，管道输出时也固定读取len个字符，采用了左对齐方式，多余部分填充ASCII码0，“固定长度”数据的管道操作方法：
+
+void WriteG(int fd, char *str, int len)/*写入固定长度报文*/
+{
+    char buf[255];
+    memset(buf, 0, sizeof(buf));
+    sprintf(buf, "%s", str);
+    write(fd, str, len);/*管道输入*/
+}
+
+char * ReadG(int fd, int len)/*读取固定长度报文, 记得去free内存*/
+{
+    int bufSize = 255;
+    char *buf;
+    buf = malloc(bufSize);
+    memset(buf, 0, bufSize);
+    read(fd, buf, len);/*管道输出*/
+    return buf;/*返回管道输出数据*/
+}
+
+//2 显式长度    显式长度报文的“长度域”可分为整型和字符串型两种，以4字节“长度域”传书数据“Hello！”为例，整型长度域报文为：0x06， 0x00, 0x00, 0x00, "Hello!" 出于兼容性考虑，一般采用网络字节顺序的整型。字符串型长度域报文为：“0006Hello！”
+//本例采用“4字节字符串“+“数据”的格式传送报文，输入时先写入数据长度再写入数据内容   显式长度输入操作
+void WriteC(int fd, char * str)
+{
+    char buf[255];
+    sprintf(buf, "%04lu%s", strlen(str), str);/*报文头增加报文长度*/
+    write(fd, buf, strlen(buf));
+}
+
+//管道的输出操作分为两步：1.读入4字节，转化为整型长度。2.读入数据，字节数为步骤1中的整型数。
+char * ReadC(int fd)//记得free内存
+{
+    int bufSize = 255;
+    char *buf;
+    buf = malloc(bufSize);
+    ssize_t i;
+    memset(buf, 0, bufSize);
+    read(fd, buf, 4);/*读入长度域*/
+    i = atoi(buf);/*转化长度域为整型   长度域采用字符串类型存储，函数atoi将之转换为整型，并作为参数供函数read调用*/
+    read(fd, buf, i);/*读入后续报文*/
+    return buf;/*返回输入的报文*/
+}
+
+//父子进程双向通信实例
+void main2(int argc, const char * argv[])
+{
+    int fildes1[2], fildes2[2];
+    pid_t pid;
+    char buf[255];
+    memset(buf, 0, sizeof(buf));
+    if (pipe(fildes1) < 0 || pipe(fildes2) < 0) {//创建管道
+        fprintf(stderr, "pipe error!\n");
+        return;
+    }
+    
+    if ((pid = fork()) < 0) {//创建子进程
+        fprintf(stderr, "fork error!\n");
+        return;
+    }
+    
+    if (pid == 0) {//子进程
+        close(fildes1[1]);
+        close(fildes2[0]);
+        char * bb = ReadG(fildes1[0], 10);
+        strcpy(buf, bb);//读取管道数据
+        free(bb);
+        fprintf(stderr, "[child] buf=[%s]\n", buf);
+        WriteC(fildes2[1], buf);//回传父进程
+        
+        bb = ReadG(fildes1[0], 10);
+        strcpy(buf, bb);//读取管道数据
+        free(bb);
+        
+        fprintf(stderr, "[child] buf=[%s]\n", buf);
+        WriteC(fildes2[1], buf);//回传父进程
+        return;
+    }
+    
+    //父进程
+    close(fildes1[0]);
+    close(fildes2[1]);
+    WriteG(fildes1[1], "hello!", 10);/*固定长度输入*/
+    WriteG(fildes1[1], "world!", 10);/*固定长度输入*/
+    
+    char * bc = ReadC(fildes2[0]);
+    fprintf(stderr, "[father] buf=[%s]\n", bc);/*显式输出*/
+    free(bc);
+    
+    bc = ReadC(fildes2[0]);
+    fprintf(stderr, "[father] buf=[%s]\n", bc);/*显式输出*/
+    free(bc);
+}
 int main(int argc, const char * argv[])
 {
-    main1(argc, argv);
+//    main1(argc, argv);
+    int i = 0;
+    while (i < 6) {
+        main2(argc, argv);
+        i++;
+        sleep(5);
+    }
     return 0;
 }
 
