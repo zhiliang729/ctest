@@ -19,7 +19,9 @@
 #include <errno.h>
 #include <ctype.h>
 #include <sys/msg.h>
+#include <sys/sem.h>
 #include <setjmp.h>
+
 
 #define MAXBUF 4096
 
@@ -80,6 +82,10 @@ int WriteMsgExt(int nPid, void * pText, int nSize, int nType, int nTimeout);
 //判断队列中是否存在消息
 int CheckMsgData(int nPid, int * pType);
 
+/*信号量阻塞操作  信号量的阻塞P操作（信号值减少）、释放V操作(信号值增加)和Z（信号值判断）操作功能*/
+int Semop(int nSid, int nIndex , int nVal);
+int SemopNowait(int nSid, int nIndex , int nVal);
+int SemopTime(int nSid, int nIndex, int nVal, int nTimeOut);
 
 
 
