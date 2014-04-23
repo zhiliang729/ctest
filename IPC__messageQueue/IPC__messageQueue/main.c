@@ -16,6 +16,8 @@
 #include <string.h>
 #include <unistd.h>
 
+#include "define.h"
+
 
 extern int errno;
 
@@ -41,9 +43,9 @@ int main(int argc, const char * argv[])
         //从键盘输入消息数据内容
         fgets(buf.ctext, sizeof(buf.ctext), stdin);
         //设置消息类型为进程id
-        buf.mtype = 0;
+        buf.mtype = msgType;
         //发送消息
-        while ((msgsnd(msgid, &buf, sizeof(buf.ctext), 0)) < 0) {//小于0则发送失败处理
+        while ((msgsnd(msgid, &buf, strlen(buf.ctext), 0)) < 0) {//小于0则发送失败处理
             printf("error:%d", errno);
             if (errno == EINTR) {
                 continue;//信号中断，重新发送

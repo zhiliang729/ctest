@@ -26,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C663E9651907506500F6445C /* define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
 		C6651F8F19065B0700D4F2C8 /* IPC__messageQueue */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = IPC__messageQueue; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6651F9219065B0700D4F2C8 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C6651F9419065B0700D4F2C8 /* IPC__messageQueue.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = IPC__messageQueue.1; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 				C6651F9219065B0700D4F2C8 /* main.c */,
 				C6651F9419065B0700D4F2C8 /* IPC__messageQueue.1 */,
 				C6651F9D1906763900D4F2C8 /* msgrcv.c */,
+				C663E9651907506500F6445C /* define.h */,
 			);
 			path = IPC__messageQueue;
 			sourceTree = "<group>";
@@ -231,6 +233,7 @@
 				C6651F9A19065B0700D4F2C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
