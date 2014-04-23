@@ -84,6 +84,7 @@ int CheckMsgData(int nPid, int * pType);
 
 /*信号量阻塞操作  信号量的阻塞P操作（信号值减少）、释放V操作(信号值增加)和Z（信号值判断）操作功能*/
 int Semop(int nSid, int nIndex , int nVal);
+/*非阻塞操作  以非阻塞方式执行P（信号量减少）、V（信号量增加）和Z（信号值判断）操作功能。 成功返回0 ，信号中断时返回1，不满足P操作或Z操作条件时立即返回2，否则返回其他值*/
 int SemopNowait(int nSid, int nIndex , int nVal);
 int SemopTime(int nSid, int nIndex, int nVal, int nTimeOut);
 
