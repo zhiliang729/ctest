@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C60316F319079ECD0022CE3C /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C60316F219079ECD0022CE3C /* main.c */; };
 		C60316F519079ECE0022CE3C /* IPC__semid.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C60316F419079ECE0022CE3C /* IPC__semid.1 */; };
+		C60316FC1907BA7E0022CE3C /* sema.c in Sources */ = {isa = PBXBuildFile; fileRef = C60316FB1907BA7E0022CE3C /* sema.c */; };
+		C60316FE1907BDA40022CE3C /* semc.c in Sources */ = {isa = PBXBuildFile; fileRef = C60316FD1907BDA40022CE3C /* semc.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,9 @@
 		C60316EF19079ECC0022CE3C /* IPC__semid */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = IPC__semid; sourceTree = BUILT_PRODUCTS_DIR; };
 		C60316F219079ECD0022CE3C /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C60316F419079ECE0022CE3C /* IPC__semid.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = IPC__semid.1; sourceTree = "<group>"; };
+		C60316FB1907BA7E0022CE3C /* sema.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sema.c; sourceTree = "<group>"; };
+		C60316FD1907BDA40022CE3C /* semc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = semc.c; sourceTree = "<group>"; };
+		C60316FF1907C0870022CE3C /* 说明 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "说明"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,9 @@
 			children = (
 				C60316F219079ECD0022CE3C /* main.c */,
 				C60316F419079ECE0022CE3C /* IPC__semid.1 */,
+				C60316FB1907BA7E0022CE3C /* sema.c */,
+				C60316FD1907BDA40022CE3C /* semc.c */,
+				C60316FF1907C0870022CE3C /* 说明 */,
 			);
 			path = IPC__semid;
 			sourceTree = "<group>";
@@ -118,6 +126,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C60316F319079ECD0022CE3C /* main.c in Sources */,
+				C60316FE1907BDA40022CE3C /* semc.c in Sources */,
+				C60316FC1907BA7E0022CE3C /* sema.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +237,7 @@
 				C60316FA19079ECE0022CE3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
