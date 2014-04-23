@@ -18,6 +18,8 @@
 #include <string.h>
 #include <errno.h>
 #include <ctype.h>
+#include <sys/msg.h>
+#include <setjmp.h>
 
 #define MAXBUF 4096
 
@@ -68,6 +70,15 @@ int WriteFile(int nFile, void* pData, ssize_t nSize);
 /*定时读写功能库，函数在收到足够输入或写入足够输出后返回，如果无输入输出则定时完成后函数返回*/
 int ReadFileExt(int nFile, void * pData, ssize_t * pnSize, int nTimeout);
 int WriteFileExt(int nFile, void* pData, ssize_t * nSize, int nTimeout);
+
+/*阻塞方式消息发送与接收*/
+int ReadMsg(int nPid, void * pText, int * pSize, int * pType);
+int WriteMsg(int nPid, void * pText, int nSize, int nType);
+/*定时方式消息发送与接收*/
+int ReadMsgExt(int nPid, void * pText, int * pSize, int * pType, int nTimeout);
+int WriteMsgExt(int nPid, void * pText, int nSize, int nType, int nTimeout);
+//判断队列中是否存在消息
+int CheckMsgData(int nPid, int * pType);
 
 
 
