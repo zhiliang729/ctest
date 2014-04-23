@@ -86,8 +86,29 @@ int CheckMsgData(int nPid, int * pType);
 int Semop(int nSid, int nIndex , int nVal);
 /*非阻塞操作  以非阻塞方式执行P（信号量减少）、V（信号量增加）和Z（信号值判断）操作功能。 成功返回0 ，信号中断时返回1，不满足P操作或Z操作条件时立即返回2，否则返回其他值*/
 int SemopNowait(int nSid, int nIndex , int nVal);
+/*定时操作  对标识号为nSid，序号为nIndex的信号量执行P、V或Z操作。当操作被阻塞时，进程被挂起，直到阻塞条件消失或者阻塞nTimeout秒后函数返回*/
 int SemopTime(int nSid, int nIndex, int nVal, int nTimeOut);
+//通常情况下，我们对信号量的操作仅限于信号值减小1，增加1或判断信号值是否等于0，所以宏定义如下：
+//减少1 P操作  阻塞
+#define SEMP(nSid, nIndex) Semop(nSid, nIndex, -1)
+//增加1 V操作 阻塞
+#define SEMV(nSid, nIndex) Semop(nSid, nIndex, 1)
+//比较操作 Z操作 阻塞
+#define SEMZ(nSid, nIndex) Semop(nSid, nIndex, 0)
 
+//减少1 P操作  非阻塞
+#define SEMPNW(nSid, nIndex) SemopNoWait(nSid, nIndex, -1)
+//增加1 V操作 非阻塞
+#define SEMVNW(nSid, nIndex) SemopNoWait(nSid, nIndex, 1)
+//比较操作 Z操作 非阻塞
+#define SEMZNW(nSid, nIndex) SemopNoWait(nSid, nIndex, 0)
+
+//减少1 P操作  定时
+#define SEMPT(nSid, nIndex, nTime) SemopTime(nSid, nIndex, -1, nTime)
+//增加1 V操作 定时
+#define SEMVT(nSid, nIndex, nTime) SemopTime(nSid, nIndex, 1, nTime)
+//比较操作 Z操作 定时
+#define SEMZT(nSid, nIndex, nTime) SemopTime(nSid, nIndex, 0, nTime)
 
 
 /*守护进程生成器*/
