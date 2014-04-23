@@ -9,6 +9,5 @@
 #ifndef IPC__messageQueue_define_h
 #define IPC__messageQueue_define_h
 
-long msgType = 10000;
-
+//long msgType = 10000;
 #endif

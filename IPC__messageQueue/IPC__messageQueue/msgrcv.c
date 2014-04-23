@@ -13,10 +13,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/msg.h>
-
 #include "define.h"
 
 extern int errno;
+long msgType2 = 10000;
 
 struct mymsgbuf/*定义消息结构*/
 {
@@ -24,7 +24,7 @@ struct mymsgbuf/*定义消息结构*/
     char ctext[100];/*消息数据*/
 };
 
-int main(int argc, const char * argv[])
+int main1(int argc, const char * argv[])
 {
     struct mymsgbuf buf;/*申请消息缓冲*/
     int msgid;
@@ -37,7 +37,7 @@ int main(int argc, const char * argv[])
     
     while (strncmp(buf.ctext, "exit", strlen("exit")) != 0) {
         memset(&buf, 0, sizeof(buf));/*清空消息缓冲区*/
-        while ((ret = msgrcv(msgid, &buf, sizeof(buf), msgType, 0)) < 0) {//小于0则接收失败处理
+        while ((ret = msgrcv(msgid, &buf, sizeof(buf), msgType2, 0)) < 0) {//小于0则接收失败处理
             printf("error:%d", errno);
             if (errno == EINTR) {
                 continue;//信号中断，重新接收

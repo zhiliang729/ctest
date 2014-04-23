@@ -15,19 +15,17 @@
 #include <sys/errno.h>
 #include <string.h>
 #include <unistd.h>
-
 #include "define.h"
 
-
 extern int errno;
-
+long msgType1 = 10000;
 struct mymsgbuf/*定义消息结构*/
 {
     long mtype;/*消息类型*/
     char ctext[100];/*消息数据*/
 };
 
-int main(int argc, const char * argv[])
+int main2(int argc, const char * argv[])
 {
     struct mymsgbuf buf;/*申请消息缓冲*/
     int msgid;
@@ -43,7 +41,7 @@ int main(int argc, const char * argv[])
         //从键盘输入消息数据内容
         fgets(buf.ctext, sizeof(buf.ctext), stdin);
         //设置消息类型为进程id
-        buf.mtype = msgType;
+        buf.mtype = msgType1;
         //发送消息
         while ((msgsnd(msgid, &buf, strlen(buf.ctext), 0)) < 0) {//小于0则发送失败处理
             printf("error:%d", errno);
