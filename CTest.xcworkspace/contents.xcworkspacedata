@@ -5,6 +5,9 @@
       location = "group:IPC&#x4ecb;&#x7ecd;">
    </FileRef>
    <FileRef
+      location = "group:IPC_sharedMemory/IPC_sharedMemory.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:IPC__semid/IPC__semid.xcodeproj">
    </FileRef>
    <FileRef
