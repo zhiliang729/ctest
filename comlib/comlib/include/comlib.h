@@ -12,6 +12,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 #include <stdarg.h>
 #include <unistd.h>
 #include <sys/time.h>
@@ -22,6 +23,7 @@
 #include <sys/sem.h>
 #include <setjmp.h>
 #include <sys/shm.h>
+
 
 #define MAXBUF 4096
 
@@ -110,7 +112,15 @@ int SemopTime(int nSid, int nIndex, int nVal, int nTimeOut);
 //比较操作 Z操作 定时
 #define SEMZT(nSid, nIndex, nTime) SemopTime(nSid, nIndex, 0, nTime)
 
+//共享内存 1-n-n模型
+int CreateMemo(int shmid, int index, int size);
+int AllocMemoExt(char *pc, int *index);
+int AllocMemo(int shmid, int semid, int semindex, int *index);
+int FreeMemo(int shmid, int semid, int semindex, int index);
+char *GetMemoAddr(char *paddr, int index);
 
 /*守护进程生成器*/
 int InitServer();
+
+
 #endif

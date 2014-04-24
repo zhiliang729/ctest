@@ -29,7 +29,7 @@ int CreateMemo(int shmid, int index, int size)
     pd[1] = 0;//当前已使用的记录块数
     pd[2] = 0;//最近一次分配的记录编号
     pd[3] = size;//每个记录块的大小
-    memset(pc + sizeof(int) * 4, 0, index);//重置MAP区
+    memset(pc + sizeof(int) * 4, 0, index);//重置MAP区， 占用index个字节
     shmdt(pc);//释放共享内存映射
     return 0;
 }
@@ -102,5 +102,56 @@ int AllocMemoExt(char * pc, int * index)
     return 0;
 }
 
+/*
+ 1-n-n中完成共享内存记录块的回收
+ 函数回收标识号为shmid的共享内存中编号为index的记录区域。
+ 步骤如下：
+        1.进程对信号量提交P操作，申请释放共享内存资源
+        2.置MAP区第index字节值为0.
+        3.进程对信号量提交V操作，回收过程完毕
+ 与共享内存shmid配对的信号量集合的标识号为semid，信号量序号为semindex，函数调用成功时返回0，否则返回其他值。
+ */
+int FreeMemo(int shmid, int semid, int semindex, int index)
+{
+    char * paddr, *pc;
+    int * pd;
+    if ((paddr = shmat(shmid, NULL, 0)) == NULL) {
+        return -2;//如果映射共享内存失败则返回-2
+    }
+    if (SEMP(semid, semindex) != 0) {/*信号P操作，申请操作共享内存资源*/
+        shmdt(paddr);//取消映射
+        return -3;//P操作失败返回-3
+    }
+    pd = (int *)paddr;
+    pc = paddr + sizeof(int) * 4;//MAP区首地址
+    
+    assert(index >= 0 && index < pd[0]);
+    
+    if (index >= 0 && index < pd[0]) {//在MAP区范围内释放记录
+        pc[index] = 0;//更改记录空闲标志,设为空闲
+        pd[1]--;//已分配数减1
+    }
+    SEMV(semid, semindex);//信号V操作，释放操作共享内存资源
+    shmdt(paddr);//取消共享内存映射
+    return 0;
+}
+
+/*
+ 模型1-n-n 内存记录寻址函数
+ 函数查询共享内存记录块的地址
+ 本模型将共享内存块划分为多个记录，并以标号区分之，其中paddr是共享内存映射地址，index是记录编号，函数成功时，返回记录首地址，否则返回NULL。
+ */
+char * GetMemoAddr(char * paddr, int index)
+{
+    int * pd = (int *)paddr;
+//    int nSize, nUsed;
+    if (index < 0 || index >= pd[0]) {
+        return NULL;
+    }
+    return (paddr +//首地址
+            sizeof(int) * 4 +//信息区，4个整型
+            pd[0] * sizeof(char) +//MAP区，pd[0]个字节
+            pd[3] * index);//数据区，每个记录pd[3]个字节
+}
 
 

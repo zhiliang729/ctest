@@ -72,7 +72,7 @@ void main5(int argc, char * argv[])
     }
 }
 
-int main(int argc, char * argv[])
+int main6(int argc, char * argv[])
 {
 //    main1(argc, argv);
 //    main2(argc, argv);

@@ -1,0 +1,9 @@
+sharedMemory ,writeSharedMemory, readSharedMemory
+
+首先创建或打开共享内存和信号量，并置信号量取值为1，初始化共享内存：./sharedMemory c
+    程序将共享内存数据区格式化为10个记录块，每个记录块占用512字节，当前可用块数为10.
+
+接着 申请了共享内存的第0块记录区，并写入字符串，./writeSharedMemory   此时可用./sharedMemory查看内存块分配情况
+
+读取共享内存中的第0个数据可以调用./readSharedMemory 0
+
