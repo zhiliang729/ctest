@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C68389751908A7770021A943 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C68389741908A7770021A943 /* main.c */; };
 		C68389771908A7770021A943 /* IPC_sharedMemory.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C68389761908A7770021A943 /* IPC_sharedMemory.1 */; };
+		C683897E1908B8350021A943 /* writeToShm.c in Sources */ = {isa = PBXBuildFile; fileRef = C683897D1908B8350021A943 /* writeToShm.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 		C68389711908A7770021A943 /* IPC_sharedMemory */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = IPC_sharedMemory; sourceTree = BUILT_PRODUCTS_DIR; };
 		C68389741908A7770021A943 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C68389761908A7770021A943 /* IPC_sharedMemory.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = IPC_sharedMemory.1; sourceTree = "<group>"; };
+		C683897D1908B8350021A943 /* writeToShm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = writeToShm.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				C68389741908A7770021A943 /* main.c */,
 				C68389761908A7770021A943 /* IPC_sharedMemory.1 */,
+				C683897D1908B8350021A943 /* writeToShm.c */,
 			);
 			path = IPC_sharedMemory;
 			sourceTree = "<group>";
@@ -118,6 +121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C68389751908A7770021A943 /* main.c in Sources */,
+				C683897E1908B8350021A943 /* writeToShm.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

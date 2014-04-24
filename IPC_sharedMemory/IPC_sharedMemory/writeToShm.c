@@ -1,5 +1,5 @@
 //
-//  main.c
+//  writeToShm.c
 //  IPC_sharedMemory
 //
 //  Created by zhangliang on 14-4-24.
@@ -23,29 +23,22 @@
                     fprintf(stderr, "%s success.\n", b);\
                 }
 
-//向共享内存中指定位置写入数据
+//向共享内存中指定位置读取数据
 int main(int argc, const char * argv[])
 {
     int shmid, no;
     char * pmat = NULL, buf[1024];
     /*打开共享内存*/
     VERIFYERR((shmid = shmget(0x1234, 10 * 1024, 0666 | IPC_CREAT)) == -1, "Open shm");
-    /*映射共享内存， 地址存储在pmat处*/
+    /*映射共享内存，地址存储在pmat处*/
     VERIFYERR((pmat = (char *)shmat(shmid, 0, 0)) == 0, "Link shm");
-    /*输入更新的内存块*/
+    /*输入读取的内存块号*/
     printf("Please Input No.(0-9):");
     scanf("%d", &no);
     VERIFYERR(no < 0 || no > 9, "Input No.");
-    /*输入更新的数据*/
-    printf("please Input Data:");
-    memset(buf, 0, sizeof(buf));
-    scanf("%s", buf);
-    /*更新共享内存数据*/
-    memcpy(pmat + no * 1024, buf, 1024);
-    
-    printf("%s", pmat + no*1024);
+    /*读取共享内存的数据*/
+    memcpy(buf, pmat + no * 1024, 1024);
+    printf("Data:[%s]\n", buf);
     /*释放共享内存映射*/
     shmdt(pmat);
-    return 0;
 }
-
