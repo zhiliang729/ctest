@@ -21,7 +21,7 @@
 #include <sys/msg.h>
 #include <sys/sem.h>
 #include <setjmp.h>
-
+#include <sys/shm.h>
 
 #define MAXBUF 4096
 
