@@ -2,7 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:socketIntro/socketIntro.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:IPC&#x4ecb;&#x7ecd;">
+   </FileRef>
+   <FileRef
+      location = "group:&#x5957;&#x63a5;&#x5b57;">
    </FileRef>
    <FileRef
       location = "group:IPC_sharedMemory/IPC_sharedMemory.xcodeproj">
