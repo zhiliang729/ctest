@@ -13,28 +13,21 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <string.h>
 
+#define VERIFYERR(a, b)\
+if (a) {\
+fprintf(stderr, "%s failed.\n", b);\
+}else {\
+fprintf(stderr, "%s success.\n", b);\
+}
 
+/*创建socket侦听端口，与客户端建立连接，然后接收并打印客户端发送的数据*/
 int main(int argc, const char * argv[])
 {
-    int soc;
-    soc = socket(AF_INET, SOCK_STREAM, 0);
-    soc = socket(AF_INET, SOCK_DGRAM, 0);
-    
-    int nIp;
-    nIp = inet_addr("127.0.0.1");
-    printf("ip:%d\n", nIp);
-    struct in_addr addr;
-    int ret = inet_aton("127.0.0.1", &addr);
-    if (ret == 1) {
-        printf("success : %d\n", addr.s_addr);
-    }
-    char *buf;
-    buf = inet_ntoa(addr);
-    printf("ip: %s\n", buf);
-    struct sockaddr_in addr_in;
-//    bind(soc, , )
-    
+    int nSock, nSock1;/*定义socket描述符*/
+    char buf[1024];
+    /*创建端口号为9001的侦听套接字*/
     return 0;
 }
 

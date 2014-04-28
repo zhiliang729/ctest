@@ -23,6 +23,9 @@
 #include <sys/sem.h>
 #include <setjmp.h>
 #include <sys/shm.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
 
 
 #define MAXBUF 4096
@@ -59,6 +62,13 @@ typedef TIMESTRU * PTIMESTRU;
 TIMESTRU GetTime();
 TIMESTRU GetOffsetTime(TIMESTRU timestru, int nOffsetSec);
 
+/*socket 连接*/
+int CreateSock(int *pSock, int nPort, int nMaxConnect);
+int AcceptSock(int *pSock, int nSock);
+int ConnectSock(int *pSock, int nPort, char * pszAddr);
+int LocateRemoteAddr(int nSock, char* szAddr);
+int LocateNativeAddr(int nSock, char* szAddr);
+
 #define BYTESIZE 1024
 
 /*格式化日志输出函数*/
@@ -75,14 +85,15 @@ int WriteFile(int nFile, void* pData, ssize_t nSize);
 int ReadFileExt(int nFile, void * pData, ssize_t * pnSize, int nTimeout);
 int WriteFileExt(int nFile, void* pData, ssize_t * nSize, int nTimeout);
 
+
 /*阻塞方式消息发送与接收*/
-int ReadMsg(int nPid, void * pText, int * pSize, int * pType);
+int ReadMsg(int nPid, void * pText, ssize_t * pSize, long * pType);
 int WriteMsg(int nPid, void * pText, int nSize, int nType);
 /*定时方式消息发送与接收*/
-int ReadMsgExt(int nPid, void * pText, int * pSize, int * pType, int nTimeout);
+int ReadMsgExt(int nPid, void * pText, ssize_t * pSize, long * pType, int nTimeout);
 int WriteMsgExt(int nPid, void * pText, int nSize, int nType, int nTimeout);
 //判断队列中是否存在消息
-int CheckMsgData(int nPid, int * pType);
+int CheckMsgData(int nPid, long * pType);
 
 /*信号量阻塞操作  信号量的阻塞P操作（信号值减少）、释放V操作(信号值增加)和Z（信号值判断）操作功能*/
 int Semop(int nSid, int nIndex , int nVal);
