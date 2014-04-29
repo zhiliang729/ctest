@@ -22,7 +22,7 @@ int CreateSock(int *pSock, int nPort, int nMaxConnect)
     addrin.sin_port = htons(nPort);/*端口号*/
     
     /*创建 TCP 套接字描述符*/
-    ASSERT(*pSock = socket(AF_INET, SOCK_STREAM, 0) >= 0);/*命名套接字*/
+    ASSERT((*pSock = socket(AF_INET, SOCK_STREAM, 0)) >= 0);/*命名套接字*/
     if (VERIFY(bind(*pSock, paddr, sizeof(addrin))) >= 0 && VERIFY(listen(*pSock, nMaxConnect)) >= 0) {/*套接字绑定并进入侦听状态*/
         return 0;/*成功，返回0*/
     }
@@ -46,6 +46,8 @@ int AcceptSock(int *pSock, int nSock)
         }else if (errno == EINTR){/*调用accept过程中接收到信号，调用中断*/
             continue;
         }else{
+            
+            fprintf(stderr, "errno: %d  desc:%s\n", errno, strerror(errno));
             ASSERT(0);
         }
     }

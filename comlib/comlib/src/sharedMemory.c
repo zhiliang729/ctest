@@ -23,7 +23,7 @@
  使用前必须初始化共享内存，用1-n-n的要求格式共享内存。
  */
 
-int main(int argc, char * argv[])
+int main7(int argc, char * argv[])
 {
     int shmid, semid, *pd;
     VERIFYERR((semid = semget(SEMKEY, 1, 0666 | IPC_CREAT)) < 0, "Open (cretae) Sem");//创建或打开信号量，只用一个信号量集合，一个信号量值即可

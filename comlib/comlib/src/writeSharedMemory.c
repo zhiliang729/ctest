@@ -20,7 +20,7 @@ fprintf(stderr, "%s success.\n", b);\
 #define SHMKEY 0x1234
 
 /*接收用户输入指定的共享内存记录块编号，并向该记录块中写入数据*/
-int main(int argc, char * argv[])
+int main8(int argc, char * argv[])
 {
     int shmid, semid, index;
     char buf[1024], * paddr;
@@ -34,6 +34,7 @@ int main(int argc, char * argv[])
     strcpy(GetMemoAddr(paddr, index), buf);/*写入数据到GetMemoAddr返回值位置*/
     printf("Input Data End.\n");
     shmdt(paddr);/*释放共享内存映射*/
+    return 0;
 }
 
 

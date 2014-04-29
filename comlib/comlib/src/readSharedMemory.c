@@ -21,7 +21,7 @@ fprintf(stderr, "%s success.\n", b);\
 
 /*从命令行参数中接收指定的共享内存记录块编号，并读取该记录的数据*/
 
-int main(int argc, char * argv[])
+int main9(int argc, char * argv[])
 {
     int shmid, semid, index;
     char buf[1024], *paddr;
