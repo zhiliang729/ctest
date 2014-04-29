@@ -16,10 +16,10 @@ fprintf(stderr, "%s success.\n", b);\
 }
 
 /*创建socket侦听端口，与客户端建立连接，然后接收并打印客户端发送的数据*/
-int main(int argc, const char * argv[])
+int main10(int argc, const char * argv[])
 {
     int nSock, nSock1;/*定义socket描述符*/
-    char buf[1024];
+    char buf[10240];
     /*创建端口号为9001的侦听套接字*/
     VERIFYERR(CreateSock(&nSock, 9001, 9) != 0, "Create Listen Socket");
     /*接收客户端连接申请，创建连接套接字nsock1*/

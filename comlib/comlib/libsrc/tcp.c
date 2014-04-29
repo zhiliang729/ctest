@@ -23,7 +23,7 @@ int CreateSock(int *pSock, int nPort, int nMaxConnect)
     
     /*创建 TCP 套接字描述符*/
     ASSERT((*pSock = socket(AF_INET, SOCK_STREAM, 0)) >= 0);/*命名套接字*/
-    if (VERIFY(bind(*pSock, paddr, sizeof(addrin))) >= 0 && VERIFY(listen(*pSock, nMaxConnect)) >= 0) {/*套接字绑定并进入侦听状态*/
+    if (VERIFY(bind(*pSock, paddr, sizeof(struct sockaddr_in)) >= 0) && VERIFY(listen(*pSock, nMaxConnect) >= 0)) {/*套接字绑定并进入侦听状态*/
         return 0;/*成功，返回0*/
     }
     VERIFY(close(*pSock) == 0);/*失败，关闭套接字描述符*/
@@ -61,12 +61,12 @@ int ConnectSock(int *pSock, int nPort, char * pszAddr)
     int nSock;
     ASSERT(pSock != NULL && nPort > 0 && pszAddr != NULL);
     /*创建TCP套接字描述符*/
-    ASSERT(nSock = socket(AF_INET, SOCK_STREAM, 0) > 0);
+    ASSERT((nSock = socket(AF_INET, SOCK_STREAM, 0)) > 0);
     /*协议地址组包*/
     addrin.sin_family = AF_INET;/*协议族*/
     addrin.sin_addr.s_addr = inet_addr(pszAddr);/*字符串ip地址转换为网络字节顺序*/
     addrin.sin_port = htons(nPort);/*端口号网络字节顺序*/
-    if (VERIFY(connect(nSock, (struct sockaddr *)&addrin, sizeof(struct sockaddr_in))) >= 0) {
+    if (VERIFY(connect(nSock, (struct sockaddr *)&addrin, sizeof(struct sockaddr_in)) >= 0)) {
         *pSock = nSock;
         return 0;
     }
@@ -75,7 +75,32 @@ int ConnectSock(int *pSock, int nPort, char * pszAddr)
     return 1;
 }
 
+/*获取与套接字描述符nSock相连接的客户端IP地址，并将该IP值转化为以点分割的字符串形式存储到指针pAddr指定的缓冲区中，函数调用成功时返回0，或者返回其他值*/
+int LocateRemoteAddr(int nSock, char* pAddr)
+{
+    struct sockaddr_in addrin;
+    socklen_t lSize;
+    ASSERT(nSock > 0 && pAddr != NULL);
+    memset(&addrin, 0, sizeof(struct sockaddr_in));
+    lSize = sizeof(struct sockaddr_in);
+    int ret;
+    ASSERT((ret = getpeername(nSock, (struct sockaddr *)&addrin, &lSize)) >= 0);/*获取对方套接字协议地址信息*/
+    strcpy(pAddr, (char *)inet_ntoa(addrin.sin_addr));/*转换套接字地址信息为以点分割的字符串形式*/
+    return 0;
+}
 
+int LocateNativeAddr(int nSock, char* pAddr)
+{
+    struct sockaddr_in addrin;
+    socklen_t lSize;
+    ASSERT(nSock > 0 && pAddr != NULL);
+    memset(&addrin, 0, sizeof(struct sockaddr_in));
+    lSize = sizeof(struct sockaddr_in);
+    int ret;
+    ASSERT((ret =getsockname(nSock, (struct sockaddr *)&addrin, &lSize)) >= 0);/*获取本地套接字协议地址信息*/
+    strcpy(pAddr, (char *)inet_ntoa(addrin.sin_addr));/*转换套接字地址信息为以点分割的字符串形式*/
+    return 0;
+}
 
 
 
