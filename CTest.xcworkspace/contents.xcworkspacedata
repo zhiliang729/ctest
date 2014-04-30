@@ -11,6 +11,9 @@
       location = "group:&#x5957;&#x63a5;&#x5b57;">
    </FileRef>
    <FileRef
+      location = "group:URL">
+   </FileRef>
+   <FileRef
       location = "group:IPC_sharedMemory/IPC_sharedMemory.xcodeproj">
    </FileRef>
    <FileRef

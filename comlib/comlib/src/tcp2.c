@@ -15,7 +15,7 @@
                 }
 
 /*首先创建一个服务器端侦听套接字，如果接收到客户端连接申请，则创建连接、读取并打印对方IP地址，然后关闭连接*/
-int main(int argc, char * argv[])
+int main11(int argc, char * argv[])
 {
     int nSock, nSock1;/*定义socket描述符*/
     char pAddr[30];

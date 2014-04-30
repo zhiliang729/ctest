@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C60317011907C3950022CE3C /* sem.c in Sources */ = {isa = PBXBuildFile; fileRef = C60317001907C3950022CE3C /* sem.c */; };
+		C6444F011910946200471962 /* tcpopt.c in Sources */ = {isa = PBXBuildFile; fileRef = C6444F001910946200471962 /* tcpopt.c */; };
+		C6444F031910A5C300471962 /* http1.c in Sources */ = {isa = PBXBuildFile; fileRef = C6444F021910A5C300471962 /* http1.c */; };
+		C6444F051910AAD200471962 /* http2.c in Sources */ = {isa = PBXBuildFile; fileRef = C6444F041910AAD200471962 /* http2.c */; };
 		C6651F9C190666B500D4F2C8 /* msg.c in Sources */ = {isa = PBXBuildFile; fileRef = C6651F9B190666B500D4F2C8 /* msg.c */; };
 		C66C229318FD04B10001DCB4 /* pid.c in Sources */ = {isa = PBXBuildFile; fileRef = C66C229218FD04B10001DCB4 /* pid.c */; };
 		C66C229518FD0F110001DCB4 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C66C229418FD0F110001DCB4 /* main.c */; };
@@ -39,6 +42,9 @@
 
 /* Begin PBXFileReference section */
 		C60317001907C3950022CE3C /* sem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sem.c; sourceTree = "<group>"; };
+		C6444F001910946200471962 /* tcpopt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcpopt.c; sourceTree = "<group>"; };
+		C6444F021910A5C300471962 /* http1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = http1.c; sourceTree = "<group>"; };
+		C6444F041910AAD200471962 /* http2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = http2.c; sourceTree = "<group>"; };
 		C6651F9B190666B500D4F2C8 /* msg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = msg.c; sourceTree = "<group>"; };
 		C66C229218FD04B10001DCB4 /* pid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pid.c; sourceTree = "<group>"; };
 		C66C229418FD0F110001DCB4 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
@@ -145,6 +151,9 @@
 				C6F3494A190913F1009E759E /* 共享内存操作说明 */,
 				C6909048190E50C70027BB54 /* tcp1.c */,
 				C6AAE0DF190F7CD10024A5BA /* tcp2.c */,
+				C6444F001910946200471962 /* tcpopt.c */,
+				C6444F021910A5C300471962 /* http1.c */,
+				C6444F041910AAD200471962 /* http2.c */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -209,8 +218,11 @@
 				C6F3494719090BAB009E759E /* writeSharedMemory.c in Sources */,
 				C6E7D25518F3C4EF00BF93D8 /* file.c in Sources */,
 				C66C229318FD04B10001DCB4 /* pid.c in Sources */,
+				C6444F031910A5C300471962 /* http1.c in Sources */,
 				C6F3494919090F78009E759E /* readSharedMemory.c in Sources */,
+				C6444F011910946200471962 /* tcpopt.c in Sources */,
 				C6AAE0E0190F7CD10024A5BA /* tcp2.c in Sources */,
+				C6444F051910AAD200471962 /* http2.c in Sources */,
 				C6909047190E3CB40027BB54 /* tcp.c in Sources */,
 				C6F349431908EA6B009E759E /* shm.c in Sources */,
 				C60317011907C3950022CE3C /* sem.c in Sources */,
