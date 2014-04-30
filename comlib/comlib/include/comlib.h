@@ -63,12 +63,16 @@ typedef TIMESTRU * PTIMESTRU;
 TIMESTRU GetTime();
 TIMESTRU GetOffsetTime(TIMESTRU timestru, int nOffsetSec);
 
-/*socket 连接*/
+/*socket TCP 连接*/
 int CreateSock(int *pSock, int nPort, int nMaxConnect);
 int AcceptSock(int *pSock, int nSock);
 int ConnectSock(int *pSock, int nPort, char * pszAddr);
 int LocateRemoteAddr(int nSock, char* szAddr);
 int LocateNativeAddr(int nSock, char* szAddr);
+/*socket UDP连接*/
+int CreateUdpSock(int * pnSock, int nPort);
+int SendMsgByUdp(void * pMsg, int nSize, char * szAddr, int nPort);
+int RecvMsgByUdp(int nFile, void * pData, ssize_t * pnSize);
 
 #define BYTESIZE 1024
 
