@@ -29,6 +29,8 @@
 		C6F3494919090F78009E759E /* readSharedMemory.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F3494819090F78009E759E /* readSharedMemory.c */; };
 		C6FE264F1910E8C8002C7F25 /* udpk1.c in Sources */ = {isa = PBXBuildFile; fileRef = C6FE264E1910E8C8002C7F25 /* udpk1.c */; };
 		C6FE26511910EAA3002C7F25 /* udps1.c in Sources */ = {isa = PBXBuildFile; fileRef = C6FE26501910EAA3002C7F25 /* udps1.c */; };
+		C6FE26541911021D002C7F25 /* ser1.c in Sources */ = {isa = PBXBuildFile; fileRef = C6FE26531911021D002C7F25 /* ser1.c */; };
+		C6FE2656191103F2002C7F25 /* trans1.c in Sources */ = {isa = PBXBuildFile; fileRef = C6FE2655191103F2002C7F25 /* trans1.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,6 +72,8 @@
 		C6F3494A190913F1009E759E /* 共享内存操作说明 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "共享内存操作说明"; sourceTree = "<group>"; };
 		C6FE264E1910E8C8002C7F25 /* udpk1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = udpk1.c; sourceTree = "<group>"; };
 		C6FE26501910EAA3002C7F25 /* udps1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = udps1.c; sourceTree = "<group>"; };
+		C6FE26531911021D002C7F25 /* ser1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ser1.c; sourceTree = "<group>"; };
+		C6FE2655191103F2002C7F25 /* trans1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = trans1.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 		C66E3E6818C088B3000491E9 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				C6FE26521911020D002C7F25 /* udpExample */,
 				C66C229418FD0F110001DCB4 /* main.c */,
 				C6F349441909067D009E759E /* sharedMemory.c */,
 				C6F3494619090BAB009E759E /* writeSharedMemory.c */,
@@ -168,6 +173,15 @@
 				C6FE26501910EAA3002C7F25 /* udps1.c */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		C6FE26521911020D002C7F25 /* udpExample */ = {
+			isa = PBXGroup;
+			children = (
+				C6FE26531911021D002C7F25 /* ser1.c */,
+				C6FE2655191103F2002C7F25 /* trans1.c */,
+			);
+			path = udpExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +238,7 @@
 				C6314FD01910E0A900BAA1D1 /* udp.c in Sources */,
 				C6909049190E50C70027BB54 /* tcp1.c in Sources */,
 				C66C229518FD0F110001DCB4 /* main.c in Sources */,
+				C6FE2656191103F2002C7F25 /* trans1.c in Sources */,
 				C6FE26511910EAA3002C7F25 /* udps1.c in Sources */,
 				C66E3E6318C08812000491E9 /* debug.c in Sources */,
 				C66E3E6F18C08D9D000491E9 /* time.c in Sources */,
@@ -237,6 +252,7 @@
 				C6F3494919090F78009E759E /* readSharedMemory.c in Sources */,
 				C6444F011910946200471962 /* tcpopt.c in Sources */,
 				C6AAE0E0190F7CD10024A5BA /* tcp2.c in Sources */,
+				C6FE26541911021D002C7F25 /* ser1.c in Sources */,
 				C6444F051910AAD200471962 /* http2.c in Sources */,
 				C6909047190E3CB40027BB54 /* tcp.c in Sources */,
 				C6FE264F1910E8C8002C7F25 /* udpk1.c in Sources */,
