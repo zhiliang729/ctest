@@ -17,7 +17,7 @@ char buf3[]=
 "Host: %s\r\n"
 "Connection: Keep-Alive\r\n\r\n";
 
-int main(int argc, char * argv[])
+int main14(int argc, char * argv[])
 {
     char buf[1024];
     int nSock;
@@ -50,4 +50,5 @@ int main(int argc, char * argv[])
     /*终端套接字连接*/
     close(nSock);
     PrintLog(stderr, "%d", j);
+    return 0;
 }
