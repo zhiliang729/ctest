@@ -34,10 +34,17 @@ int main(int argc, char * argv[])
         nSize = sizeof(szBuf);
         RecvMsgByUdp(nSock, szBuf, &nSize);/*接收主机进程监控信息*/
         fprintf(stderr, "Get [%s]\n", szBuf);
-        for (i = 0; i < sizeof(top)/sizeof(struct desktop); i++) {
+        for (i = 0; i < sizeof(top)/sizeof(struct desktop); i++) {/*获取数组中元素个数的技巧，它可以抽象为“全部数组空间/数组元素空间”，即“sizeof（数组名）/sizeof（数组元素类型名）”*/
             /*发送接收到的信息到每个前台进程*/
             fprintf(stderr, "Send [%s] [%d]", top[i].szIP, top[i].nPort);
-            SendMsgByUdp(szBuf, (int)strlen(szBuf), top[i].szIP, top[i].nPort);
+//            SendMsgByUdp(szBuf, (int)strlen(szBuf), top[i].szIP, top[i].nPort);
+            if (strcmp("0:FILE", szBuf) == 0 && top[i].nPort == 10001) {//FILE送到10001端口的进程
+                SendMsgByUdp(szBuf, (int)strlen(szBuf), top[i].szIP, top[i].nPort);
+            }
+            if (strcmp("0:DATA", szBuf) == 0 && top[i].nPort == 10000) {//只将DATA送到10000端口的进程
+                SendMsgByUdp(szBuf, (int)strlen(szBuf), top[i].szIP, top[i].nPort);
+            }
+
         }
     }
     

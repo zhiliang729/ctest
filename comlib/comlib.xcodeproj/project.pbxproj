@@ -22,6 +22,7 @@
 		C6909047190E3CB40027BB54 /* tcp.c in Sources */ = {isa = PBXBuildFile; fileRef = C6909046190E3CB40027BB54 /* tcp.c */; };
 		C6909049190E50C70027BB54 /* tcp1.c in Sources */ = {isa = PBXBuildFile; fileRef = C6909048190E50C70027BB54 /* tcp1.c */; };
 		C6AAE0E0190F7CD10024A5BA /* tcp2.c in Sources */ = {isa = PBXBuildFile; fileRef = C6AAE0DF190F7CD10024A5BA /* tcp2.c */; };
+		C6D55F001911E93B0046F8C7 /* desktop1.c in Sources */ = {isa = PBXBuildFile; fileRef = C6D55EFF1911E93B0046F8C7 /* desktop1.c */; };
 		C6E7D25518F3C4EF00BF93D8 /* file.c in Sources */ = {isa = PBXBuildFile; fileRef = C6E7D25418F3C4EF00BF93D8 /* file.c */; };
 		C6F349431908EA6B009E759E /* shm.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F349421908EA6B009E759E /* shm.c */; };
 		C6F349451909067D009E759E /* sharedMemory.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F349441909067D009E759E /* sharedMemory.c */; };
@@ -64,6 +65,7 @@
 		C6909046190E3CB40027BB54 /* tcp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcp.c; sourceTree = "<group>"; };
 		C6909048190E50C70027BB54 /* tcp1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcp1.c; sourceTree = "<group>"; };
 		C6AAE0DF190F7CD10024A5BA /* tcp2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcp2.c; sourceTree = "<group>"; };
+		C6D55EFF1911E93B0046F8C7 /* desktop1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = desktop1.c; sourceTree = "<group>"; };
 		C6E7D25418F3C4EF00BF93D8 /* file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = file.c; sourceTree = "<group>"; };
 		C6F349421908EA6B009E759E /* shm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shm.c; sourceTree = "<group>"; };
 		C6F349441909067D009E759E /* sharedMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sharedMemory.c; sourceTree = "<group>"; };
@@ -106,9 +108,9 @@
 		C66E3E5618C0877D000491E9 /* comlib */ = {
 			isa = PBXGroup;
 			children = (
-				C66E3E6518C088B3000491E9 /* bin */,
+				C6D55F011911EC020046F8C7 /* bin */,
+				C6D55F021911EC020046F8C7 /* lib */,
 				C66E3E6618C088B3000491E9 /* include */,
-				C66E3E6718C088B3000491E9 /* lib */,
 				C66E3E6818C088B3000491E9 /* src */,
 				C66E3E6118C08807000491E9 /* libsrc */,
 				C66E3E5918C0877D000491E9 /* comlib.1 */,
@@ -132,26 +134,12 @@
 			path = libsrc;
 			sourceTree = "<group>";
 		};
-		C66E3E6518C088B3000491E9 /* bin */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = bin;
-			sourceTree = "<group>";
-		};
 		C66E3E6618C088B3000491E9 /* include */ = {
 			isa = PBXGroup;
 			children = (
 				C66E3E6B18C088D3000491E9 /* comlib.h */,
 			);
 			path = include;
-			sourceTree = "<group>";
-		};
-		C66E3E6718C088B3000491E9 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = lib;
 			sourceTree = "<group>";
 		};
 		C66E3E6818C088B3000491E9 /* src */ = {
@@ -175,11 +163,26 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		C6D55F011911EC020046F8C7 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		C6D55F021911EC020046F8C7 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 		C6FE26521911020D002C7F25 /* udpExample */ = {
 			isa = PBXGroup;
 			children = (
 				C6FE26531911021D002C7F25 /* ser1.c */,
 				C6FE2655191103F2002C7F25 /* trans1.c */,
+				C6D55EFF1911E93B0046F8C7 /* desktop1.c */,
 			);
 			path = udpExample;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				C6909047190E3CB40027BB54 /* tcp.c in Sources */,
 				C6FE264F1910E8C8002C7F25 /* udpk1.c in Sources */,
 				C6F349431908EA6B009E759E /* shm.c in Sources */,
+				C6D55F001911E93B0046F8C7 /* desktop1.c in Sources */,
 				C60317011907C3950022CE3C /* sem.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
