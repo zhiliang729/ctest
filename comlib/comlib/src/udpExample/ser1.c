@@ -13,7 +13,7 @@
             ser1 主机信息   转发进程所在主机的ip  转发进程占用的udp端口号
   模拟本应该适时读取的系统信息，然后将此信息发送到“监控转发器段”
  */
-int main(int argc, char * argv[])
+int main_1(int argc, char * argv[])
 {
     int i = 0;
     char szBuf[1024];

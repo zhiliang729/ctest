@@ -20,7 +20,7 @@ struct desktop top[] = /*监控前台列表*/
     {"127.0.0.1", 10001}
 };
 
-int main(int argc, char * argv[])
+int main_2(int argc, char * argv[])
 {
     int nSock, i;
     ssize_t nSize;

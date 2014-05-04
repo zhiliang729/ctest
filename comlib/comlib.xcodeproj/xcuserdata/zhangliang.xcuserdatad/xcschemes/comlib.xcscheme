@@ -59,11 +59,11 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "http://en.cppreference.com"
+            argument = "127.0.0.1"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/w/c"
+            argument = "9999"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

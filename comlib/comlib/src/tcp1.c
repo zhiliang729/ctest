@@ -27,7 +27,7 @@ int main10(int argc, const char * argv[])
     memset(buf, 0, sizeof(buf));
     /*接收客户端发送的TCP数据信息*/
     recv(nSock1, buf, sizeof(buf), 0);
-    fprintf(stderr, buf);
+    fprintf(stderr, "%s", buf);
     close(nSock1);/*关闭侦听套接字*/
     close(nSock);/*关闭连接套接字*/
     return 0;

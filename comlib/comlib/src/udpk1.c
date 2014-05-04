@@ -11,7 +11,7 @@
 /*
  UDP客户端数据发送程序，每隔一秒向服务器端发送数据报信息。
  */
-int main(int argc,char * argv[])
+int main16(int argc,char * argv[])
 {
     int ret, i = 0;
     char szBuf[100];

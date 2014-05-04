@@ -8,7 +8,7 @@
 
 #include "comlib.h"
 
-int main(int argc, char * argv[])
+int main17(int argc, char * argv[])
 {
     int nSock;
     ssize_t nSize;
@@ -23,5 +23,6 @@ int main(int argc, char * argv[])
     }
     /*关闭UDP套接字描述符*/
     close(nSock);
+    return 0;
 }
 

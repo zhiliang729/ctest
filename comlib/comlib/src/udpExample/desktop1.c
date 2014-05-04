@@ -8,7 +8,7 @@
 
 #include "comlib.h"
 
-int main(int argc, char * argv[])
+int main_3(int argc, char * argv[])
 {
     int nSock;
     ssize_t nSize;
