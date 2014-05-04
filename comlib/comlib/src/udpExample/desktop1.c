@@ -10,7 +10,7 @@
 
 int main(int argc, char * argv[])
 {
-    int nSock, i;
+    int nSock;
     ssize_t nSize;
     char szBuf[1024];
     if (argc != 2) {
