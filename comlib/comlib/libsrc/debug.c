@@ -138,7 +138,7 @@ int Verify(int bStatus, const char * szBuf, const char * szFile, int nLine)
         {
             memset(szFileLine, 0, sizeof(szFileLine));
             memset(szError, 0, sizeof(szError));
-            if (errno != 0) sprintf(szError, "\t> %s\n", strerror(errno));
+            if (errno != 0) sprintf(szError, "\t> errno:%d %s\n", errno, strerror(errno));
             if (szFile == NULL) strcpy(szFileLine, "\t> Invalid file name");
             else sprintf(szFileLine, "\t> In line %d file %s", nLine, szFile);
             if (szBuf == NULL)  szBuf = "";

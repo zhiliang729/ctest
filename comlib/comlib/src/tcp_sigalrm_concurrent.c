@@ -23,7 +23,7 @@ void OnTimeout(int nSignal)/*2.信号处理函数*/
 }
 
 /*参数格式为name IP PORT*/
-int main(int argc, char * argv[])
+int main18(int argc, char * argv[])
 {
     int nSock = -1, ret;
     if (argc != 3) {
@@ -32,7 +32,9 @@ int main(int argc, char * argv[])
     
     signal(SIGALRM, OnTimeout);/*3.捕获信号SIGALRM*/
     alarm(10);/*3.发送定时器信号SIGALRM*/
-    ret = ConnectSock(&nSock, atoi(argv[2]), argv[1]);/*4.执行函数*/
+    int port = atoi(argv[2]);
+    printf("%s", argv[1]);
+    ret = ConnectSock(&nSock, port, argv[1]);/*4.执行函数*/
     alarm(0);/*5.取消定时器*/
     signal(SIGALRM, SIG_IGN);/*5.忽略信号SGIALRM*/
     /*6.函数返回，超时判断*/

@@ -42,6 +42,7 @@
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      debugAsWhichUser = "root"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
@@ -59,11 +60,11 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "127.0.0.1"
+            argument = "0.0.0.0"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "9999"
+            argument = "9001"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

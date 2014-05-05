@@ -22,6 +22,7 @@
 		C6810F881915E7BE001A1257 /* tcp_sigalrm_concurrent.c in Sources */ = {isa = PBXBuildFile; fileRef = C6810F871915E7BE001A1257 /* tcp_sigalrm_concurrent.c */; };
 		C6909047190E3CB40027BB54 /* tcp.c in Sources */ = {isa = PBXBuildFile; fileRef = C6909046190E3CB40027BB54 /* tcp.c */; };
 		C6909049190E50C70027BB54 /* tcp1.c in Sources */ = {isa = PBXBuildFile; fileRef = C6909048190E50C70027BB54 /* tcp1.c */; };
+		C69172F619175ECE0091E93C /* tcp_sigalrm_jmp.c in Sources */ = {isa = PBXBuildFile; fileRef = C69172F519175ECE0091E93C /* tcp_sigalrm_jmp.c */; };
 		C6AAE0E0190F7CD10024A5BA /* tcp2.c in Sources */ = {isa = PBXBuildFile; fileRef = C6AAE0DF190F7CD10024A5BA /* tcp2.c */; };
 		C6D55F001911E93B0046F8C7 /* desktop1.c in Sources */ = {isa = PBXBuildFile; fileRef = C6D55EFF1911E93B0046F8C7 /* desktop1.c */; };
 		C6E7D25518F3C4EF00BF93D8 /* file.c in Sources */ = {isa = PBXBuildFile; fileRef = C6E7D25418F3C4EF00BF93D8 /* file.c */; };
@@ -66,6 +67,7 @@
 		C6810F871915E7BE001A1257 /* tcp_sigalrm_concurrent.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcp_sigalrm_concurrent.c; sourceTree = "<group>"; };
 		C6909046190E3CB40027BB54 /* tcp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcp.c; sourceTree = "<group>"; };
 		C6909048190E50C70027BB54 /* tcp1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcp1.c; sourceTree = "<group>"; };
+		C69172F519175ECE0091E93C /* tcp_sigalrm_jmp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcp_sigalrm_jmp.c; sourceTree = "<group>"; };
 		C6AAE0DF190F7CD10024A5BA /* tcp2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcp2.c; sourceTree = "<group>"; };
 		C6D55EFF1911E93B0046F8C7 /* desktop1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = desktop1.c; sourceTree = "<group>"; };
 		C6E7D25418F3C4EF00BF93D8 /* file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = file.c; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				C6FE264E1910E8C8002C7F25 /* udpk1.c */,
 				C6FE26501910EAA3002C7F25 /* udps1.c */,
 				C6810F871915E7BE001A1257 /* tcp_sigalrm_concurrent.c */,
+				C69172F519175ECE0091E93C /* tcp_sigalrm_jmp.c */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				C6651F9C190666B500D4F2C8 /* msg.c in Sources */,
 				C6F3494719090BAB009E759E /* writeSharedMemory.c in Sources */,
 				C6E7D25518F3C4EF00BF93D8 /* file.c in Sources */,
+				C69172F619175ECE0091E93C /* tcp_sigalrm_jmp.c in Sources */,
 				C66C229318FD04B10001DCB4 /* pid.c in Sources */,
 				C6314FCE1910C5EE00BAA1D1 /* http3.c in Sources */,
 				C6444F031910A5C300471962 /* http1.c in Sources */,
