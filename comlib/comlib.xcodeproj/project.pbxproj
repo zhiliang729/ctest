@@ -25,6 +25,7 @@
 		C69172F619175ECE0091E93C /* tcp_sigalrm_jmp.c in Sources */ = {isa = PBXBuildFile; fileRef = C69172F519175ECE0091E93C /* tcp_sigalrm_jmp.c */; };
 		C69172F8191763D80091E93C /* multiplexing.c in Sources */ = {isa = PBXBuildFile; fileRef = C69172F7191763D80091E93C /* multiplexing.c */; };
 		C69172FC19176F130091E93C /* proxy1.c in Sources */ = {isa = PBXBuildFile; fileRef = C69172FB19176F130091E93C /* proxy1.c */; };
+		C69172FE19178D900091E93C /* proxy2.c in Sources */ = {isa = PBXBuildFile; fileRef = C69172FD19178D900091E93C /* proxy2.c */; };
 		C6AAE0E0190F7CD10024A5BA /* tcp2.c in Sources */ = {isa = PBXBuildFile; fileRef = C6AAE0DF190F7CD10024A5BA /* tcp2.c */; };
 		C6D55F001911E93B0046F8C7 /* desktop1.c in Sources */ = {isa = PBXBuildFile; fileRef = C6D55EFF1911E93B0046F8C7 /* desktop1.c */; };
 		C6E7D25518F3C4EF00BF93D8 /* file.c in Sources */ = {isa = PBXBuildFile; fileRef = C6E7D25418F3C4EF00BF93D8 /* file.c */; };
@@ -72,6 +73,7 @@
 		C69172F519175ECE0091E93C /* tcp_sigalrm_jmp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcp_sigalrm_jmp.c; sourceTree = "<group>"; };
 		C69172F7191763D80091E93C /* multiplexing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = multiplexing.c; sourceTree = "<group>"; };
 		C69172FB19176F130091E93C /* proxy1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = proxy1.c; sourceTree = "<group>"; };
+		C69172FD19178D900091E93C /* proxy2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = proxy2.c; sourceTree = "<group>"; };
 		C6AAE0DF190F7CD10024A5BA /* tcp2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcp2.c; sourceTree = "<group>"; };
 		C6D55EFF1911E93B0046F8C7 /* desktop1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = desktop1.c; sourceTree = "<group>"; };
 		C6E7D25418F3C4EF00BF93D8 /* file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = file.c; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				C69172FB19176F130091E93C /* proxy1.c */,
+				C69172FD19178D900091E93C /* proxy2.c */,
 			);
 			path = communicationRepeater;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				C66C229318FD04B10001DCB4 /* pid.c in Sources */,
 				C6314FCE1910C5EE00BAA1D1 /* http3.c in Sources */,
 				C6444F031910A5C300471962 /* http1.c in Sources */,
+				C69172FE19178D900091E93C /* proxy2.c in Sources */,
 				C6F3494919090F78009E759E /* readSharedMemory.c in Sources */,
 				C6444F011910946200471962 /* tcpopt.c in Sources */,
 				C6AAE0E0190F7CD10024A5BA /* tcp2.c in Sources */,
