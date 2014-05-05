@@ -60,11 +60,15 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "0.0.0.0"
+            argument = "61.135.169.125"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "9001"
+            argument = "80"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "9004"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

@@ -14,6 +14,7 @@ int PrintLog(FILE* pfile, const char * pformat, ...)
     va_list _va_list;
     
     char szBuf[BYTESIZE];
+    memset(szBuf, 0, sizeof(szBuf));
     int nLen;
     if (pformat == NULL || pfile == NULL) {/*判断指针是否正确*/
         return -1;

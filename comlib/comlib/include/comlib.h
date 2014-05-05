@@ -74,7 +74,7 @@ int CreateUdpSock(int * pnSock, int nPort);
 int SendMsgByUdp(void * pMsg, int nSize, char * szAddr, int nPort);
 int RecvMsgByUdp(int nFile, void * pData, ssize_t * pnSize);
 
-#define BYTESIZE 1024
+#define BYTESIZE 2048
 
 /*格式化日志输出函数*/
 int PrintLog(FILE * pfile, const char * pformat, ...);

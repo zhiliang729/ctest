@@ -15,7 +15,7 @@
 
 static int nTimeOutFlag = 0;/*1.定义超时标志变量*/
 
-void OnTimeout(int nSignal)/*2.信号处理函数*/
+void OnTimeout4(int nSignal)/*2.信号处理函数*/
 {
     signal(nSignal, SIG_IGN);/*超时一次后就忽略信号SIGALARM,防止循环超时*/
     nTimeOutFlag = 1;/*设置超时标志位“已超时”*/
@@ -30,7 +30,7 @@ int main18(int argc, char * argv[])
         return 1;
     }
     
-    signal(SIGALRM, OnTimeout);/*3.捕获信号SIGALRM*/
+    signal(SIGALRM, OnTimeout4);/*3.捕获信号SIGALRM*/
     alarm(10);/*3.发送定时器信号SIGALRM*/
     int port = atoi(argv[2]);
     printf("%s", argv[1]);

@@ -11,7 +11,7 @@
 static int nTimeOutFlag = 0;/*1.定义超时标志变量*/
 jmp_buf env;/*1.定义跳转结构*/
 
-void OnTimeout(int nSignal)/*2.信号处理函数*/
+void OnTimeout3(int nSignal)/*2.信号处理函数*/
 {
     signal(nSignal, SIG_IGN);/*超时一次后就忽略信号SIGALARM,防止循环超时*/
     nTimeOutFlag = 1;/*设置超时标志位“已超时”*/
@@ -20,7 +20,7 @@ void OnTimeout(int nSignal)/*2.信号处理函数*/
 }
 
 /*main ip port*/
-int main(int argc, char * argv[])
+int main19(int argc, char * argv[])
 {
     int nSock = -1, ret;
     if (argc != 3) {
@@ -32,7 +32,7 @@ int main(int argc, char * argv[])
     if (nTimeOutFlag == 1) {
         printf("Connect Timeout.\n");/*4.超时判断*/
     }else{
-        signal(SIGALRM, OnTimeout);/*5.捕获信号SIGALRM*/
+        signal(SIGALRM, OnTimeout3);/*5.捕获信号SIGALRM*/
         alarm(10);/*5.发送定时器信号SIGALRM*/
         ret = ConnectSock(&nSock, atoi(argv[2]), argv[1]);/*6.执行函数*/
         alarm(0);/*7.取消定时器*/
