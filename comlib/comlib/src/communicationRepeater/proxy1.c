@@ -10,7 +10,7 @@
 
 int SendReceiveServer(int nLocalSock, int nRemoteSock);
 int TransSock(int nReadSock, int nWriteSock);
-int main(int argc, char * argv[])
+int main_com1(int argc, char * argv[])
 {
     int nListenSock = 0, nLocalSock = 0, nRemoteSock = 0;
     if (argc != 4) {/*命令行参数：“proxy1 远程IP地址 远程端口 本地端口”*/
@@ -99,4 +99,3 @@ int TransSock(int nReadSock, int nWriteSock)
     }
     return 0;
 }
-

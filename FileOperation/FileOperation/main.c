@@ -23,6 +23,7 @@ int main(int argc, const char * argv[])
     FILE * fp;
     
     fp = fopen(argv[1], "r");
+//    fp = fopen("/Users/$(whoami)/Desktop/trace_file", "r");
     if (fp == NULL) {
         printf("open %s failed.\n", argv[1]);
         return 1;

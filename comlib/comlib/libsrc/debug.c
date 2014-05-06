@@ -46,7 +46,7 @@ int PrintLog(FILE* pfile, const char * pformat, ...)
     return -2;//错误返回
 }
 
-/*将日志写入文件TRACE_FILE中*/
+/*将日志写入文件trace_file中*/
 int PrintTraceLog(const char* pformat, ...)
 {
     va_list _va_list;
@@ -59,7 +59,7 @@ int PrintTraceLog(const char* pformat, ...)
  	vsprintf(szBuf, pformat, _va_list);
  	va_end(_va_list);
     
- 	if ((fp = fopen(TRACE_FILE, "a")) != NULL)/*打开文件*/
+ 	if ((fp = fopen(traceFile(), "a")) != NULL)/*打开文件*/
  	{
  		ret = PrintLog(fp, szBuf);	/*写日志文件*/
  		fclose(fp);			/*关闭日志文件*/
@@ -113,7 +113,7 @@ int PrintTraceHexLog(void * pData, int nSize)
 {
  	FILE *fp;
  	int ret;
- 	if ((fp = fopen(TRACE_FILE, "a")) != NULL)
+ 	if ((fp = fopen(traceFile(), "a")) != NULL)
  	{
  		ret = PrintHexLog(fp, pData, nSize);	/*以十六进制输出内存信息到文件流pfile中*/
  		fclose(fp);				/*关闭文件*/
@@ -143,7 +143,7 @@ int Verify(int bStatus, const char * szBuf, const char * szFile, int nLine)
             if (szFile == NULL) strcpy(szFileLine, "\t> Invalid file name");
             else sprintf(szFileLine, "\t> In line %d file %s", nLine, szFile);
             if (szBuf == NULL)  szBuf = "";
-            fp = fopen(TRACE_FILE, "a");
+            fp = fopen(traceFile(), "a");
             if (fp != NULL)
             {
                 PrintLog(fp, "%s[%d]\n%s%s", szBuf, getpid(), szError, szFileLine);
@@ -152,5 +152,62 @@ int Verify(int bStatus, const char * szBuf, const char * szFile, int nLine)
             errno = 0;
         }
         return bStatus;
+}
+
+void printUser()
+{
+    struct passwd* pwd;
+    pwd=getpwuid(getuid());
+    if(pwd)
+    {
+        printf("你的用户名是：%s\n",pwd->pw_name);
+        printf("你的密码是：%s\n", pwd->pw_passwd);
+        printf("你的用户组id是：%u\n",pwd->pw_gid);
+        printf("你的用户id是：%u\n",pwd->pw_uid);
+        printf("你的access class：%s\n", pwd->pw_class);
+        printf("你的login info：%s\n", pwd->pw_gecos);
+        printf("你的工作目录是：%s\n",pwd->pw_dir);
+        printf("你的shell是：%s\n",pwd->pw_shell);
+    }
+    printf("+++++++++++++++++++++++\n");
+    pwd=getpwuid(geteuid());
+    if(pwd)
+    {
+        printf("你的实际用户名是：%s\n", pwd->pw_name);
+        printf("你的实际用户组id是：%u\n",pwd->pw_gid);
+        printf("你的实际用户id是：%u\n",pwd->pw_uid);
+        printf("你的实际工作目录是：%s\n",pwd->pw_dir);
+        printf("你的实际shell是：%s\n",pwd->pw_shell);
+    }
+    
+    printf("+++++++++++++++++++++++\n");
+    struct group* grp;
+    grp=getgrgid(getgid());
+    if(grp)
+    {
+        printf("你的实际用户组名是：%s\n", grp->gr_name);
+        printf("你的实际用户组id是：%u\n", grp->gr_gid);
+        
+    }
+}
+
+char * userName()
+{
+    struct passwd* pwd;
+    pwd=getpwuid(getuid());
+    if(pwd)
+    {
+        return pwd->pw_name;
+    }
+    return NULL;
+}
+
+char * traceFile()
+{
+    memset(tracefile, 0, sizeof(tracefile));
+    strcat(trace_file, "/Users/");
+    strcat(trace_file, userName());
+    strcat(trace_file, "/Desktop/trace_file");
+    return trace_file;
 }
 

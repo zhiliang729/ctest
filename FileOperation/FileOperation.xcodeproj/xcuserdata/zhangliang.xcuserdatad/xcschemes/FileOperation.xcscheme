@@ -59,7 +59,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/zhangliang/Desktop/Hello.txt"
+            argument = "/Users//Desktop/Hello.txt"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

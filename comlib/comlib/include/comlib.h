@@ -28,13 +28,19 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 
+#include <pwd.h>
+#include <grp.h>
+
 
 #define MAXBUF 4096
 
 /*日志文件路径*/
 #ifndef TRACE_FILE
-#define TRACE_FILE "/Users/zhangliang/Desktop/trace_file"
+#define TRACE_FILE "/Users/*userName()/Desktop/trace_file"
 #endif
+static char tracefile[1024];
+static char * trace_file = tracefile;
+char * traceFile();
 
 /*最大最小*/
 #ifndef min
@@ -137,6 +143,10 @@ char *GetMemoAddr(char *paddr, int index);
 
 /*守护进程生成器*/
 int InitServer();
+
+/*用户信息打印*/
+void printUser();
+char * userName();
 
 
 #endif

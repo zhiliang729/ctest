@@ -10,8 +10,8 @@
 
 int HttpConnect(int nLocalSock, int *nRemoteSock);
 int GetObjectIp(char *buf, char *ip);
-int SendReciveServer(int nLocalSock, int nRemoteSock);
-int TransSock(int nReadSock, int nWriteSock);
+int SendReceiveServer_2(int nLocalSock, int nRemoteSock);
+int TransSock_2(int nReadSock, int nWriteSock);
 
 int main(int argc, char *argv[])
 {
@@ -19,7 +19,8 @@ int main(int argc, char *argv[])
 	pid_t nChild;
 	if (argc != 2) 							/*命令行参数：“proxy2 本地端口”*/
 	{
-        PrintLog(stdout, "proxy1 LOCALPORT\n");
+//        PrintLog(stdout, "proxy2 LOCALPORT\n");
+        PrintTraceLog("proxy2 LOCALPORT");
         return 1;
     }
     /* ---------------------------父进程------------------------------- */
@@ -40,7 +41,7 @@ int main(int argc, char *argv[])
 	close(nListenSock);						/*7.子进程关闭侦听套接字*/
     /*解析HTTP报文头，并与目标服务器建立连接*/
 	if (HttpConnect(nLocalSock, &nRemoteSock) == 0)
-		SendReciveServer(nLocalSock, nRemoteSock);			/*通信转发*/
+		SendReceiveServer_2(nLocalSock, nRemoteSock);			/*通信转发*/
     if (nLocalSock >= 0) close(nLocalSock);  /*9.子进程关闭本地端套接字*/
     if (nRemoteSock >= 0) close(nRemoteSock);/*10.子进程光比目标端套接字*/
 }
@@ -59,6 +60,9 @@ int HttpConnect(int nLocalSock, int *nRemoteSock)
 			return 1;
 		}
 	}
+    
+    PrintTraceLog("%s", buf);
+    
 	memset(szIp, 0, sizeof(szIp));
 	/*解析HTTP报文，简单验证报文，并获取目标服务器的IP地址*/
 	if (GetObjectIp(buf, szIp) != 0) return 2;
@@ -109,7 +113,7 @@ int GetObjectIp(char *buf, char *ip)
 	return 0;
 }
 
-int SendReciveServer(int nLocalSock, int nRemoteSock)
+int SendReceiveServer_2(int nLocalSock, int nRemoteSock)
 {
 	int nMaxSock;
 	struct timeval	wait;
@@ -137,14 +141,16 @@ int SendReciveServer(int nLocalSock, int nRemoteSock)
 		/*如果套接字nLocalSock可以接收，则接收数据，发送数据到套接字nRemoteSock*/
 		if (FD_ISSET(nLocalSock, &fdset))
 		{
-			PrintLog(stderr, "Local To Remote");
-			ret = TransSock(nLocalSock, nRemoteSock);
+//			PrintLog(stderr, "Local To Remote");
+            PrintTraceLog("Local To Remote:");
+			ret = TransSock_2(nLocalSock, nRemoteSock);
 		}
 		/*如果套接字nRemoteSock可以接收，则接收数据，并发送到nLocalSock*/
 		else if (FD_ISSET(nRemoteSock, &fdset))
 		{
-			PrintLog(stderr, "Remote To Local");
-			ret = TransSock(nRemoteSock, nLocalSock);
+//			PrintLog(stderr, "Remote To Local");
+            PrintTraceLog("Remote To Local:");
+			ret = TransSock_2(nRemoteSock, nLocalSock);
 		}
 		/*结果判断*/
 		if (ret == 1) return 1;/*套接字系统错误，退出函数*/
@@ -153,23 +159,24 @@ int SendReciveServer(int nLocalSock, int nRemoteSock)
 	return 0;
 }
 
-int TransSock(int nReadSock, int nWriteSock)
+int TransSock_2(int nReadSock, int nWriteSock)
 {
-	int nread;
+	ssize_t nread;
 	char	buf[4096];
 	memset(buf,0,sizeof(buf));
-	if ((nread = read(nReadSock, buf, sizeof(buf))) < 0) /* Ω” ’ ˝æ› */
+	if ((nread = read(nReadSock, buf, sizeof(buf))) < 0) /*接收数据*/
 	{
 		if (errno != EINTR) return 1;
 		else return 0;
 	}
-	else if (nread == 0)				/* Ã◊Ω”◊÷πÿ±’ */
+	else if (nread == 0)				/*未接收到数据*/
 	{
 		PrintLog(stderr, "client is close");
 		return 2;
 	}
-	PrintLog(stderr, "[%d]", nread);
-	if (WriteFile(nWriteSock, buf, nread) != 0)	/* ◊™∑¢ ˝æ› */
+//	PrintLog(stderr, "[%d]", nread);
+    PrintTraceLog("%s", buf);
+	if (WriteFile(nWriteSock, buf, nread) != 0)	/*转发数据*/
 	{
 		PrintLog(stderr, "Write message to server error[%d]", nread);
 		perror("write");
