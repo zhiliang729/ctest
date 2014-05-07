@@ -13,6 +13,7 @@
 		C6444F011910946200471962 /* tcpopt.c in Sources */ = {isa = PBXBuildFile; fileRef = C6444F001910946200471962 /* tcpopt.c */; };
 		C6444F031910A5C300471962 /* http1.c in Sources */ = {isa = PBXBuildFile; fileRef = C6444F021910A5C300471962 /* http1.c */; };
 		C6444F051910AAD200471962 /* http2.c in Sources */ = {isa = PBXBuildFile; fileRef = C6444F041910AAD200471962 /* http2.c */; };
+		C6533E4E191A37690080531D /* str.c in Sources */ = {isa = PBXBuildFile; fileRef = C6533E4D191A37690080531D /* str.c */; };
 		C6651F9C190666B500D4F2C8 /* msg.c in Sources */ = {isa = PBXBuildFile; fileRef = C6651F9B190666B500D4F2C8 /* msg.c */; };
 		C66C229318FD04B10001DCB4 /* pid.c in Sources */ = {isa = PBXBuildFile; fileRef = C66C229218FD04B10001DCB4 /* pid.c */; };
 		C66C229518FD0F110001DCB4 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C66C229418FD0F110001DCB4 /* main.c */; };
@@ -59,6 +60,7 @@
 		C6444F001910946200471962 /* tcpopt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcpopt.c; sourceTree = "<group>"; };
 		C6444F021910A5C300471962 /* http1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = http1.c; sourceTree = "<group>"; };
 		C6444F041910AAD200471962 /* http2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = http2.c; sourceTree = "<group>"; };
+		C6533E4D191A37690080531D /* str.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = str.c; sourceTree = "<group>"; };
 		C6651F9B190666B500D4F2C8 /* msg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = msg.c; sourceTree = "<group>"; };
 		C66C229218FD04B10001DCB4 /* pid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pid.c; sourceTree = "<group>"; };
 		C66C229418FD0F110001DCB4 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				C6F349421908EA6B009E759E /* shm.c */,
 				C6909046190E3CB40027BB54 /* tcp.c */,
 				C6314FCF1910E0A900BAA1D1 /* udp.c */,
+				C6533E4D191A37690080531D /* str.c */,
 			);
 			path = libsrc;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				C6E7D25518F3C4EF00BF93D8 /* file.c in Sources */,
 				C69172F619175ECE0091E93C /* tcp_sigalrm_jmp.c in Sources */,
 				C66C229318FD04B10001DCB4 /* pid.c in Sources */,
+				C6533E4E191A37690080531D /* str.c in Sources */,
 				C6314FCE1910C5EE00BAA1D1 /* http3.c in Sources */,
 				C6444F031910A5C300471962 /* http1.c in Sources */,
 				C69172FE19178D900091E93C /* proxy2.c in Sources */,
