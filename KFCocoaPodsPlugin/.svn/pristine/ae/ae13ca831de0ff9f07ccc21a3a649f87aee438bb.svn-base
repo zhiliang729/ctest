@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D02734A17D746CB00E8389F /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D02734917D746CB00E8389F /* AppKit.framework */; };
+		1D02734C17D746CB00E8389F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D02734B17D746CB00E8389F /* Foundation.framework */; };
+		1D02735217D746CC00E8389F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D02735017D746CC00E8389F /* InfoPlist.strings */; };
+		1D02735517D746CC00E8389F /* KFCocoaPodsPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D02735417D746CC00E8389F /* KFCocoaPodsPlugin.m */; };
+		1D03ECB117E9B64F00F183EB /* AMR_ANSIEscapeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D03ECB017E9B64F00F183EB /* AMR_ANSIEscapeHelper.m */; };
+		1D08FB88184148B300DE7442 /* KFPodDescriptionValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D08FB87184148B300DE7442 /* KFPodDescriptionValueTransformer.m */; };
+		1D24305C17D8DB8F00E0D3DD /* KFCocoaPodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D24305B17D8DB8F00E0D3DD /* KFCocoaPodController.m */; };
+		1D29407918396F4D00079BC4 /* KFReplController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D29407818396F4D00079BC4 /* KFReplController.m */; };
+		1D2A5368183D01250010858E /* NSAttributedString+Hyperlinks.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2A5367183D01250010858E /* NSAttributedString+Hyperlinks.m */; };
+		1D35C31F17D8B814006A9BDC /* KFTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D35C31E17D8B814006A9BDC /* KFTaskController.m */; };
+		1D35C32217D8BBE9006A9BDC /* KFWorkspaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D35C32117D8BBE9006A9BDC /* KFWorkspaceController.m */; };
+		1D44D6AE17DBAEDB00CBE93B /* DVTSourceTextView+KFCocoaPods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D44D6A917DBAEDB00CBE93B /* DVTSourceTextView+KFCocoaPods.m */; };
+		1D44D6AF17DBAEDB00CBE93B /* DVTTextCompletionWordsInFileStrategy+KFCocoaPods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D44D6AB17DBAEDB00CBE93B /* DVTTextCompletionWordsInFileStrategy+KFCocoaPods.m */; };
+		1D44D6B017DBAEDB00CBE93B /* KFPodAutoCompletionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D44D6AD17DBAEDB00CBE93B /* KFPodAutoCompletionItem.m */; };
+		1D5C6C6117DB63E80009B936 /* MethodSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C6C6017DB63E80009B936 /* MethodSwizzle.m */; };
+		1D5C6C6B17DB64130009B936 /* IDEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5C6C6917DB64130009B936 /* IDEFoundation.framework */; };
+		1D5C6C6C17DB64130009B936 /* IDEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5C6C6A17DB64130009B936 /* IDEKit.framework */; };
+		1D5C6C6F17DB64290009B936 /* DVTFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5C6C6D17DB64290009B936 /* DVTFoundation.framework */; };
+		1D5C6C7017DB64290009B936 /* DVTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5C6C6E17DB64290009B936 /* DVTKit.framework */; };
+		1D81CE40181AB41C00D45D84 /* KFConsoleThemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D81CE3F181AB41C00D45D84 /* KFConsoleThemeModel.m */; };
+		1DA3B242183839C60009AC4E /* KFPodSearchWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA3B240183839C60009AC4E /* KFPodSearchWindowController.m */; };
+		1DA3B243183839C60009AC4E /* KFPodSearchWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA3B241183839C60009AC4E /* KFPodSearchWindow.xib */; };
+		1DAC167617D9F09300287BA0 /* KFRepoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAC167517D9F09300287BA0 /* KFRepoModel.m */; };
+		1DC1B35917E08B2000CBC31F /* DVTTextCompletionKeywordsStrategy+KFCocoaPods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1B35817E08B2000CBC31F /* DVTTextCompletionKeywordsStrategy+KFCocoaPods.m */; };
+		1DD2CD0B17DE4B72006A1355 /* KFSyntaxAutoCompletionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2CD0A17DE4B72006A1355 /* KFSyntaxAutoCompletionItem.m */; };
+		1DDB9A9B17DE4E4200B69C9D /* PodSyntax.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DDB9A9A17DE4E4200B69C9D /* PodSyntax.plist */; };
+		1DDE21BF17D8B08D0015857D /* KFConsoleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDE21BE17D8B08D0015857D /* KFConsoleController.m */; };
+		1DF28C9017DA5B6B00DFBD5C /* KFNotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF28C8F17DA5B6B00DFBD5C /* KFNotificationController.m */; };
+		C8DBFFE38BD1451BB6DACAF9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B5BF65125F74E12891B4621 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D02734617D746CB00E8389F /* KFCocoaPodsPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KFCocoaPodsPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D02734917D746CB00E8389F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		1D02734B17D746CB00E8389F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D02734F17D746CC00E8389F /* KFCocoaPodsPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KFCocoaPodsPlugin-Info.plist"; sourceTree = "<group>"; };
+		1D02735117D746CC00E8389F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1D02735317D746CC00E8389F /* KFCocoaPodsPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KFCocoaPodsPlugin.h; sourceTree = "<group>"; };
+		1D02735417D746CC00E8389F /* KFCocoaPodsPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFCocoaPodsPlugin.m; sourceTree = "<group>"; };
+		1D02735617D746CC00E8389F /* KFCocoaPodsPlugin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KFCocoaPodsPlugin-Prefix.pch"; sourceTree = "<group>"; };
+		1D03ECAF17E9B64F00F183EB /* AMR_ANSIEscapeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMR_ANSIEscapeHelper.h; sourceTree = "<group>"; };
+		1D03ECB017E9B64F00F183EB /* AMR_ANSIEscapeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMR_ANSIEscapeHelper.m; sourceTree = "<group>"; };
+		1D08FB86184148B300DE7442 /* KFPodDescriptionValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFPodDescriptionValueTransformer.h; sourceTree = "<group>"; };
+		1D08FB87184148B300DE7442 /* KFPodDescriptionValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFPodDescriptionValueTransformer.m; sourceTree = "<group>"; };
+		1D24305A17D8DB8F00E0D3DD /* KFCocoaPodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KFCocoaPodController.h; path = Sources/Controllers/KFCocoaPodController.h; sourceTree = "<group>"; };
+		1D24305B17D8DB8F00E0D3DD /* KFCocoaPodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KFCocoaPodController.m; path = Sources/Controllers/KFCocoaPodController.m; sourceTree = "<group>"; };
+		1D29407718396F4D00079BC4 /* KFReplController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KFReplController.h; path = Sources/Controllers/KFReplController.h; sourceTree = "<group>"; };
+		1D29407818396F4D00079BC4 /* KFReplController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KFReplController.m; path = Sources/Controllers/KFReplController.m; sourceTree = "<group>"; };
+		1D2A5366183D01250010858E /* NSAttributedString+Hyperlinks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Hyperlinks.h"; sourceTree = "<group>"; };
+		1D2A5367183D01250010858E /* NSAttributedString+Hyperlinks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Hyperlinks.m"; sourceTree = "<group>"; };
+		1D35C31D17D8B814006A9BDC /* KFTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KFTaskController.h; path = Sources/Controllers/KFTaskController.h; sourceTree = "<group>"; };
+		1D35C31E17D8B814006A9BDC /* KFTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KFTaskController.m; path = Sources/Controllers/KFTaskController.m; sourceTree = "<group>"; };
+		1D35C32017D8BBE9006A9BDC /* KFWorkspaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KFWorkspaceController.h; path = Sources/Controllers/KFWorkspaceController.h; sourceTree = "<group>"; };
+		1D35C32117D8BBE9006A9BDC /* KFWorkspaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KFWorkspaceController.m; path = Sources/Controllers/KFWorkspaceController.m; sourceTree = "<group>"; };
+		1D44D6A817DBAEDB00CBE93B /* DVTSourceTextView+KFCocoaPods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTSourceTextView+KFCocoaPods.h"; sourceTree = "<group>"; };
+		1D44D6A917DBAEDB00CBE93B /* DVTSourceTextView+KFCocoaPods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DVTSourceTextView+KFCocoaPods.m"; sourceTree = "<group>"; };
+		1D44D6AA17DBAEDB00CBE93B /* DVTTextCompletionWordsInFileStrategy+KFCocoaPods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTTextCompletionWordsInFileStrategy+KFCocoaPods.h"; sourceTree = "<group>"; };
+		1D44D6AB17DBAEDB00CBE93B /* DVTTextCompletionWordsInFileStrategy+KFCocoaPods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DVTTextCompletionWordsInFileStrategy+KFCocoaPods.m"; sourceTree = "<group>"; };
+		1D44D6AC17DBAEDB00CBE93B /* KFPodAutoCompletionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFPodAutoCompletionItem.h; sourceTree = "<group>"; };
+		1D44D6AD17DBAEDB00CBE93B /* KFPodAutoCompletionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFPodAutoCompletionItem.m; sourceTree = "<group>"; };
+		1D5C6C5F17DB63E80009B936 /* MethodSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodSwizzle.h; sourceTree = "<group>"; };
+		1D5C6C6017DB63E80009B936 /* MethodSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodSwizzle.m; sourceTree = "<group>"; };
+		1D5C6C6917DB64130009B936 /* IDEFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEFoundation.framework; path = "../../../../../../../Applications/Xcode5-DP6.app/Contents/Frameworks/IDEFoundation.framework"; sourceTree = "<group>"; };
+		1D5C6C6A17DB64130009B936 /* IDEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEKit.framework; path = "../../../../../../../Applications/Xcode5-DP6.app/Contents/Frameworks/IDEKit.framework"; sourceTree = "<group>"; };
+		1D5C6C6D17DB64290009B936 /* DVTFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTFoundation.framework; path = "../../../../../../../Applications/Xcode5-DP6.app/Contents/SharedFrameworks/DVTFoundation.framework"; sourceTree = "<group>"; };
+		1D5C6C6E17DB64290009B936 /* DVTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTKit.framework; path = "../../../../../../../Applications/Xcode5-DP6.app/Contents/SharedFrameworks/DVTKit.framework"; sourceTree = "<group>"; };
+		1D81CE3E181AB41C00D45D84 /* KFConsoleThemeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFConsoleThemeModel.h; sourceTree = "<group>"; };
+		1D81CE3F181AB41C00D45D84 /* KFConsoleThemeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFConsoleThemeModel.m; sourceTree = "<group>"; };
+		1DA3B23F183839C60009AC4E /* KFPodSearchWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KFPodSearchWindowController.h; path = Sources/Controllers/KFPodSearchWindowController.h; sourceTree = "<group>"; };
+		1DA3B240183839C60009AC4E /* KFPodSearchWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KFPodSearchWindowController.m; path = Sources/Controllers/KFPodSearchWindowController.m; sourceTree = "<group>"; };
+		1DA3B241183839C60009AC4E /* KFPodSearchWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KFPodSearchWindow.xib; path = Sources/Controllers/KFPodSearchWindow.xib; sourceTree = "<group>"; };
+		1DAC167417D9F09300287BA0 /* KFRepoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFRepoModel.h; sourceTree = "<group>"; };
+		1DAC167517D9F09300287BA0 /* KFRepoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFRepoModel.m; sourceTree = "<group>"; };
+		1DC1B35717E08B2000CBC31F /* DVTTextCompletionKeywordsStrategy+KFCocoaPods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTTextCompletionKeywordsStrategy+KFCocoaPods.h"; sourceTree = "<group>"; };
+		1DC1B35817E08B2000CBC31F /* DVTTextCompletionKeywordsStrategy+KFCocoaPods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DVTTextCompletionKeywordsStrategy+KFCocoaPods.m"; sourceTree = "<group>"; };
+		1DD2CD0917DE4B72006A1355 /* KFSyntaxAutoCompletionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFSyntaxAutoCompletionItem.h; sourceTree = "<group>"; };
+		1DD2CD0A17DE4B72006A1355 /* KFSyntaxAutoCompletionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFSyntaxAutoCompletionItem.m; sourceTree = "<group>"; };
+		1DDB9A9A17DE4E4200B69C9D /* PodSyntax.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PodSyntax.plist; sourceTree = "<group>"; };
+		1DDE21BD17D8B08D0015857D /* KFConsoleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KFConsoleController.h; path = Sources/Controllers/KFConsoleController.h; sourceTree = "<group>"; };
+		1DDE21BE17D8B08D0015857D /* KFConsoleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KFConsoleController.m; path = Sources/Controllers/KFConsoleController.m; sourceTree = "<group>"; };
+		1DDE21C117D8B1E70015857D /* DVTFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTFoundation.h; sourceTree = "<group>"; };
+		1DDE21C217D8B1E70015857D /* DVTKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTKit.h; sourceTree = "<group>"; };
+		1DDE21C317D8B1E70015857D /* IDEFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEFoundation.h; sourceTree = "<group>"; };
+		1DDE21C417D8B1E70015857D /* IDEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEKit.h; sourceTree = "<group>"; };
+		1DDE21C517D8B1E70015857D /* IDESourceEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDESourceEditor.h; sourceTree = "<group>"; };
+		1DF28C8E17DA5B6B00DFBD5C /* KFNotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KFNotificationController.h; path = Sources/Controllers/KFNotificationController.h; sourceTree = "<group>"; };
+		1DF28C8F17DA5B6B00DFBD5C /* KFNotificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KFNotificationController.m; path = Sources/Controllers/KFNotificationController.m; sourceTree = "<group>"; };
+		890D3963EC534E2586D5020C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		8B5BF65125F74E12891B4621 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D02734317D746CB00E8389F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D02734A17D746CB00E8389F /* AppKit.framework in Frameworks */,
+				1D02734C17D746CB00E8389F /* Foundation.framework in Frameworks */,
+				1D5C6C6B17DB64130009B936 /* IDEFoundation.framework in Frameworks */,
+				1D5C6C6C17DB64130009B936 /* IDEKit.framework in Frameworks */,
+				1D5C6C6F17DB64290009B936 /* DVTFoundation.framework in Frameworks */,
+				1D5C6C7017DB64290009B936 /* DVTKit.framework in Frameworks */,
+				C8DBFFE38BD1451BB6DACAF9 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D02733D17D746CB00E8389F = {
+			isa = PBXGroup;
+			children = (
+				1D02734D17D746CC00E8389F /* KFCocoaPodsPlugin */,
+				1D02734817D746CB00E8389F /* Frameworks */,
+				1D02734717D746CB00E8389F /* Products */,
+				890D3963EC534E2586D5020C /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		1D02734717D746CB00E8389F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D02734617D746CB00E8389F /* KFCocoaPodsPlugin.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D02734817D746CB00E8389F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D5C6C6D17DB64290009B936 /* DVTFoundation.framework */,
+				1D5C6C6E17DB64290009B936 /* DVTKit.framework */,
+				1D5C6C6917DB64130009B936 /* IDEFoundation.framework */,
+				1D5C6C6A17DB64130009B936 /* IDEKit.framework */,
+				1D02734917D746CB00E8389F /* AppKit.framework */,
+				1D02734B17D746CB00E8389F /* Foundation.framework */,
+				8B5BF65125F74E12891B4621 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D02734D17D746CC00E8389F /* KFCocoaPodsPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				1D02735317D746CC00E8389F /* KFCocoaPodsPlugin.h */,
+				1D02735417D746CC00E8389F /* KFCocoaPodsPlugin.m */,
+				1D2A5365183D01090010858E /* Categories */,
+				1DAC167317D9F09300287BA0 /* Models */,
+				1D24305D17D8DB9400E0D3DD /* Controllers */,
+				1D08FB851841488800DE7442 /* Value Transformers */,
+				1D5C6C5E17DB63E80009B936 /* 3rdParty */,
+				1DDE21C017D8B1E70015857D /* XcodeClasses */,
+				1DA3B23E183837750009AC4E /* Resources */,
+				1D02734E17D746CC00E8389F /* Supporting Files */,
+			);
+			path = KFCocoaPodsPlugin;
+			sourceTree = "<group>";
+		};
+		1D02734E17D746CC00E8389F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D02734F17D746CC00E8389F /* KFCocoaPodsPlugin-Info.plist */,
+				1D02735017D746CC00E8389F /* InfoPlist.strings */,
+				1D02735617D746CC00E8389F /* KFCocoaPodsPlugin-Prefix.pch */,
+				1DDB9A9A17DE4E4200B69C9D /* PodSyntax.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D08FB851841488800DE7442 /* Value Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				1D08FB86184148B300DE7442 /* KFPodDescriptionValueTransformer.h */,
+				1D08FB87184148B300DE7442 /* KFPodDescriptionValueTransformer.m */,
+			);
+			name = "Value Transformers";
+			path = "Sources/Categories/Value Transformers";
+			sourceTree = "<group>";
+		};
+		1D24305D17D8DB9400E0D3DD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1D44D6A717DBAEDB00CBE93B /* AutoCompletion */,
+				1D24305A17D8DB8F00E0D3DD /* KFCocoaPodController.h */,
+				1D24305B17D8DB8F00E0D3DD /* KFCocoaPodController.m */,
+				1D29407718396F4D00079BC4 /* KFReplController.h */,
+				1D29407818396F4D00079BC4 /* KFReplController.m */,
+				1DA3B244183839D20009AC4E /* PodSearch */,
+				1DDE21BD17D8B08D0015857D /* KFConsoleController.h */,
+				1DDE21BE17D8B08D0015857D /* KFConsoleController.m */,
+				1D35C31D17D8B814006A9BDC /* KFTaskController.h */,
+				1D35C31E17D8B814006A9BDC /* KFTaskController.m */,
+				1D35C32017D8BBE9006A9BDC /* KFWorkspaceController.h */,
+				1D35C32117D8BBE9006A9BDC /* KFWorkspaceController.m */,
+				1DF28C8E17DA5B6B00DFBD5C /* KFNotificationController.h */,
+				1DF28C8F17DA5B6B00DFBD5C /* KFNotificationController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		1D2A5365183D01090010858E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				1D2A5366183D01250010858E /* NSAttributedString+Hyperlinks.h */,
+				1D2A5367183D01250010858E /* NSAttributedString+Hyperlinks.m */,
+			);
+			name = Categories;
+			path = Sources/Categories;
+			sourceTree = "<group>";
+		};
+		1D44D6A717DBAEDB00CBE93B /* AutoCompletion */ = {
+			isa = PBXGroup;
+			children = (
+				1D44D6A817DBAEDB00CBE93B /* DVTSourceTextView+KFCocoaPods.h */,
+				1D44D6A917DBAEDB00CBE93B /* DVTSourceTextView+KFCocoaPods.m */,
+				1DC1B35717E08B2000CBC31F /* DVTTextCompletionKeywordsStrategy+KFCocoaPods.h */,
+				1DC1B35817E08B2000CBC31F /* DVTTextCompletionKeywordsStrategy+KFCocoaPods.m */,
+				1D44D6AA17DBAEDB00CBE93B /* DVTTextCompletionWordsInFileStrategy+KFCocoaPods.h */,
+				1D44D6AB17DBAEDB00CBE93B /* DVTTextCompletionWordsInFileStrategy+KFCocoaPods.m */,
+				1D44D6AC17DBAEDB00CBE93B /* KFPodAutoCompletionItem.h */,
+				1D44D6AD17DBAEDB00CBE93B /* KFPodAutoCompletionItem.m */,
+				1DD2CD0917DE4B72006A1355 /* KFSyntaxAutoCompletionItem.h */,
+				1DD2CD0A17DE4B72006A1355 /* KFSyntaxAutoCompletionItem.m */,
+			);
+			name = AutoCompletion;
+			path = Sources/AutoCompletion;
+			sourceTree = "<group>";
+		};
+		1D5C6C5E17DB63E80009B936 /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+				1D5C6C5F17DB63E80009B936 /* MethodSwizzle.h */,
+				1D5C6C6017DB63E80009B936 /* MethodSwizzle.m */,
+				1D03ECAF17E9B64F00F183EB /* AMR_ANSIEscapeHelper.h */,
+				1D03ECB017E9B64F00F183EB /* AMR_ANSIEscapeHelper.m */,
+			);
+			path = 3rdParty;
+			sourceTree = "<group>";
+		};
+		1DA3B23E183837750009AC4E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1DA3B241183839C60009AC4E /* KFPodSearchWindow.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1DA3B244183839D20009AC4E /* PodSearch */ = {
+			isa = PBXGroup;
+			children = (
+				1DA3B23F183839C60009AC4E /* KFPodSearchWindowController.h */,
+				1DA3B240183839C60009AC4E /* KFPodSearchWindowController.m */,
+			);
+			name = PodSearch;
+			sourceTree = "<group>";
+		};
+		1DAC167317D9F09300287BA0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1DAC167417D9F09300287BA0 /* KFRepoModel.h */,
+				1DAC167517D9F09300287BA0 /* KFRepoModel.m */,
+				1D81CE3E181AB41C00D45D84 /* KFConsoleThemeModel.h */,
+				1D81CE3F181AB41C00D45D84 /* KFConsoleThemeModel.m */,
+			);
+			name = Models;
+			path = Sources/Models;
+			sourceTree = "<group>";
+		};
+		1DDE21C017D8B1E70015857D /* XcodeClasses */ = {
+			isa = PBXGroup;
+			children = (
+				1DDE21C117D8B1E70015857D /* DVTFoundation.h */,
+				1DDE21C217D8B1E70015857D /* DVTKit.h */,
+				1DDE21C317D8B1E70015857D /* IDEFoundation.h */,
+				1DDE21C417D8B1E70015857D /* IDEKit.h */,
+				1DDE21C517D8B1E70015857D /* IDESourceEditor.h */,
+			);
+			path = XcodeClasses;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D02734517D746CB00E8389F /* KFCocoaPodsPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D02735917D746CC00E8389F /* Build configuration list for PBXNativeTarget "KFCocoaPodsPlugin" */;
+			buildPhases = (
+				C90012E6A43940B78D0347BA /* Check Pods Manifest.lock */,
+				1D97398318352EC7003CDA74 /* Build Version */,
+				1D02734217D746CB00E8389F /* Sources */,
+				1D02734317D746CB00E8389F /* Frameworks */,
+				1D02734417D746CB00E8389F /* Resources */,
+				6864FFC159CF45B5806FA1D4 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KFCocoaPodsPlugin;
+			productName = KFCocoaPodsPlugin;
+			productReference = 1D02734617D746CB00E8389F /* KFCocoaPodsPlugin.xcplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1D02733E17D746CB00E8389F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "KF Interactive";
+			};
+			buildConfigurationList = 1D02734117D746CB00E8389F /* Build configuration list for PBXProject "KFCocoaPodsPlugin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1D02733D17D746CB00E8389F;
+			productRefGroup = 1D02734717D746CB00E8389F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D02734517D746CB00E8389F /* KFCocoaPodsPlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D02734417D746CB00E8389F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D02735217D746CC00E8389F /* InfoPlist.strings in Resources */,
+				1DDB9A9B17DE4E4200B69C9D /* PodSyntax.plist in Resources */,
+				1DA3B243183839C60009AC4E /* KFPodSearchWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D97398318352EC7003CDA74 /* Build Version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Version";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=`expr $(git rev-list HEAD | wc -l) + 1`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+		6864FFC159CF45B5806FA1D4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C90012E6A43940B78D0347BA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D02734217D746CB00E8389F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D02735517D746CC00E8389F /* KFCocoaPodsPlugin.m in Sources */,
+				1DDE21BF17D8B08D0015857D /* KFConsoleController.m in Sources */,
+				1D35C31F17D8B814006A9BDC /* KFTaskController.m in Sources */,
+				1DC1B35917E08B2000CBC31F /* DVTTextCompletionKeywordsStrategy+KFCocoaPods.m in Sources */,
+				1D35C32217D8BBE9006A9BDC /* KFWorkspaceController.m in Sources */,
+				1D24305C17D8DB8F00E0D3DD /* KFCocoaPodController.m in Sources */,
+				1D2A5368183D01250010858E /* NSAttributedString+Hyperlinks.m in Sources */,
+				1D08FB88184148B300DE7442 /* KFPodDescriptionValueTransformer.m in Sources */,
+				1D29407918396F4D00079BC4 /* KFReplController.m in Sources */,
+				1DAC167617D9F09300287BA0 /* KFRepoModel.m in Sources */,
+				1DF28C9017DA5B6B00DFBD5C /* KFNotificationController.m in Sources */,
+				1D03ECB117E9B64F00F183EB /* AMR_ANSIEscapeHelper.m in Sources */,
+				1D5C6C6117DB63E80009B936 /* MethodSwizzle.m in Sources */,
+				1D44D6AE17DBAEDB00CBE93B /* DVTSourceTextView+KFCocoaPods.m in Sources */,
+				1D81CE40181AB41C00D45D84 /* KFConsoleThemeModel.m in Sources */,
+				1DD2CD0B17DE4B72006A1355 /* KFSyntaxAutoCompletionItem.m in Sources */,
+				1D44D6AF17DBAEDB00CBE93B /* DVTTextCompletionWordsInFileStrategy+KFCocoaPods.m in Sources */,
+				1DA3B242183839C60009AC4E /* KFPodSearchWindowController.m in Sources */,
+				1D44D6B017DBAEDB00CBE93B /* KFPodAutoCompletionItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1D02735017D746CC00E8389F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D02735117D746CC00E8389F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D02735717D746CC00E8389F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1D02735817D746CC00E8389F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1D02735A17D746CC00E8389F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 890D3963EC534E2586D5020C /* Pods.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_DIR)/../Frameworks",
+					"$(DEVELOPER_DIR)/../SharedFrameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KFCocoaPodsPlugin/KFCocoaPodsPlugin-Prefix.pch";
+				INFOPLIST_FILE = "KFCocoaPodsPlugin/KFCocoaPodsPlugin-Info.plist";
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Debug;
+		};
+		1D02735B17D746CC00E8389F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 890D3963EC534E2586D5020C /* Pods.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_DIR)/../Frameworks",
+					"$(DEVELOPER_DIR)/../SharedFrameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KFCocoaPodsPlugin/KFCocoaPodsPlugin-Prefix.pch";
+				INFOPLIST_FILE = "KFCocoaPodsPlugin/KFCocoaPodsPlugin-Info.plist";
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D02734117D746CB00E8389F /* Build configuration list for PBXProject "KFCocoaPodsPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D02735717D746CC00E8389F /* Debug */,
+				1D02735817D746CC00E8389F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D02735917D746CC00E8389F /* Build configuration list for PBXNativeTarget "KFCocoaPodsPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D02735A17D746CC00E8389F /* Debug */,
+				1D02735B17D746CC00E8389F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1D02733E17D746CB00E8389F /* Project object */;
+}

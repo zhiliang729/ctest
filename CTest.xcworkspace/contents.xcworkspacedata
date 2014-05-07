@@ -1,6 +1,2163 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "group:Dash-Plugin-for-Xcode"
+      name = "Dash-Plugin-for-Xcode">
+      <Group
+         location = "group:Classes"
+         name = "Classes">
+         <FileRef
+            location = "group:JRSwizzle.h">
+         </FileRef>
+         <FileRef
+            location = "group:JRSwizzle.m">
+         </FileRef>
+         <FileRef
+            location = "group:NSString+DHUtils.h">
+         </FileRef>
+         <FileRef
+            location = "group:NSString+DHUtils.m">
+         </FileRef>
+         <FileRef
+            location = "group:OMQuickHelpPlugin.h">
+         </FileRef>
+         <FileRef
+            location = "group:OMQuickHelpPlugin.m">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:Info.plist">
+      </FileRef>
+      <FileRef
+         location = "group:OMQuickHelp.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:iphone-smtp"
+      name = "iphone-smtp">
+      <FileRef
+         location = "group:buildstaticlib.sh">
+      </FileRef>
+      <Group
+         location = "group:Classes"
+         name = "Classes">
+         <FileRef
+            location = "group:Base64Transcoder.h">
+         </FileRef>
+         <FileRef
+            location = "group:Base64Transcoder.m">
+         </FileRef>
+         <FileRef
+            location = "group:HSK_CFUtilities.h">
+         </FileRef>
+         <FileRef
+            location = "group:HSK_CFUtilities.m">
+         </FileRef>
+         <FileRef
+            location = "group:NSData+Base64Additions.h">
+         </FileRef>
+         <FileRef
+            location = "group:NSData+Base64Additions.m">
+         </FileRef>
+         <FileRef
+            location = "group:NSStream+SKPSMTPExtensions.h">
+         </FileRef>
+         <FileRef
+            location = "group:NSStream+SKPSMTPExtensions.m">
+         </FileRef>
+         <FileRef
+            location = "group:SKPSMTPMessage.h">
+         </FileRef>
+         <FileRef
+            location = "group:SKPSMTPMessage.m">
+         </FileRef>
+         <FileRef
+            location = "group:SMTPSenderAppDelegate.h">
+         </FileRef>
+         <FileRef
+            location = "group:SMTPSenderAppDelegate.m">
+         </FileRef>
+         <FileRef
+            location = "group:SMTPSenderViewController.h">
+         </FileRef>
+         <FileRef
+            location = "group:SMTPSenderViewController.m">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:Info.plist">
+      </FileRef>
+      <FileRef
+         location = "group:main.m">
+      </FileRef>
+      <FileRef
+         location = "group:MainWindow.xib">
+      </FileRef>
+      <FileRef
+         location = "group:README-iPhone-SMTP.markdown">
+      </FileRef>
+      <FileRef
+         location = "group:README-SKPSMTPMessage.txt">
+      </FileRef>
+      <FileRef
+         location = "group:SMTPSender-Example.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:SMTPSender_Prefix.pch">
+      </FileRef>
+      <FileRef
+         location = "group:SMTPSenderViewController.xib">
+      </FileRef>
+      <FileRef
+         location = "group:Success.png">
+      </FileRef>
+      <FileRef
+         location = "group:test.vcf">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:KFCocoaPodsPlugin"
+      name = "KFCocoaPodsPlugin">
+      <Group
+         location = "group:KFCocoaPodsPlugin"
+         name = "KFCocoaPodsPlugin">
+         <Group
+            location = "group:3rdParty"
+            name = "3rdParty">
+            <FileRef
+               location = "group:AMR_ANSIEscapeHelper.h">
+            </FileRef>
+            <FileRef
+               location = "group:AMR_ANSIEscapeHelper.m">
+            </FileRef>
+            <FileRef
+               location = "group:MethodSwizzle.h">
+            </FileRef>
+            <FileRef
+               location = "group:MethodSwizzle.m">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:en.lproj"
+            name = "en.lproj">
+            <FileRef
+               location = "group:InfoPlist.strings">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:KFCocoaPodsPlugin-Info.plist">
+         </FileRef>
+         <FileRef
+            location = "group:KFCocoaPodsPlugin-Prefix.pch">
+         </FileRef>
+         <FileRef
+            location = "group:KFCocoaPodsPlugin.h">
+         </FileRef>
+         <FileRef
+            location = "group:KFCocoaPodsPlugin.m">
+         </FileRef>
+         <FileRef
+            location = "group:PodSyntax.plist">
+         </FileRef>
+         <Group
+            location = "group:Sources"
+            name = "Sources">
+            <Group
+               location = "group:AutoCompletion"
+               name = "AutoCompletion">
+               <FileRef
+                  location = "group:DVTSourceTextView+KFCocoaPods.h">
+               </FileRef>
+               <FileRef
+                  location = "group:DVTSourceTextView+KFCocoaPods.m">
+               </FileRef>
+               <FileRef
+                  location = "group:DVTTextCompletionKeywordsStrategy+KFCocoaPods.h">
+               </FileRef>
+               <FileRef
+                  location = "group:DVTTextCompletionKeywordsStrategy+KFCocoaPods.m">
+               </FileRef>
+               <FileRef
+                  location = "group:DVTTextCompletionWordsInFileStrategy+KFCocoaPods.h">
+               </FileRef>
+               <FileRef
+                  location = "group:DVTTextCompletionWordsInFileStrategy+KFCocoaPods.m">
+               </FileRef>
+               <FileRef
+                  location = "group:KFPodAutoCompletionItem.h">
+               </FileRef>
+               <FileRef
+                  location = "group:KFPodAutoCompletionItem.m">
+               </FileRef>
+               <FileRef
+                  location = "group:KFSyntaxAutoCompletionItem.h">
+               </FileRef>
+               <FileRef
+                  location = "group:KFSyntaxAutoCompletionItem.m">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:Categories"
+               name = "Categories">
+               <FileRef
+                  location = "group:NSAttributedString+Hyperlinks.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NSAttributedString+Hyperlinks.m">
+               </FileRef>
+               <Group
+                  location = "group:Value Transformers"
+                  name = "Value Transformers">
+                  <FileRef
+                     location = "group:KFPodDescriptionValueTransformer.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:KFPodDescriptionValueTransformer.m">
+                  </FileRef>
+               </Group>
+            </Group>
+            <Group
+               location = "group:Controllers"
+               name = "Controllers">
+               <FileRef
+                  location = "group:KFCocoaPodController.h">
+               </FileRef>
+               <FileRef
+                  location = "group:KFCocoaPodController.m">
+               </FileRef>
+               <FileRef
+                  location = "group:KFConsoleController.h">
+               </FileRef>
+               <FileRef
+                  location = "group:KFConsoleController.m">
+               </FileRef>
+               <FileRef
+                  location = "group:KFNotificationController.h">
+               </FileRef>
+               <FileRef
+                  location = "group:KFNotificationController.m">
+               </FileRef>
+               <FileRef
+                  location = "group:KFPodSearchWindow.xib">
+               </FileRef>
+               <FileRef
+                  location = "group:KFPodSearchWindowController.h">
+               </FileRef>
+               <FileRef
+                  location = "group:KFPodSearchWindowController.m">
+               </FileRef>
+               <FileRef
+                  location = "group:KFReplController.h">
+               </FileRef>
+               <FileRef
+                  location = "group:KFReplController.m">
+               </FileRef>
+               <FileRef
+                  location = "group:KFTaskController.h">
+               </FileRef>
+               <FileRef
+                  location = "group:KFTaskController.m">
+               </FileRef>
+               <FileRef
+                  location = "group:KFWorkspaceController.h">
+               </FileRef>
+               <FileRef
+                  location = "group:KFWorkspaceController.m">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:Models"
+               name = "Models">
+               <FileRef
+                  location = "group:KFConsoleThemeModel.h">
+               </FileRef>
+               <FileRef
+                  location = "group:KFConsoleThemeModel.m">
+               </FileRef>
+               <FileRef
+                  location = "group:KFRepoModel.h">
+               </FileRef>
+               <FileRef
+                  location = "group:KFRepoModel.m">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:XcodeClasses"
+            name = "XcodeClasses">
+            <FileRef
+               location = "group:DVTFoundation.h">
+            </FileRef>
+            <FileRef
+               location = "group:DVTKit.h">
+            </FileRef>
+            <FileRef
+               location = "group:IDEFoundation.h">
+            </FileRef>
+            <FileRef
+               location = "group:IDEKit.h">
+            </FileRef>
+            <FileRef
+               location = "group:IDESourceEditor.h">
+            </FileRef>
+         </Group>
+      </Group>
+      <FileRef
+         location = "group:KFCocoaPodsPlugin.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:KFCocoaPodsPlugin.xcworkspace">
+      </FileRef>
+      <FileRef
+         location = "group:Podfile">
+      </FileRef>
+      <FileRef
+         location = "group:Podfile.lock">
+      </FileRef>
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+      <Group
+         location = "group:Screenshots"
+         name = "Screenshots">
+         <FileRef
+            location = "group:Animation-Completion.gif">
+         </FileRef>
+         <FileRef
+            location = "group:Screenshot-Console.png">
+         </FileRef>
+         <FileRef
+            location = "group:Screenshot-Menu.png">
+         </FileRef>
+         <FileRef
+            location = "group:Screenshot-Notification.png">
+         </FileRef>
+         <FileRef
+            location = "group:Screenshot-Update.png">
+         </FileRef>
+      </Group>
+   </Group>
+   <Group
+      location = "group:mailcore2"
+      name = "mailcore2">
+      <Group
+         location = "group:build-mac"
+         name = "build-mac">
+         <FileRef
+            location = "group:framework-Info.plist">
+         </FileRef>
+         <FileRef
+            location = "group:mailcore2.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:MCOFramework.h">
+         </FileRef>
+         <FileRef
+            location = "group:MCOFramework.mm">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:CMakeLists.txt">
+      </FileRef>
+      <Group
+         location = "group:example"
+         name = "example">
+         <Group
+            location = "group:common"
+            name = "common">
+            <FileRef
+               location = "group:FXKeychain.h">
+            </FileRef>
+            <FileRef
+               location = "group:FXKeychain.m">
+            </FileRef>
+            <FileRef
+               location = "group:FXKeychain_LICENCE.md">
+            </FileRef>
+            <Group
+               location = "group:gtm-oauth2"
+               name = "gtm-oauth2">
+               <Group
+                  location = "group:HTTPFetcher"
+                  name = "HTTPFetcher">
+                  <FileRef
+                     location = "group:GTMHTTPFetcher.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:GTMHTTPFetcher.m">
+                  </FileRef>
+                  <FileRef
+                     location = "group:GTMHTTPFetchHistory.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:GTMHTTPFetchHistory.m">
+                  </FileRef>
+               </Group>
+               <Group
+                  location = "group:Source"
+                  name = "Source">
+                  <FileRef
+                     location = "group:GTMOAuth2Authentication.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:GTMOAuth2Authentication.m">
+                  </FileRef>
+                  <FileRef
+                     location = "group:GTMOAuth2SignIn.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:GTMOAuth2SignIn.m">
+                  </FileRef>
+                  <Group
+                     location = "group:Mac"
+                     name = "Mac">
+                     <FileRef
+                        location = "group:GTMOAuth2Window.xib">
+                     </FileRef>
+                     <FileRef
+                        location = "group:GTMOAuth2WindowController.h">
+                     </FileRef>
+                     <FileRef
+                        location = "group:GTMOAuth2WindowController.m">
+                     </FileRef>
+                  </Group>
+                  <Group
+                     location = "group:Touch"
+                     name = "Touch">
+                     <FileRef
+                        location = "group:GTMOAuth2ViewControllerTouch.h">
+                     </FileRef>
+                     <FileRef
+                        location = "group:GTMOAuth2ViewControllerTouch.m">
+                     </FileRef>
+                     <FileRef
+                        location = "group:GTMOAuth2ViewTouch.xib">
+                     </FileRef>
+                  </Group>
+               </Group>
+            </Group>
+         </Group>
+         <Group
+            location = "group:ios"
+            name = "ios">
+            <Group
+               location = "group:iOS UI Test"
+               name = "iOS UI Test">
+               <Group
+                  location = "group:iOS UI Test"
+                  name = "iOS UI Test">
+                  <FileRef
+                     location = "group:AppDelegate.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:AppDelegate.m">
+                  </FileRef>
+                  <FileRef
+                     location = "group:Default-568h@2x.png">
+                  </FileRef>
+                  <FileRef
+                     location = "group:Default.png">
+                  </FileRef>
+                  <FileRef
+                     location = "group:Default@2x.png">
+                  </FileRef>
+                  <Group
+                     location = "group:en.lproj"
+                     name = "en.lproj">
+                     <FileRef
+                        location = "group:InfoPlist.strings">
+                     </FileRef>
+                     <FileRef
+                        location = "group:MainStoryboard.storyboard">
+                     </FileRef>
+                  </Group>
+                  <FileRef
+                     location = "group:iOS UI Test-Info.plist">
+                  </FileRef>
+                  <FileRef
+                     location = "group:iOS UI Test-Prefix.pch">
+                  </FileRef>
+                  <FileRef
+                     location = "group:main.mm">
+                  </FileRef>
+                  <FileRef
+                     location = "group:MasterViewController.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:MasterViewController.m">
+                  </FileRef>
+                  <FileRef
+                     location = "group:MCOMessageView.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:MCOMessageView.mm">
+                  </FileRef>
+                  <FileRef
+                     location = "group:MCOMessageViewScript.js">
+                  </FileRef>
+                  <FileRef
+                     location = "group:MCTMsgViewController.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:MCTMsgViewController.mm">
+                  </FileRef>
+                  <FileRef
+                     location = "group:MCTTableViewCell.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:MCTTableViewCell.m">
+                  </FileRef>
+                  <FileRef
+                     location = "group:SettingsViewController.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:SettingsViewController.m">
+                  </FileRef>
+                  <FileRef
+                     location = "group:SettingsViewController.xib">
+                  </FileRef>
+               </Group>
+               <FileRef
+                  location = "group:iOS UI Test.xcodeproj">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:mac"
+            name = "mac">
+            <Group
+               location = "group:macExample"
+               name = "macExample">
+               <Group
+                  location = "group:macExample"
+                  name = "macExample">
+                  <FileRef
+                     location = "group:AppDelegate.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:AppDelegate.m">
+                  </FileRef>
+                  <Group
+                     location = "group:en.lproj"
+                     name = "en.lproj">
+                     <FileRef
+                        location = "group:MainMenu.xib">
+                     </FileRef>
+                  </Group>
+                  <FileRef
+                     location = "group:macExample-Info.plist">
+                  </FileRef>
+                  <FileRef
+                     location = "group:main.mm">
+                  </FileRef>
+                  <FileRef
+                     location = "group:MCTMsgListViewController.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:MCTMsgListViewController.m">
+                  </FileRef>
+                  <FileRef
+                     location = "group:MCTMsgViewController.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:MCTMsgViewController.m">
+                  </FileRef>
+               </Group>
+               <FileRef
+                  location = "group:macExample.xcodeproj">
+               </FileRef>
+            </Group>
+         </Group>
+      </Group>
+      <Group
+         location = "group:Externals"
+         name = "Externals">
+         <Group
+            location = "group:builds"
+            name = "builds">
+            <Group
+               location = "group:builds"
+               name = "builds">
+            </Group>
+            <Group
+               location = "group:downloads"
+               name = "downloads">
+               <Group
+                  location = "group:libetpan"
+                  name = "libetpan">
+               </Group>
+               <Group
+                  location = "group:tidy-html5"
+                  name = "tidy-html5">
+               </Group>
+            </Group>
+            <Group
+               location = "group:workdir"
+               name = "workdir">
+               <Group
+                  location = "group:20140507144756"
+                  name = "20140507144756">
+                  <Group
+                     location = "group:log"
+                     name = "log">
+                  </Group>
+                  <Group
+                     location = "group:src"
+                     name = "src">
+                     <Group
+                        location = "group:tidy-html5"
+                        name = "tidy-html5">
+                     </Group>
+                  </Group>
+                  <Group
+                     location = "group:tmp"
+                     name = "tmp">
+                  </Group>
+               </Group>
+               <Group
+                  location = "group:20140507144801"
+                  name = "20140507144801">
+                  <Group
+                     location = "group:log"
+                     name = "log">
+                  </Group>
+                  <Group
+                     location = "group:src"
+                     name = "src">
+                     <FileRef
+                        location = "group:icu4c-51_1-src.tgz">
+                     </FileRef>
+                  </Group>
+                  <Group
+                     location = "group:tmp"
+                     name = "tmp">
+                  </Group>
+               </Group>
+               <Group
+                  location = "group:20140507145337"
+                  name = "20140507145337">
+                  <Group
+                     location = "group:log"
+                     name = "log">
+                  </Group>
+                  <Group
+                     location = "group:src"
+                     name = "src">
+                  </Group>
+                  <Group
+                     location = "group:tmp"
+                     name = "tmp">
+                  </Group>
+               </Group>
+            </Group>
+         </Group>
+         <Group
+            location = "group:prebuilt"
+            name = "prebuilt">
+            <Group
+               location = "group:mailcore2-deps"
+               name = "mailcore2-deps">
+            </Group>
+         </Group>
+      </Group>
+      <FileRef
+         location = "group:LICENSE">
+      </FileRef>
+      <FileRef
+         location = "group:mailcore-schema.svg">
+      </FileRef>
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+      <Group
+         location = "group:resources"
+         name = "resources">
+         <FileRef
+            location = "group:providers.json">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:scripts"
+         name = "scripts">
+         <FileRef
+            location = "group:build-mailcore2-ios.sh">
+         </FileRef>
+         <FileRef
+            location = "group:build-mailcore2-macos.sh">
+         </FileRef>
+         <FileRef
+            location = "group:gen-docs.sh">
+         </FileRef>
+         <FileRef
+            location = "group:get-prebuilt.sh">
+         </FileRef>
+         <FileRef
+            location = "group:icu4c-ios.patch">
+         </FileRef>
+         <FileRef
+            location = "group:prebuilt.list">
+         </FileRef>
+         <FileRef
+            location = "group:prepare-ctemplate-ios.sh">
+         </FileRef>
+         <FileRef
+            location = "group:prepare-ctemplate-macos.sh">
+         </FileRef>
+         <FileRef
+            location = "group:prepare-icu4c-ios.sh">
+         </FileRef>
+         <FileRef
+            location = "group:prepare-icu4c-macos.sh">
+         </FileRef>
+         <FileRef
+            location = "group:prepare-ios.sh">
+         </FileRef>
+         <FileRef
+            location = "group:prepare-libetpan-ios.sh">
+         </FileRef>
+         <FileRef
+            location = "group:prepare-libetpan-macos.sh">
+         </FileRef>
+         <FileRef
+            location = "group:prepare-mac.sh">
+         </FileRef>
+         <FileRef
+            location = "group:prepare-tidy-ios.sh">
+         </FileRef>
+         <FileRef
+            location = "group:prepare.sh">
+         </FileRef>
+         <Group
+            location = "group:travis"
+            name = "travis">
+            <FileRef
+               location = "group:before-script.sh">
+            </FileRef>
+            <FileRef
+               location = "group:script.sh">
+            </FileRef>
+         </Group>
+      </Group>
+      <Group
+         location = "group:src"
+         name = "src">
+         <Group
+            location = "group:async"
+            name = "async">
+            <Group
+               location = "group:imap"
+               name = "imap">
+               <FileRef
+                  location = "group:MCAsyncIMAP.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPAppendMessageOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPAppendMessageOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPAsyncConnection.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPAsyncConnection.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPAsyncSession.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPAsyncSession.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPCapabilityOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPCapabilityOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPCheckAccountOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPCheckAccountOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPConnectOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPConnectOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPCopyMessagesOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPCopyMessagesOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPCreateFolderOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPCreateFolderOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPDeleteFolderOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPDeleteFolderOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPDisconnectOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPDisconnectOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPExpungeOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPExpungeOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPFetchContentOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPFetchContentOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPFetchFoldersOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPFetchFoldersOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPFetchMessagesOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPFetchMessagesOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPFetchNamespaceOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPFetchNamespaceOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPFolderInfoOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPFolderInfoOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPFolderStatusOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPFolderStatusOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPIdentityOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPIdentityOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPIdleOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPIdleOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPMessageRenderingOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPMessageRenderingOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPMultiDisconnectOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPMultiDisconnectOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPNoopOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPNoopOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPOperationCallback.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPQuotaOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPQuotaOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPRenameFolderOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPRenameFolderOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPSearchOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPSearchOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPStoreFlagsOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPStoreFlagsOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPStoreLabelsOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPStoreLabelsOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPSubscribeFolderOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPSubscribeFolderOperation.h">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:MCAsync.h">
+            </FileRef>
+            <Group
+               location = "group:pop"
+               name = "pop">
+               <FileRef
+                  location = "group:MCAsyncPOP.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPAsyncSession.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPAsyncSession.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPCheckAccountOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPCheckAccountOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPDeleteMessagesOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPDeleteMessagesOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPFetchHeaderOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPFetchHeaderOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPFetchMessageOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPFetchMessageOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPFetchMessagesOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPFetchMessagesOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPNoopOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPNoopOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPOperationCallback.h">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:smtp"
+               name = "smtp">
+               <FileRef
+                  location = "group:MCAsyncSMTP.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSMTPAsyncSession.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSMTPAsyncSession.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSMTPCheckAccountOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSMTPCheckAccountOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSMTPDisconnectOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSMTPDisconnectOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSMTPNoopOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSMTPNoopOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSMTPOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSMTPOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSMTPOperationCallback.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSMTPSendWithDataOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSMTPSendWithDataOperation.h">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:cmake"
+            name = "cmake">
+            <FileRef
+               location = "group:async.cmake">
+            </FileRef>
+            <FileRef
+               location = "group:core.cmake">
+            </FileRef>
+            <FileRef
+               location = "group:gen-public-headers.sh">
+            </FileRef>
+            <FileRef
+               location = "group:LibFindMacros.cmake">
+            </FileRef>
+            <FileRef
+               location = "group:objc.cmake">
+            </FileRef>
+            <FileRef
+               location = "group:public-headers.cmake">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:CMakeLists.txt">
+         </FileRef>
+         <Group
+            location = "group:core"
+            name = "core">
+            <Group
+               location = "group:abstract"
+               name = "abstract">
+               <FileRef
+                  location = "group:MCAbstract.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCAbstractMessage.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCAbstractMessage.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCAbstractMessagePart.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCAbstractMessagePart.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCAbstractMultipart.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCAbstractMultipart.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCAbstractPart.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCAbstractPart.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCAddress.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCAddress.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMessageConstants.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMessageHeader.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMessageHeader.h">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:basetypes"
+               name = "basetypes">
+               <FileRef
+                  location = "group:MCArray.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCArray.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCAssert.c">
+               </FileRef>
+               <FileRef
+                  location = "group:MCAssert.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCAutoreleasePool.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCAutoreleasePool.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCAutoreleasePoolMac.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCBase64.c">
+               </FileRef>
+               <FileRef
+                  location = "group:MCBase64.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCBaseTypes.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCConnectionLogger.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCConnectionLoggerUtils.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCConnectionLoggerUtils.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCData.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCData.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCHash.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCHash.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCHashMap.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCHashMap.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCHTMLCleaner.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCHTMLCleaner.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCICUTypes.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIndexSet.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIndexSet.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIterator.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCJSON.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCJSON.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCJSONParser.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCJSONParser.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCLibetpan.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCLibetpan.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCLibetpanTypes.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCLog.c">
+               </FileRef>
+               <FileRef
+                  location = "group:MCLog.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMainThread.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMainThread.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMD5.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMD5.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCNull.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCNull.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCObject.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCObject.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCObjectMac.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOperation.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOperationCallback.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOperationQueue.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOperationQueue.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOperationQueueCallback.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCRange.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCRange.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSet.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSet.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCString.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCString.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCUtils.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCValue.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCValue.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCValuePrivate.h">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:imap"
+               name = "imap">
+               <FileRef
+                  location = "group:MCIMAP.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPFolder.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPFolder.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPFolderStatus.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPFolderStatus.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPIdentity.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPIdentity.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPMessage.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPMessage.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPMessagePart.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPMessagePart.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPMultipart.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPMultipart.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPNamespace.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPNamespace.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPNamespaceItem.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPNamespaceItem.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPPart.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPPart.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPProgressCallback.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPSearchExpression.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPSearchExpression.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPSession.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPSession.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPSyncResult.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCIMAPSyncResult.h">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:MCCore.h">
+            </FileRef>
+            <Group
+               location = "group:pop"
+               name = "pop">
+               <FileRef
+                  location = "group:MCPOP.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPMessageInfo.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPMessageInfo.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPProgressCallback.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPSession.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCPOPSession.h">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:provider"
+               name = "provider">
+               <FileRef
+                  location = "group:MCMailProvider.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMailProvider.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMailProvidersManager.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMailProvidersManager.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCNetService.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCNetService.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCProvider.h">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:renderer"
+               name = "renderer">
+               <FileRef
+                  location = "group:MCAddressDisplay.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCAddressDisplay.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCDateFormatter.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCDateFormatter.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCHTMLBodyRendererTemplateCallback.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCHTMLBodyRendererTemplateCallback.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCHTMLRenderer.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCHTMLRenderer.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCHTMLRendererCallback.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCHTMLRendererCallback.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCHTMLRendererIMAPDataCallback.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCHTMLRendererIMAPDataCallback.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCRenderer.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSizeFormatter.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSizeFormatter.h">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:rfc822"
+               name = "rfc822">
+               <FileRef
+                  location = "group:MCAttachment.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCAttachment.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMessageBuilder.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMessageBuilder.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMessageParser.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMessageParser.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMessagePart.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMessagePart.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMultipart.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCMultipart.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCRFC822.h">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:security"
+               name = "security">
+               <FileRef
+                  location = "group:MCCertificateUtils.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCCertificateUtils.h">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:smtp"
+               name = "smtp">
+               <FileRef
+                  location = "group:MCSMTP.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSMTPProgressCallback.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSMTPSession.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCSMTPSession.h">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:zip"
+               name = "zip">
+               <FileRef
+                  location = "group:MCZip.cc">
+               </FileRef>
+               <FileRef
+                  location = "group:MCZip.h">
+               </FileRef>
+               <Group
+                  location = "group:MiniZip"
+                  name = "MiniZip">
+                  <FileRef
+                     location = "group:ioapi.c">
+                  </FileRef>
+                  <FileRef
+                     location = "group:ioapi.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:mztools.c">
+                  </FileRef>
+                  <FileRef
+                     location = "group:mztools.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:unzip.c">
+                  </FileRef>
+                  <FileRef
+                     location = "group:unzip.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:zip.c">
+                  </FileRef>
+                  <FileRef
+                     location = "group:zip.h">
+                  </FileRef>
+               </Group>
+            </Group>
+         </Group>
+         <FileRef
+            location = "group:MailCore.h">
+         </FileRef>
+         <Group
+            location = "group:objc"
+            name = "objc">
+            <Group
+               location = "group:abstract"
+               name = "abstract">
+               <FileRef
+                  location = "group:MCOAbstract.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOAbstractMessage+Private.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOAbstractMessage.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOAbstractMessage.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOAbstractMessagePart.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOAbstractMessagePart.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOAbstractMessageRendererCallback.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOAbstractMessageRendererCallback.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOAbstractMultipart.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOAbstractMultipart.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOAbstractPart+Private.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOAbstractPart.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOAbstractPart.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOAddress+Private.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOAddress.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOAddress.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOConstants.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOHTMLRendererDelegate.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOHTMLRendererIMAPDelegate.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOMessageHeader+Private.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOMessageHeader.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOMessageHeader.mm">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:imap"
+               name = "imap">
+               <FileRef
+                  location = "group:MCOIMAP.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPAppendMessageOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPAppendMessageOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPBaseOperation+Private.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPBaseOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPBaseOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPCapabilityOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPCapabilityOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPCopyMessagesOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPCopyMessagesOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFetchContentOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFetchContentOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFetchFoldersOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFetchFoldersOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFetchMessagesOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFetchMessagesOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFetchNamespaceOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFetchNamespaceOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFolder.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFolder.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFolderInfo.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFolderInfo.m">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFolderInfoOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFolderInfoOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFolderStatus.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFolderStatus.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFolderStatusOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPFolderStatusOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPIdentity.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPIdentity.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPIdentityOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPIdentityOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPIdleOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPIdleOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPMessage.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPMessage.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPMessagePart.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPMessagePart.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPMessageRenderingOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPMessageRenderingOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPMultiDisconnectOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPMultiDisconnectOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPMultipart.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPMultipart.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPNamespace.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPNamespace.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPNamespaceItem.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPNamespaceItem.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPNoopOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPNoopOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPPart.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPPart.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPQuotaOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPQuotaOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPSearchExpression.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPSearchExpression.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPSearchOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPSearchOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPSession.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIMAPSession.mm">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:MCObjC.h">
+            </FileRef>
+            <Group
+               location = "group:pop"
+               name = "pop">
+               <FileRef
+                  location = "group:MCOPOP.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOPOPFetchHeaderOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOPOPFetchHeaderOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOPOPFetchMessageOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOPOPFetchMessageOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOPOPFetchMessagesOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOPOPFetchMessagesOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOPOPMessageInfo.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOPOPMessageInfo.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOPOPNoopOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOPOPNoopOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOPOPOperation+Private.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOPOPOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOPOPOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOPOPSession.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOPOPSession.mm">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:provider"
+               name = "provider">
+               <FileRef
+                  location = "group:MCOMailProvider.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOMailProvider.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOMailProvidersManager.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOMailProvidersManager.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCONetService.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCONetService.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOProvider.h">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:rfc822"
+               name = "rfc822">
+               <FileRef
+                  location = "group:MCOAttachment.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOAttachment.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOMessageBuilder.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOMessageBuilder.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOMessageParser.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOMessageParser.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOMessagePart.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOMessagePart.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOMultipart.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOMultipart.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCORFC822.h">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:smtp"
+               name = "smtp">
+               <FileRef
+                  location = "group:MCOSMTP.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOSMTPNoopOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOSMTPNoopOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOSMTPOperation+Private.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOSMTPOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOSMTPOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOSMTPSendOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOSMTPSendOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOSMTPSession.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOSMTPSession.mm">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:utils"
+               name = "utils">
+               <FileRef
+                  location = "group:MCOIndexSet+Private.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIndexSet.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOIndexSet.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOObjectWrapper.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOObjectWrapper.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOOperation+Private.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOOperation.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOOperation.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCORange.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCORange.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOUtils.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NSArray+MCO.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NSArray+MCO.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:NSData+MCO.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NSData+MCO.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:NSDictionary+MCO.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NSDictionary+MCO.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:NSError+MCO.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NSError+MCO.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:NSIndexSet+MCO.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NSIndexSet+MCO.m">
+               </FileRef>
+               <FileRef
+                  location = "group:NSObject+MCO.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NSObject+MCO.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:NSSet+MCO.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NSSet+MCO.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:NSString+MCO.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NSString+MCO.mm">
+               </FileRef>
+               <FileRef
+                  location = "group:NSValue+MCO.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NSValue+MCO.mm">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:ui"
+            name = "ui">
+            <Group
+               location = "group:common"
+               name = "common">
+               <FileRef
+                  location = "group:MCOCIDURLProtocol.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOCIDURLProtocol.mm">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:ios"
+               name = "ios">
+               <FileRef
+                  location = "group:MCOMessageView.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOMessageView.mm">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:mac"
+               name = "mac">
+               <FileRef
+                  location = "group:MCOMessageView.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MCOMessageView.mm">
+               </FileRef>
+            </Group>
+         </Group>
+      </Group>
+      <Group
+         location = "group:tests"
+         name = "tests">
+         <FileRef
+            location = "group:CMakeLists.txt">
+         </FileRef>
+         <FileRef
+            location = "group:main.mm">
+         </FileRef>
+         <FileRef
+            location = "group:test-all.h">
+         </FileRef>
+         <FileRef
+            location = "group:test-all.mm">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:tests-ios"
+         name = "tests-ios">
+         <FileRef
+            location = "group:AppDelegate.h">
+         </FileRef>
+         <FileRef
+            location = "group:AppDelegate.mm">
+         </FileRef>
+         <FileRef
+            location = "group:main.m">
+         </FileRef>
+         <FileRef
+            location = "group:tests-ios-Info.plist">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:TODO.md">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:UserInfo/UserInfo.xcodeproj">
    </FileRef>
