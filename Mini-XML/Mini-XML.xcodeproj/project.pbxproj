@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C6F5906F191B8D800011FDBE /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F5906E191B8D800011FDBE /* main.c */; };
+		C6F59071191B8D800011FDBE /* Mini_XML.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6F59070191B8D800011FDBE /* Mini_XML.1 */; };
+		C6F590AE191B91660011FDBE /* mxml-attr.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590A2191B91660011FDBE /* mxml-attr.c */; };
+		C6F590AF191B91660011FDBE /* mxml-entity.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590A3191B91660011FDBE /* mxml-entity.c */; };
+		C6F590B0191B91660011FDBE /* mxml-file.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590A4191B91660011FDBE /* mxml-file.c */; };
+		C6F590B1191B91660011FDBE /* mxml-get.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590A5191B91660011FDBE /* mxml-get.c */; };
+		C6F590B2191B91660011FDBE /* mxml-index.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590A6191B91660011FDBE /* mxml-index.c */; };
+		C6F590B3191B91660011FDBE /* mxml-node.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590A7191B91660011FDBE /* mxml-node.c */; };
+		C6F590B4191B91660011FDBE /* mxml-private.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590A8191B91660011FDBE /* mxml-private.c */; };
+		C6F590B5191B91660011FDBE /* mxml-search.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590AA191B91660011FDBE /* mxml-search.c */; };
+		C6F590B6191B91660011FDBE /* mxml-set.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590AB191B91660011FDBE /* mxml-set.c */; };
+		C6F590B7191B91660011FDBE /* mxml-string.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590AC191B91660011FDBE /* mxml-string.c */; };
+		C6F590C1191B91CD0011FDBE /* class.cxx in Sources */ = {isa = PBXBuildFile; fileRef = C6F590B9191B91CD0011FDBE /* class.cxx */; };
+		C6F590C2191B91CD0011FDBE /* enum.cxx in Sources */ = {isa = PBXBuildFile; fileRef = C6F590BB191B91CD0011FDBE /* enum.cxx */; };
+		C6F590C3191B91CD0011FDBE /* function.cxx in Sources */ = {isa = PBXBuildFile; fileRef = C6F590BC191B91CD0011FDBE /* function.cxx */; };
+		C6F590C4191B91CD0011FDBE /* functype.cxx in Sources */ = {isa = PBXBuildFile; fileRef = C6F590BD191B91CD0011FDBE /* functype.cxx */; };
+		C6F590C5191B91CD0011FDBE /* struct.cxx in Sources */ = {isa = PBXBuildFile; fileRef = C6F590BE191B91CD0011FDBE /* struct.cxx */; };
+		C6F590C6191B91CD0011FDBE /* type.cxx in Sources */ = {isa = PBXBuildFile; fileRef = C6F590BF191B91CD0011FDBE /* type.cxx */; };
+		C6F590C7191B91CD0011FDBE /* testmxml.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590C0191B91CD0011FDBE /* testmxml.c */; };
+		C6F590CA191B92CD0011FDBE /* mxmldoc.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590C9191B92CD0011FDBE /* mxmldoc.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C6F59069191B8D800011FDBE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				C6F59071191B8D800011FDBE /* Mini_XML.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C6F5906B191B8D800011FDBE /* Mini-XML */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Mini-XML"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6F5906E191B8D800011FDBE /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		C6F59070191B8D800011FDBE /* Mini_XML.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Mini_XML.1; sourceTree = "<group>"; };
+		C6F59077191B8DD80011FDBE /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		C6F59079191B91660011FDBE /* 0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 0.gif; sourceTree = "<group>"; };
+		C6F5907A191B91660011FDBE /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
+		C6F5907B191B91660011FDBE /* 2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2.gif; sourceTree = "<group>"; };
+		C6F5907C191B91660011FDBE /* 3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3.gif; sourceTree = "<group>"; };
+		C6F5907D191B91660011FDBE /* 4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 4.gif; sourceTree = "<group>"; };
+		C6F5907E191B91660011FDBE /* 5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 5.gif; sourceTree = "<group>"; };
+		C6F5907F191B91660011FDBE /* 6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 6.gif; sourceTree = "<group>"; };
+		C6F59080191B91660011FDBE /* 7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 7.gif; sourceTree = "<group>"; };
+		C6F59081191B91660011FDBE /* 8.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 8.gif; sourceTree = "<group>"; };
+		C6F59082191B91660011FDBE /* 9.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 9.gif; sourceTree = "<group>"; };
+		C6F59083191B91660011FDBE /* A.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = A.gif; sourceTree = "<group>"; };
+		C6F59084191B91660011FDBE /* advanced.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = advanced.html; sourceTree = "<group>"; };
+		C6F59085191B91660011FDBE /* B.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = B.gif; sourceTree = "<group>"; };
+		C6F59086191B91660011FDBE /* basics.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = basics.html; sourceTree = "<group>"; };
+		C6F59087191B91660011FDBE /* C.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = C.gif; sourceTree = "<group>"; };
+		C6F59088191B91660011FDBE /* chapters.xcf.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = chapters.xcf.gz; sourceTree = "<group>"; };
+		C6F59089191B91660011FDBE /* D.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = D.gif; sourceTree = "<group>"; };
+		C6F5908A191B91660011FDBE /* docset.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = docset.css; sourceTree = "<group>"; };
+		C6F5908B191B91660011FDBE /* docset.header */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = docset.header; sourceTree = "<group>"; };
+		C6F5908C191B91660011FDBE /* docset.intro */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = docset.intro; sourceTree = "<group>"; };
+		C6F5908D191B91660011FDBE /* E.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = E.gif; sourceTree = "<group>"; };
+		C6F5908E191B91660011FDBE /* F.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = F.gif; sourceTree = "<group>"; };
+		C6F5908F191B91660011FDBE /* footer.man */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = footer.man; sourceTree = "<group>"; };
+		C6F59090191B91660011FDBE /* install.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = install.html; sourceTree = "<group>"; };
+		C6F59091191B91660011FDBE /* intro.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = intro.html; sourceTree = "<group>"; };
+		C6F59092191B91660011FDBE /* intro.man */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = intro.man; sourceTree = "<group>"; };
+		C6F59093191B91660011FDBE /* license.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = license.html; sourceTree = "<group>"; };
+		C6F59094191B91660011FDBE /* logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo.gif; sourceTree = "<group>"; };
+		C6F59095191B91660011FDBE /* logo.xcf.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = logo.xcf.gz; sourceTree = "<group>"; };
+		C6F59096191B91660011FDBE /* makedocs.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = makedocs.sh; sourceTree = "<group>"; };
+		C6F59097191B91660011FDBE /* mxml.book */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mxml.book; sourceTree = "<group>"; };
+		C6F59098191B91660011FDBE /* mxml.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = mxml.html; sourceTree = "<group>"; };
+		C6F59099191B91660011FDBE /* mxmldoc.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = mxmldoc.html; sourceTree = "<group>"; };
+		C6F5909A191B91660011FDBE /* mxmldoc.man */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mxmldoc.man; sourceTree = "<group>"; };
+		C6F5909B191B91660011FDBE /* mxmldoc.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = mxmldoc.xsd; sourceTree = "<group>"; };
+		C6F5909C191B91660011FDBE /* reference.heading */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = reference.heading; sourceTree = "<group>"; };
+		C6F5909D191B91660011FDBE /* reference.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = reference.html; sourceTree = "<group>"; };
+		C6F5909E191B91660011FDBE /* relnotes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = relnotes.html; sourceTree = "<group>"; };
+		C6F5909F191B91660011FDBE /* schema.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = schema.html; sourceTree = "<group>"; };
+		C6F590A0191B91660011FDBE /* title.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = title.html; sourceTree = "<group>"; };
+		C6F590A2191B91660011FDBE /* mxml-attr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mxml-attr.c"; sourceTree = "<group>"; };
+		C6F590A3191B91660011FDBE /* mxml-entity.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mxml-entity.c"; sourceTree = "<group>"; };
+		C6F590A4191B91660011FDBE /* mxml-file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mxml-file.c"; sourceTree = "<group>"; };
+		C6F590A5191B91660011FDBE /* mxml-get.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mxml-get.c"; sourceTree = "<group>"; };
+		C6F590A6191B91660011FDBE /* mxml-index.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mxml-index.c"; sourceTree = "<group>"; };
+		C6F590A7191B91660011FDBE /* mxml-node.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mxml-node.c"; sourceTree = "<group>"; };
+		C6F590A8191B91660011FDBE /* mxml-private.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mxml-private.c"; sourceTree = "<group>"; };
+		C6F590A9191B91660011FDBE /* mxml-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mxml-private.h"; sourceTree = "<group>"; };
+		C6F590AA191B91660011FDBE /* mxml-search.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mxml-search.c"; sourceTree = "<group>"; };
+		C6F590AB191B91660011FDBE /* mxml-set.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mxml-set.c"; sourceTree = "<group>"; };
+		C6F590AC191B91660011FDBE /* mxml-string.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mxml-string.c"; sourceTree = "<group>"; };
+		C6F590AD191B91660011FDBE /* mxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mxml.h; sourceTree = "<group>"; };
+		C6F590B9191B91CD0011FDBE /* class.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = class.cxx; sourceTree = "<group>"; };
+		C6F590BA191B91CD0011FDBE /* dotest.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dotest.sh; sourceTree = "<group>"; };
+		C6F590BB191B91CD0011FDBE /* enum.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = enum.cxx; sourceTree = "<group>"; };
+		C6F590BC191B91CD0011FDBE /* function.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = function.cxx; sourceTree = "<group>"; };
+		C6F590BD191B91CD0011FDBE /* functype.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = functype.cxx; sourceTree = "<group>"; };
+		C6F590BE191B91CD0011FDBE /* struct.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = struct.cxx; sourceTree = "<group>"; };
+		C6F590BF191B91CD0011FDBE /* type.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = type.cxx; sourceTree = "<group>"; };
+		C6F590C0191B91CD0011FDBE /* testmxml.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = testmxml.c; sourceTree = "<group>"; };
+		C6F590C8191B92A50011FDBE /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		C6F590C9191B92CD0011FDBE /* mxmldoc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mxmldoc.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C6F59068191B8D800011FDBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C6F59062191B8D800011FDBE = {
+			isa = PBXGroup;
+			children = (
+				C6F5906D191B8D800011FDBE /* Mini-XML */,
+				C6F5906C191B8D800011FDBE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C6F5906C191B8D800011FDBE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C6F5906B191B8D800011FDBE /* Mini-XML */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6F5906D191B8D800011FDBE /* Mini-XML */ = {
+			isa = PBXGroup;
+			children = (
+				C6F590C9191B92CD0011FDBE /* mxmldoc.c */,
+				C6F590B8191B91CD0011FDBE /* test */,
+				C6F590C0191B91CD0011FDBE /* testmxml.c */,
+				C6F59078191B91660011FDBE /* doc */,
+				C6F590A1191B91660011FDBE /* src */,
+				C6F5906E191B8D800011FDBE /* main.c */,
+				C6F59070191B8D800011FDBE /* Mini_XML.1 */,
+				C6F59077191B8DD80011FDBE /* README */,
+			);
+			path = "Mini-XML";
+			sourceTree = "<group>";
+		};
+		C6F59078191B91660011FDBE /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				C6F59079191B91660011FDBE /* 0.gif */,
+				C6F5907A191B91660011FDBE /* 1.gif */,
+				C6F5907B191B91660011FDBE /* 2.gif */,
+				C6F5907C191B91660011FDBE /* 3.gif */,
+				C6F5907D191B91660011FDBE /* 4.gif */,
+				C6F5907E191B91660011FDBE /* 5.gif */,
+				C6F5907F191B91660011FDBE /* 6.gif */,
+				C6F59080191B91660011FDBE /* 7.gif */,
+				C6F59081191B91660011FDBE /* 8.gif */,
+				C6F59082191B91660011FDBE /* 9.gif */,
+				C6F59083191B91660011FDBE /* A.gif */,
+				C6F59084191B91660011FDBE /* advanced.html */,
+				C6F59085191B91660011FDBE /* B.gif */,
+				C6F59086191B91660011FDBE /* basics.html */,
+				C6F59087191B91660011FDBE /* C.gif */,
+				C6F59088191B91660011FDBE /* chapters.xcf.gz */,
+				C6F59089191B91660011FDBE /* D.gif */,
+				C6F5908A191B91660011FDBE /* docset.css */,
+				C6F5908B191B91660011FDBE /* docset.header */,
+				C6F5908C191B91660011FDBE /* docset.intro */,
+				C6F5908D191B91660011FDBE /* E.gif */,
+				C6F5908E191B91660011FDBE /* F.gif */,
+				C6F5908F191B91660011FDBE /* footer.man */,
+				C6F59090191B91660011FDBE /* install.html */,
+				C6F59091191B91660011FDBE /* intro.html */,
+				C6F59092191B91660011FDBE /* intro.man */,
+				C6F59093191B91660011FDBE /* license.html */,
+				C6F59094191B91660011FDBE /* logo.gif */,
+				C6F59095191B91660011FDBE /* logo.xcf.gz */,
+				C6F59096191B91660011FDBE /* makedocs.sh */,
+				C6F59097191B91660011FDBE /* mxml.book */,
+				C6F59098191B91660011FDBE /* mxml.html */,
+				C6F59099191B91660011FDBE /* mxmldoc.html */,
+				C6F5909A191B91660011FDBE /* mxmldoc.man */,
+				C6F5909B191B91660011FDBE /* mxmldoc.xsd */,
+				C6F5909C191B91660011FDBE /* reference.heading */,
+				C6F5909D191B91660011FDBE /* reference.html */,
+				C6F5909E191B91660011FDBE /* relnotes.html */,
+				C6F5909F191B91660011FDBE /* schema.html */,
+				C6F590A0191B91660011FDBE /* title.html */,
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+		C6F590A1191B91660011FDBE /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C6F590C8191B92A50011FDBE /* config.h */,
+				C6F590A2191B91660011FDBE /* mxml-attr.c */,
+				C6F590A3191B91660011FDBE /* mxml-entity.c */,
+				C6F590A4191B91660011FDBE /* mxml-file.c */,
+				C6F590A5191B91660011FDBE /* mxml-get.c */,
+				C6F590A6191B91660011FDBE /* mxml-index.c */,
+				C6F590A7191B91660011FDBE /* mxml-node.c */,
+				C6F590A8191B91660011FDBE /* mxml-private.c */,
+				C6F590A9191B91660011FDBE /* mxml-private.h */,
+				C6F590AA191B91660011FDBE /* mxml-search.c */,
+				C6F590AB191B91660011FDBE /* mxml-set.c */,
+				C6F590AC191B91660011FDBE /* mxml-string.c */,
+				C6F590AD191B91660011FDBE /* mxml.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		C6F590B8191B91CD0011FDBE /* test */ = {
+			isa = PBXGroup;
+			children = (
+				C6F590B9191B91CD0011FDBE /* class.cxx */,
+				C6F590BA191B91CD0011FDBE /* dotest.sh */,
+				C6F590BB191B91CD0011FDBE /* enum.cxx */,
+				C6F590BC191B91CD0011FDBE /* function.cxx */,
+				C6F590BD191B91CD0011FDBE /* functype.cxx */,
+				C6F590BE191B91CD0011FDBE /* struct.cxx */,
+				C6F590BF191B91CD0011FDBE /* type.cxx */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C6F5906A191B8D800011FDBE /* Mini-XML */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6F59074191B8D800011FDBE /* Build configuration list for PBXNativeTarget "Mini-XML" */;
+			buildPhases = (
+				C6F59067191B8D800011FDBE /* Sources */,
+				C6F59068191B8D800011FDBE /* Frameworks */,
+				C6F59069191B8D800011FDBE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mini-XML";
+			productName = "Mini-XML";
+			productReference = C6F5906B191B8D800011FDBE /* Mini-XML */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C6F59063191B8D800011FDBE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = com.gooagoo.Gooagoo;
+			};
+			buildConfigurationList = C6F59066191B8D800011FDBE /* Build configuration list for PBXProject "Mini-XML" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C6F59062191B8D800011FDBE;
+			productRefGroup = C6F5906C191B8D800011FDBE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C6F5906A191B8D800011FDBE /* Mini-XML */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C6F59067191B8D800011FDBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6F590C5191B91CD0011FDBE /* struct.cxx in Sources */,
+				C6F590C1191B91CD0011FDBE /* class.cxx in Sources */,
+				C6F590B6191B91660011FDBE /* mxml-set.c in Sources */,
+				C6F590CA191B92CD0011FDBE /* mxmldoc.c in Sources */,
+				C6F590C6191B91CD0011FDBE /* type.cxx in Sources */,
+				C6F590B2191B91660011FDBE /* mxml-index.c in Sources */,
+				C6F590B5191B91660011FDBE /* mxml-search.c in Sources */,
+				C6F590C2191B91CD0011FDBE /* enum.cxx in Sources */,
+				C6F590C7191B91CD0011FDBE /* testmxml.c in Sources */,
+				C6F590B1191B91660011FDBE /* mxml-get.c in Sources */,
+				C6F590AE191B91660011FDBE /* mxml-attr.c in Sources */,
+				C6F590B7191B91660011FDBE /* mxml-string.c in Sources */,
+				C6F5906F191B8D800011FDBE /* main.c in Sources */,
+				C6F590C3191B91CD0011FDBE /* function.cxx in Sources */,
+				C6F590B3191B91660011FDBE /* mxml-node.c in Sources */,
+				C6F590C4191B91CD0011FDBE /* functype.cxx in Sources */,
+				C6F590B4191B91660011FDBE /* mxml-private.c in Sources */,
+				C6F590AF191B91660011FDBE /* mxml-entity.c in Sources */,
+				C6F590B0191B91660011FDBE /* mxml-file.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C6F59072191B8D800011FDBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C6F59073191B8D800011FDBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C6F59075191B8D800011FDBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C6F59076191B8D800011FDBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C6F59066191B8D800011FDBE /* Build configuration list for PBXProject "Mini-XML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6F59072191B8D800011FDBE /* Debug */,
+				C6F59073191B8D800011FDBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6F59074191B8D800011FDBE /* Build configuration list for PBXNativeTarget "Mini-XML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6F59075191B8D800011FDBE /* Debug */,
+				C6F59076191B8D800011FDBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C6F59063191B8D800011FDBE /* Project object */;
+}

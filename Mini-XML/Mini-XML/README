@@ -1,0 +1,8 @@
+文档见：
+http://www.msweet.org/documentation/project3/Mini-XML.html
+
+
+Mini_xml 是Michael Sweet写的一个xml开源库，开始于2003年，现在已经挺稳定了，本人只是想将其搬到xcode5中看看。玩玩。
+
+源代码所有权归Michael Sweet所有。
+
