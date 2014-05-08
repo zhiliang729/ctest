@@ -21,7 +21,7 @@
  */
 
 char szCestr[] = "1|!9999999999999999999|!张良|!1234567.89";
-int main(int argc, char * argv[])
+int main_str2(int argc, char * argv[])
 {
     int nIndex;
     ssize_t nCeLen[4];/*无法直接获取每个数据域的长度*/
@@ -45,5 +45,6 @@ int main(int argc, char * argv[])
     PrintLog(stderr, "accno = [%d]%s", strlen(szAccno), szAccno);
     PrintLog(stderr, "name = [%d]%s", strlen(szName), szName);
     PrintLog(stderr, "amt = %.2f", fAmt);
+    return 0;
 }
 

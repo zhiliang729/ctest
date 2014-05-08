@@ -35,24 +35,24 @@ int main12(int argc, char * argv[])
 	struct linger ling;		/* 选项SO_LINGER传输数据结构 */
 	struct timeval val1, val2;	/* 发送、接收超时时间数据结构 */
 	ASSERT((nSock = socket(AF_INET, SOCK_STREAM, 0)) > 0);	/* 创建TCP套接字*/
-	for (i=0; i<sizeof(optname)/sizeof(4); i++)
+	for (i=0; i<sizeof(optname)/sizeof(int); i++)//sizeof（optname）返回值为整型数组的长度，sizeof(int),为整型占用的内存，因此可以得到总数
 	{
 		result = -1;
-		nSize = sizeof(result);
+		nSize = sizeof(socklen_t);
 		/*获取套接字选项取值，并存储到result中*/
 		getsockopt(nSock, SOL_SOCKET, optname[i], &result, &nSize);
 		printf("%s:%d\n", optstr[i], result);
 	}
 	/*----------------获取套接字选项SO_LINGER取值，并存储到ling中–-------- */
-	nSize = sizeof(ling);
+	nSize = sizeof(struct linger);
 	getsockopt(nSock, SOL_SOCKET, SO_LINGER, &ling, &nSize);
 	printf("SO_LINGER:%d.%d\n", ling.l_onoff, ling.l_linger);
 	/*----------------获取套接字选项SO_SNDTIMEO取值，并存储到结构val1中–-------- */
-	nSize = sizeof(val1);
+	nSize = sizeof(struct timeval);
 	getsockopt(nSock, SOL_SOCKET, SO_SNDTIMEO, &val1, &nSize);
 	printf("SO_SNDTIMEO:%ld.%d\n", val1.tv_sec, val1.tv_usec);
 	/*----------------获取套接字选项SO_RCVTIMEO取值，并存储到结构val2中–-------- */
-	nSize = sizeof(val2);
+	nSize = sizeof(struct timeval);
 	getsockopt(nSock, SOL_SOCKET, SO_RCVTIMEO, &val2, &nSize);
 	printf("SO_RCVTIMEO:%ld.%d\n", val2.tv_sec, val2.tv_usec);
     return 0;

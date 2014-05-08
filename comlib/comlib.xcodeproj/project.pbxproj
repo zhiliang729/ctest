@@ -10,6 +10,8 @@
 		C60317011907C3950022CE3C /* sem.c in Sources */ = {isa = PBXBuildFile; fileRef = C60317001907C3950022CE3C /* sem.c */; };
 		C6314FCE1910C5EE00BAA1D1 /* http3.c in Sources */ = {isa = PBXBuildFile; fileRef = C6314FCD1910C5EE00BAA1D1 /* http3.c */; };
 		C6314FD01910E0A900BAA1D1 /* udp.c in Sources */ = {isa = PBXBuildFile; fileRef = C6314FCF1910E0A900BAA1D1 /* udp.c */; };
+		C6374B3E191B614C0032A39C /* configINI.c in Sources */ = {isa = PBXBuildFile; fileRef = C6374B3D191B614C0032A39C /* configINI.c */; };
+		C6374B43191B676C0032A39C /* configINIParser1.c in Sources */ = {isa = PBXBuildFile; fileRef = C6374B42191B676C0032A39C /* configINIParser1.c */; };
 		C6444F011910946200471962 /* tcpopt.c in Sources */ = {isa = PBXBuildFile; fileRef = C6444F001910946200471962 /* tcpopt.c */; };
 		C6444F031910A5C300471962 /* http1.c in Sources */ = {isa = PBXBuildFile; fileRef = C6444F021910A5C300471962 /* http1.c */; };
 		C6444F051910AAD200471962 /* http2.c in Sources */ = {isa = PBXBuildFile; fileRef = C6444F041910AAD200471962 /* http2.c */; };
@@ -59,6 +61,9 @@
 		C60317001907C3950022CE3C /* sem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sem.c; sourceTree = "<group>"; };
 		C6314FCD1910C5EE00BAA1D1 /* http3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = http3.c; sourceTree = "<group>"; };
 		C6314FCF1910E0A900BAA1D1 /* udp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = udp.c; sourceTree = "<group>"; };
+		C6374B3D191B614C0032A39C /* configINI.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = configINI.c; sourceTree = "<group>"; };
+		C6374B42191B676C0032A39C /* configINIParser1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = configINIParser1.c; sourceTree = "<group>"; };
+		C6374B44191B67EE0032A39C /* config.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.ini; sourceTree = "<group>"; };
 		C6444F001910946200471962 /* tcpopt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcpopt.c; sourceTree = "<group>"; };
 		C6444F021910A5C300471962 /* http1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = http1.c; sourceTree = "<group>"; };
 		C6444F041910AAD200471962 /* http2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = http2.c; sourceTree = "<group>"; };
@@ -105,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C6374B41191B674C0032A39C /* configINIParse */ = {
+			isa = PBXGroup;
+			children = (
+				C6374B44191B67EE0032A39C /* config.ini */,
+				C6374B42191B676C0032A39C /* configINIParser1.c */,
+			);
+			path = configINIParse;
+			sourceTree = "<group>";
+		};
 		C66E3E4B18C0877D000491E9 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +161,7 @@
 				C6909046190E3CB40027BB54 /* tcp.c */,
 				C6314FCF1910E0A900BAA1D1 /* udp.c */,
 				C6533E4D191A37690080531D /* str.c */,
+				C6374B3D191B614C0032A39C /* configINI.c */,
 			);
 			path = libsrc;
 			sourceTree = "<group>";
@@ -162,6 +177,7 @@
 		C66E3E6818C088B3000491E9 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				C6374B41191B674C0032A39C /* configINIParse */,
 				C696345F191B1BAC00A7E0E6 /* strParser */,
 				C69172FA19176EF30091E93C /* communicationRepeater */,
 				C6FE26521911020D002C7F25 /* udpExample */,
@@ -297,6 +313,7 @@
 				C6533E4E191A37690080531D /* str.c in Sources */,
 				C6314FCE1910C5EE00BAA1D1 /* http3.c in Sources */,
 				C6444F031910A5C300471962 /* http1.c in Sources */,
+				C6374B43191B676C0032A39C /* configINIParser1.c in Sources */,
 				C69172FE19178D900091E93C /* proxy2.c in Sources */,
 				C6F3494919090F78009E759E /* readSharedMemory.c in Sources */,
 				C696347A191B2FAB00A7E0E6 /* strParser2.c in Sources */,
@@ -304,6 +321,7 @@
 				C6AAE0E0190F7CD10024A5BA /* tcp2.c in Sources */,
 				C6FE26541911021D002C7F25 /* ser1.c in Sources */,
 				C6444F051910AAD200471962 /* http2.c in Sources */,
+				C6374B3E191B614C0032A39C /* configINI.c in Sources */,
 				C6909047190E3CB40027BB54 /* tcp.c in Sources */,
 				C6810F881915E7BE001A1257 /* tcp_sigalrm_concurrent.c in Sources */,
 				C6FE264F1910E8C8002C7F25 /* udpk1.c in Sources */,

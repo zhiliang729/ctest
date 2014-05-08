@@ -47,7 +47,7 @@ TIMESTRU GetOffsetTime(TIMESTRU timestru, int nOffsetSec)
 	time_t ttime;
 	struct tm when;
 	
-	memset(&when, 0, sizeof(when));
+	memset(&when, 0, sizeof(struct tm));
 	when.tm_year = timestru.nYear - 1900;
 	when.tm_mon  = timestru.nMon - 1;
 	when.tm_mday = timestru.nDay;

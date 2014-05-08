@@ -28,7 +28,7 @@ int main1(int argc, char * argv[])
 int main2(int argc, char * argv[])
 {
     char buf[11];
-    ssize_t size = sizeof(buf);
+    ssize_t size = sizeof(buf);/*要传buf的大小，所以用sizeof*/
     ReadFile(0, buf, &size);
     printf("%ld", size);
     return 0;

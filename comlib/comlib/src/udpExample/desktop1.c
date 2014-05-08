@@ -24,7 +24,7 @@ int main_3(int argc, char * argv[])
     
     while (1) {
         memset(szBuf, 0, sizeof(szBuf));
-        nSize = sizeof(szBuf);
+        nSize = sizeof(szBuf);/*此时，需要传buf的大小，故用sizeof*/
         /*接收转发进程发送的数据*/
         RecvMsgByUdp(nSock, szBuf, &nSize);
         fprintf(stderr, "Get [%s]\n", szBuf);

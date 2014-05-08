@@ -23,9 +23,8 @@ int CreateSock(int *pSock, int nPort, int nMaxConnect)
     
     /*创建 TCP 套接字描述符*/
     ASSERT((*pSock = socket(AF_INET, SOCK_STREAM, 0)) >= 0);/*命名套接字*/
-    int onReUseAddr = 1, onReUsePort,retAdd, retPort;
+    int onReUseAddr = 1,retAdd;
     retAdd = setsockopt(*pSock, SOL_SOCKET, SO_REUSEADDR, &onReUseAddr, sizeof(onReUseAddr));
-//    retPort = setsockopt(*pSock, SOL_SOCKET, SO_REUSEPORT, &onReUsePort, sizeof(onReUsePort));
     
     if (VERIFY(bind(*pSock, paddr, sizeof(struct sockaddr_in)) >= 0) && VERIFY(listen(*pSock, nMaxConnect) >= 0)) {/*套接字绑定并进入侦听状态*/
         return 0;/*成功，返回0*/

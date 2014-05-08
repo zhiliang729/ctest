@@ -10,6 +10,7 @@
 #define comlib_comlib_h
 
 
+#pragma mark - *****************头文件包含
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -34,13 +35,15 @@
 
 #define MAXBUF 4096
 
+#pragma mark - *****************一些基本宏定义及日志文件位置
 /*日志文件路径*/
 #ifndef TRACE_FILE
-#define TRACE_FILE "/Users/*userName()/Desktop/trace_file"
+#define TRACE_FILE "/Users/zhangliang/Desktop/trace_file"
 #endif
 static char tracefile[1024];
 static char * trace_file = tracefile;
 char * traceFile();
+
 
 /*最大最小*/
 #ifndef min
@@ -51,10 +54,12 @@ char * traceFile();
 #define max(A, B) ((A) > (B) ? (A) : (B))
 #endif
 
+#pragma mark - *****************判断ASSERT宏定义
 #define VERIFY(b)        Verify((errno = 0) || (b), NULL, __FILE__, __LINE__)
 #define ASSERT(b)        if (VERIFY(b)) ; else return -1;
 #define ASSERTEXT(b, c)	 if (VERIFY(b)) ; else return(c);
 
+#pragma mark - *****************时间结构及获取方法
 typedef struct structTIMESTRU
 {
     int nYear; /* From  1900 */
@@ -69,6 +74,7 @@ typedef TIMESTRU * PTIMESTRU;
 TIMESTRU GetTime();
 TIMESTRU GetOffsetTime(TIMESTRU timestru, int nOffsetSec);
 
+#pragma mark - *****************SOCKET的一些操作，TCP,UDP
 /*socket TCP 连接*/
 int CreateSock(int *pSock, int nPort, int nMaxConnect);
 int AcceptSock(int *pSock, int nSock);
@@ -80,6 +86,7 @@ int CreateUdpSock(int * pnSock, int nPort);
 int SendMsgByUdp(void * pMsg, int nSize, char * szAddr, int nPort);
 int RecvMsgByUdp(int nFile, void * pData, ssize_t * pnSize);
 
+#pragma mark - *****************字符串报文解析结构及解析方法，可解析数据类型
 /*字符串报文解析结构*/
 typedef struct STRRESVARstu
 {
@@ -106,7 +113,14 @@ char * TrimString(char * szDest);
 /*字符串拷贝*/
 char * strcopy(char * dest, const char * src);
 
+#pragma mark - *****************INI配置文件解析
+/*读取配置文件之INI格式文件解析*/
+int GetINIConfigValue(char * szPath, char * szRoot, char * szName, void * pValue, int nType);
+/*解析配置项文件之INI格式文件配置项解析*/
+int GetINIConfigStrValue(char * buf, void * pValue, int nType);
 
+
+#pragma mark - *****************格式化日志输出函数
 #define BYTESIZE 2048
 
 /*格式化日志输出函数*/
@@ -116,6 +130,7 @@ int PrintHexLog(FILE * pfile, void * pData, int nSize);
 int PrintTraceHexLog(void * pData, int nSize);
 int Verify(int bStatus, const char * szBuf, const char * szFile, int nLine);
 
+#pragma mark - *****************文件读写函数库，定时读写，阻塞读写
 /*阻塞方式的读写功能库*/
 int ReadFile(int nFile, void * pData, ssize_t * pSize);
 int WriteFile(int nFile, void* pData, ssize_t nSize);
@@ -123,7 +138,7 @@ int WriteFile(int nFile, void* pData, ssize_t nSize);
 int ReadFileExt(int nFile, void * pData, ssize_t * pnSize, int nTimeout);
 int WriteFileExt(int nFile, void* pData, ssize_t * nSize, int nTimeout);
 
-
+#pragma mark - *****************消息队列的发送与接收，阻塞方式，定时方式，判断队列中是否有消息
 /*阻塞方式消息发送与接收*/
 int ReadMsg(int nPid, void * pText, ssize_t * pSize, long * pType);
 int WriteMsg(int nPid, void * pText, int nSize, int nType);
@@ -133,6 +148,8 @@ int WriteMsgExt(int nPid, void * pText, int nSize, int nType, int nTimeout);
 //判断队列中是否存在消息
 int CheckMsgData(int nPid, long * pType);
 
+
+#pragma mark - *****************信号量操作，阻塞方式，非阻塞方式，定时方式，以及常用的宏定义
 /*信号量阻塞操作  信号量的阻塞P操作（信号值减少）、释放V操作(信号值增加)和Z（信号值判断）操作功能*/
 int Semop(int nSid, int nIndex , int nVal);
 /*非阻塞操作  以非阻塞方式执行P（信号量减少）、V（信号量增加）和Z（信号值判断）操作功能。 成功返回0 ，信号中断时返回1，不满足P操作或Z操作条件时立即返回2，否则返回其他值*/
@@ -161,6 +178,7 @@ int SemopTime(int nSid, int nIndex, int nVal, int nTimeOut);
 //比较操作 Z操作 定时
 #define SEMZT(nSid, nIndex, nTime) SemopTime(nSid, nIndex, 0, nTime)
 
+#pragma mark - *****************共享内存操作
 //共享内存 1-n-n模型
 int CreateMemo(int shmid, int index, int size);
 int AllocMemoExt(char *pc, int *index);
@@ -168,9 +186,11 @@ int AllocMemo(int shmid, int semid, int semindex, int *index);
 int FreeMemo(int shmid, int semid, int semindex, int index);
 char *GetMemoAddr(char *paddr, int index);
 
+#pragma mark - *****************守护进程生成
 /*守护进程生成器*/
 int InitServer();
 
+#pragma mark - *****************用户信息
 /*用户信息打印*/
 void printUser();
 char * userName();
