@@ -27,6 +27,8 @@
 		C69172F8191763D80091E93C /* multiplexing.c in Sources */ = {isa = PBXBuildFile; fileRef = C69172F7191763D80091E93C /* multiplexing.c */; };
 		C69172FC19176F130091E93C /* proxy1.c in Sources */ = {isa = PBXBuildFile; fileRef = C69172FB19176F130091E93C /* proxy1.c */; };
 		C69172FE19178D900091E93C /* proxy2.c in Sources */ = {isa = PBXBuildFile; fileRef = C69172FD19178D900091E93C /* proxy2.c */; };
+		C6963461191B1BC300A7E0E6 /* strParser1.c in Sources */ = {isa = PBXBuildFile; fileRef = C6963460191B1BC300A7E0E6 /* strParser1.c */; };
+		C696347A191B2FAB00A7E0E6 /* strParser2.c in Sources */ = {isa = PBXBuildFile; fileRef = C6963479191B2FAB00A7E0E6 /* strParser2.c */; };
 		C6AAE0E0190F7CD10024A5BA /* tcp2.c in Sources */ = {isa = PBXBuildFile; fileRef = C6AAE0DF190F7CD10024A5BA /* tcp2.c */; };
 		C6D55F001911E93B0046F8C7 /* desktop1.c in Sources */ = {isa = PBXBuildFile; fileRef = C6D55EFF1911E93B0046F8C7 /* desktop1.c */; };
 		C6E7D25518F3C4EF00BF93D8 /* file.c in Sources */ = {isa = PBXBuildFile; fileRef = C6E7D25418F3C4EF00BF93D8 /* file.c */; };
@@ -76,6 +78,8 @@
 		C69172F7191763D80091E93C /* multiplexing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = multiplexing.c; sourceTree = "<group>"; };
 		C69172FB19176F130091E93C /* proxy1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = proxy1.c; sourceTree = "<group>"; };
 		C69172FD19178D900091E93C /* proxy2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = proxy2.c; sourceTree = "<group>"; };
+		C6963460191B1BC300A7E0E6 /* strParser1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = strParser1.c; sourceTree = "<group>"; };
+		C6963479191B2FAB00A7E0E6 /* strParser2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = strParser2.c; sourceTree = "<group>"; };
 		C6AAE0DF190F7CD10024A5BA /* tcp2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcp2.c; sourceTree = "<group>"; };
 		C6D55EFF1911E93B0046F8C7 /* desktop1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = desktop1.c; sourceTree = "<group>"; };
 		C6E7D25418F3C4EF00BF93D8 /* file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = file.c; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 		C66E3E6818C088B3000491E9 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				C696345F191B1BAC00A7E0E6 /* strParser */,
 				C69172FA19176EF30091E93C /* communicationRepeater */,
 				C6FE26521911020D002C7F25 /* udpExample */,
 				C66C229418FD0F110001DCB4 /* main.c */,
@@ -187,6 +192,15 @@
 				C69172FD19178D900091E93C /* proxy2.c */,
 			);
 			path = communicationRepeater;
+			sourceTree = "<group>";
+		};
+		C696345F191B1BAC00A7E0E6 /* strParser */ = {
+			isa = PBXGroup;
+			children = (
+				C6963460191B1BC300A7E0E6 /* strParser1.c */,
+				C6963479191B2FAB00A7E0E6 /* strParser2.c */,
+			);
+			path = strParser;
 			sourceTree = "<group>";
 		};
 		C6D55F011911EC020046F8C7 /* bin */ = {
@@ -269,6 +283,7 @@
 				C6909049190E50C70027BB54 /* tcp1.c in Sources */,
 				C66C229518FD0F110001DCB4 /* main.c in Sources */,
 				C6FE2656191103F2002C7F25 /* trans1.c in Sources */,
+				C6963461191B1BC300A7E0E6 /* strParser1.c in Sources */,
 				C6FE26511910EAA3002C7F25 /* udps1.c in Sources */,
 				C66E3E6318C08812000491E9 /* debug.c in Sources */,
 				C66E3E6F18C08D9D000491E9 /* time.c in Sources */,
@@ -284,6 +299,7 @@
 				C6444F031910A5C300471962 /* http1.c in Sources */,
 				C69172FE19178D900091E93C /* proxy2.c in Sources */,
 				C6F3494919090F78009E759E /* readSharedMemory.c in Sources */,
+				C696347A191B2FAB00A7E0E6 /* strParser2.c in Sources */,
 				C6444F011910946200471962 /* tcpopt.c in Sources */,
 				C6AAE0E0190F7CD10024A5BA /* tcp2.c in Sources */,
 				C6FE26541911021D002C7F25 /* ser1.c in Sources */,

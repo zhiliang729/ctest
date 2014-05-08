@@ -7,7 +7,6 @@
 //
 
 #include "comlib.h"
-
 /*
  填充字符串报文解析的结构
  字符串报文存储在buf中，参数pStrstu指向一个字符串报文解析结构，函数成功时返回0，否则返回非0值。
@@ -55,7 +54,7 @@ int strrespre(char * buf, PSTRRESVAR pStrstu)
  字符串报文数据域的读取,一旦字符串报文解析结构填充完毕，用户就可调用下面函数获取每一个数据域的值
  本函数读取字符串文件buf中第nIndex项（从0开始计数）数据的取值。其中参数Strstu是一个字符串报文解析结构，它在函数strrespre中被填充。参数nType制定了该项数据域的数据类型，函数所支持的数据类型定义在头文件“comlib.h”中，参数pValue指定了回传数据域取值的缓冲区。函数成功时返回0，否则返回非0值
  */
-int stresvalue(char * buf, STRRESVAR Strstu, int nIndex, void * pValue, int nType)
+int strresvalue(char * buf, STRRESVAR Strstu, int nIndex, void * pValue, int nType)
 {
     char szStrbuf[1024];
     ASSERT(buf != NULL && pValue != NULL);
@@ -71,7 +70,7 @@ int stresvalue(char * buf, STRRESVAR Strstu, int nIndex, void * pValue, int nTyp
             *(int *)pValue = atoi(szStrbuf);
             break;
         case STRDOUBLE:
-            *(double *)pValue = atoi(szStrbuf);
+            *(double *)pValue = atof(szStrbuf);
             break;
         default:
             strcpy((char *)pValue, szStrbuf);
@@ -80,10 +79,42 @@ int stresvalue(char * buf, STRRESVAR Strstu, int nIndex, void * pValue, int nTyp
     return 0;
 }
 
-/*清除字符串首尾的空格， 返回该字符串的首地址，即szDest的传入值*/
+/*清除字符串首尾的空格， 返回该字符串的首地址，即szDest的传入值
+    去除字符串右边空格的方法比较简单，只需将字符串最后一位非空格字符右边（后面）的字符值设定为ASCII码的0即可（字符串默认以0结尾，自动放弃0以后的数据）。而去除字符串左边空格的方法稍微复杂一点，需要先找到字符串的第一位非空字符，再将这个字符移动到字符串的第一位字符，后面的依次类推（使用strcpy完成这一系列操作）。
+ */
 char * TrimString(char * szDest)
 {
-    int n, nLen;
-    
+    ssize_t n, nLen;
+    if (szDest != NULL) {
+        /*--------以下删除字符串右边的空格-----*/
+        for (n = strlen(szDest); n > 0; n--) {
+            if (!isblank(szDest[n - 1])) {
+                break;
+            }
+        }
+        szDest[n] = '\0';/*将右边最靠左的一个空格替换为0即可*/
+        /*----以下删除字符串左边的空格----*/
+        nLen = strlen(szDest);
+        for (n = 0; n < nLen; n++) {
+            if (!isblank(szDest[n])) {
+                break;
+            }
+        }
+        strcopy(szDest, szDest + n);/*从左边第一个非空格起向前移动到串首即可*/
+    }
+    return szDest;
+}
+
+char * strcopy(char * dest, const char * src)
+{
+    char * destCopy = dest;
+    if ((NULL == dest) || (NULL == src)) {
+        return NULL;
+    }
+//    assert((NULL != dest) && (NULL != src));
+    while ((* destCopy++ = * src++) != '\0') {
+        ;
+    }
+    return destCopy;
 }
 

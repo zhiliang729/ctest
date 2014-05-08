@@ -13,7 +13,7 @@ int GetObjectIp(char *buf, char *ip);
 int SendReceiveServer_2(int nLocalSock, int nRemoteSock);
 int TransSock_2(int nReadSock, int nWriteSock);
 
-int main(int argc, char *argv[])
+int main_com2(int argc, char *argv[])
 {
     int nListenSock = -1, nLocalSock = -1, nRemoteSock = -1;
 	pid_t nChild;
@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
 		SendReceiveServer_2(nLocalSock, nRemoteSock);			/*通信转发*/
     if (nLocalSock >= 0) close(nLocalSock);  /*9.子进程关闭本地端套接字*/
     if (nRemoteSock >= 0) close(nRemoteSock);/*10.子进程光比目标端套接字*/
+    return 0;
 }
 /* ---解析HTTP报文头，并与目标服务器建立连接--- */
 int HttpConnect(int nLocalSock, int *nRemoteSock)

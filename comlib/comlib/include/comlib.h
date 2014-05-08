@@ -85,7 +85,7 @@ typedef struct STRRESVARstu
 {
 	int nAmount;			/*数据与总数----代表字符串报文所包含的数据与总数*/
 	int nFlag;				/*0：定长域；1：分割域----代表字符串报文的类型。0表示固定长度字符串报文，1表示固定分隔符串报文*/
-	unsigned long *filedlen;			/*每个数据域的长度----记载一个整型数组的首地址，这个数组中的每个元素分别对应字符串报文中相应数据域所占用的字节长度。对于固定长度报文，全部报文中的数据域占用的字节长度是一定的，因此数组fildlen中的元素的取值也是一定的。对于固定分割报文，数组fildlen中元素的取值随着每条字符串报文的不同而不同。filedlen仅仅是一个指针，用户必须先申请整型数组缓冲区，再把这个缓冲区地址赋值给它。*/
+	ssize_t *filedlen;			/*每个数据域的长度----记载一个整型数组的首地址，这个数组中的每个元素分别对应字符串报文中相应数据域所占用的字节长度。对于固定长度报文，全部报文中的数据域占用的字节长度是一定的，因此数组fildlen中的元素的取值也是一定的。对于固定分割报文，数组fildlen中元素的取值随着每条字符串报文的不同而不同。filedlen仅仅是一个指针，用户必须先申请整型数组缓冲区，再把这个缓冲区地址赋值给它。*/
 	int nCompartlen;		/*分割符号的长度----代表数据域之间的分割字符串的长度。比如“|”的长度为1，“|！”的长度是2.固定长度报文没有分割字符串，则此值为0*/
 	char szCompart[10];		/*分割字符串----字符数组，它记载了分割在数据域之间的字符串。在固定长度无分割字符串的报文中，这个是长度为0的空字符串*/
 	char **filedaddr;		/*指向每个数据域首地址的指针----这是一个指向数组的指针，这个数组中的每个元素都是一个字符指针，它们分别指向了字符串报文中每个数据域的首地址。与filedlen相同，filedaddr也仅仅是一个指针，用户必须先申请一个字符指针数组，再把数组的首地址赋值给它*/
@@ -100,7 +100,12 @@ typedef STRRESVAR * PSTRRESVAR;
 /*填充字符串报文解析的结构*/
 int strrespre(char * buf, PSTRRESVAR pStrstu);
 /*字符串报文数据域的读取,一旦字符串报文解析结构填充完毕，用户就可调用下面函数获取每一个数据域的值*/
-int stresvalue(char * buf, STRRESVAR Strstu, int nIndex, void * pValue, int nType);
+int strresvalue(char * buf, STRRESVAR Strstu, int nIndex, void * pValue, int nType);
+/*去除字符串两端的空格*/
+char * TrimString(char * szDest);
+/*字符串拷贝*/
+char * strcopy(char * dest, const char * src);
+
 
 #define BYTESIZE 2048
 
