@@ -93,6 +93,7 @@
 		C6F3494619090BAB009E759E /* writeSharedMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = writeSharedMemory.c; sourceTree = "<group>"; };
 		C6F3494819090F78009E759E /* readSharedMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = readSharedMemory.c; sourceTree = "<group>"; };
 		C6F3494A190913F1009E759E /* 共享内存操作说明 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "共享内存操作说明"; sourceTree = "<group>"; };
+		C6F59061191B86D60011FDBE /* xml说明 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "xml说明"; sourceTree = "<group>"; };
 		C6FE264E1910E8C8002C7F25 /* udpk1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = udpk1.c; sourceTree = "<group>"; };
 		C6FE26501910EAA3002C7F25 /* udps1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = udps1.c; sourceTree = "<group>"; };
 		C6FE26531911021D002C7F25 /* ser1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ser1.c; sourceTree = "<group>"; };
@@ -197,6 +198,7 @@
 				C6810F871915E7BE001A1257 /* tcp_sigalrm_concurrent.c */,
 				C69172F519175ECE0091E93C /* tcp_sigalrm_jmp.c */,
 				C69172F7191763D80091E93C /* multiplexing.c */,
+				C6F59061191B86D60011FDBE /* xml说明 */,
 			);
 			path = src;
 			sourceTree = "<group>";
