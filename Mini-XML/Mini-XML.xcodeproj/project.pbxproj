@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C67C52A9191CC1AA00E4C850 /* createXMLtest.c in Sources */ = {isa = PBXBuildFile; fileRef = C67C52A8191CC1AA00E4C850 /* createXMLtest.c */; };
 		C6F5906F191B8D800011FDBE /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F5906E191B8D800011FDBE /* main.c */; };
 		C6F59071191B8D800011FDBE /* Mini_XML.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6F59070191B8D800011FDBE /* Mini_XML.1 */; };
 		C6F590AE191B91660011FDBE /* mxml-attr.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590A2191B91660011FDBE /* mxml-attr.c */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		C6279495191CB50A004AA915 /* testxml.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testxml.xml; sourceTree = "<group>"; };
+		C67C52A8191CC1AA00E4C850 /* createXMLtest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = createXMLtest.c; sourceTree = "<group>"; };
 		C6F5906B191B8D800011FDBE /* Mini-XML */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Mini-XML"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F5906E191B8D800011FDBE /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C6F59070191B8D800011FDBE /* Mini_XML.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Mini_XML.1; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				C6F5906E191B8D800011FDBE /* main.c */,
 				C6F59070191B8D800011FDBE /* Mini_XML.1 */,
 				C6F59077191B8DD80011FDBE /* README */,
+				C67C52A8191CC1AA00E4C850 /* createXMLtest.c */,
 			);
 			path = "Mini-XML";
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6F590B6191B91660011FDBE /* mxml-set.c in Sources */,
+				C67C52A9191CC1AA00E4C850 /* createXMLtest.c in Sources */,
 				C6F590B2191B91660011FDBE /* mxml-index.c in Sources */,
 				C6F590B5191B91660011FDBE /* mxml-search.c in Sources */,
 				C6F590B1191B91660011FDBE /* mxml-get.c in Sources */,
