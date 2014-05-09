@@ -1,5 +1,5 @@
 /*
- * "$Id: config.h.in 451 2014-01-04 21:50:06Z msweet $"
+ * "$Id: config.h 451 2014-01-04 21:50:06Z msweet $"
  *
  * Configuration file for Mini-XML, a small XML-like file parsing library.
  *
@@ -50,22 +50,22 @@
  * Do we have the snprintf() and vsnprintf() functions?
  */
 
-#undef HAVE_SNPRINTF
-#undef HAVE_VSNPRINTF
+#define HAVE_SNPRINTF
+#define HAVE_VSNPRINTF
 
 
 /*
  * Do we have the strXXX() functions?
  */
 
-#undef HAVE_STRDUP
+#define HAVE_STRDUP
 
 
 /*
  * Do we have threading support?
  */
 
-#undef HAVE_PTHREAD_H
+#define HAVE_PTHREAD_H
 
 
 /*
@@ -91,5 +91,5 @@ extern int	_mxml_vsnprintf(char *, size_t, const char *, va_list);
 #  endif /* !HAVE_VSNPRINTF */
 
 /*
- * End of "$Id: config.h.in 451 2014-01-04 21:50:06Z msweet $".
+ * End of "$Id: config.h 451 2014-01-04 21:50:06Z msweet $".
  */

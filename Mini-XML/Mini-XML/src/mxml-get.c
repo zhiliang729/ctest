@@ -14,6 +14,7 @@
  *     http://www.msweet.org/projects.php/Mini-XML
  */
 
+#pragma mark - ******************* 获取xml文件中各种值的函数
 /*
  * Include necessary headers...
  */
@@ -21,7 +22,7 @@
 #include "config.h"
 #include "mxml.h"
 
-
+#pragma mark - ******************* 获取CDATA节点值
 /*
  * 'mxmlGetCDATA()' - Get the value for a CDATA node.
  *
@@ -33,22 +34,22 @@
 const char *				/* O - CDATA value or NULL */
 mxmlGetCDATA(mxml_node_t *node)		/* I - Node to get */
 {
- /*
-  * Range check input...
-  */
-
-  if (!node || node->type != MXML_ELEMENT ||
-      strncmp(node->value.element.name, "![CDATA[", 8))
-    return (NULL);
-
- /*
-  * Return the text following the CDATA declaration...
-  */
-
-  return (node->value.element.name + 8);
+    /*
+     * Range check input...
+     */
+    
+    if (!node || node->type != MXML_ELEMENT ||
+        strncmp(node->value.element.name, "![CDATA[", 8))
+        return (NULL);
+    
+    /*
+     * Return the text following the CDATA declaration...
+     */
+    
+    return (node->value.element.name + 8);
 }
 
-
+#pragma mark - ******************* 获取自定义节点值
 /*
  * 'mxmlGetCustom()' - Get the value for a custom node.
  *
@@ -61,28 +62,28 @@ mxmlGetCDATA(mxml_node_t *node)		/* I - Node to get */
 const void *				/* O - Custom value or NULL */
 mxmlGetCustom(mxml_node_t *node)	/* I - Node to get */
 {
- /*
-  * Range check input...
-  */
-
-  if (!node)
-    return (NULL);
-
- /*
-  * Return the integer value...
-  */
-
-  if (node->type == MXML_CUSTOM)
-    return (node->value.custom.data);
-  else if (node->type == MXML_ELEMENT &&
-           node->child &&
-	   node->child->type == MXML_CUSTOM)
-    return (node->child->value.custom.data);
-  else
-    return (NULL);
+    /*
+     * Range check input...
+     */
+    
+    if (!node)
+        return (NULL);
+    
+    /*
+     * Return the integer value...
+     */
+    
+    if (node->type == MXML_CUSTOM)
+        return (node->value.custom.data);
+    else if (node->type == MXML_ELEMENT &&
+             node->child &&
+             node->child->type == MXML_CUSTOM)
+        return (node->child->value.custom.data);
+    else
+        return (NULL);
 }
 
-
+#pragma mark - ******************* 获取元素节点的名称
 /*
  * 'mxmlGetElement()' - Get the name for an element node.
  *
@@ -94,21 +95,21 @@ mxmlGetCustom(mxml_node_t *node)	/* I - Node to get */
 const char *				/* O - Element name or NULL */
 mxmlGetElement(mxml_node_t *node)	/* I - Node to get */
 {
- /*
-  * Range check input...
-  */
-
-  if (!node || node->type != MXML_ELEMENT)
-    return (NULL);
-
- /*
-  * Return the element name...
-  */
-
-  return (node->value.element.name);
+    /*
+     * Range check input...
+     */
+    
+    if (!node || node->type != MXML_ELEMENT)
+        return (NULL);
+    
+    /*
+     * Return the element name...
+     */
+    
+    return (node->value.element.name);
 }
 
-
+#pragma mark - ******************* 获取元素节点的第一个子元素
 /*
  * 'mxmlGetFirstChild()' - Get the first child of an element node.
  *
@@ -121,21 +122,21 @@ mxmlGetElement(mxml_node_t *node)	/* I - Node to get */
 mxml_node_t *				/* O - First child or NULL */
 mxmlGetFirstChild(mxml_node_t *node)	/* I - Node to get */
 {
- /*
-  * Range check input...
-  */
-
-  if (!node || node->type != MXML_ELEMENT)
-    return (NULL);
-
- /*
-  * Return the first child node...
-  */
-
-  return (node->child);
+    /*
+     * Range check input...
+     */
+    
+    if (!node || node->type != MXML_ELEMENT)
+        return (NULL);
+    
+    /*
+     * Return the first child node...
+     */
+    
+    return (node->child);
 }
 
-
+#pragma mark - ******************* 获取指定节点或其首个子元素中整型值
 /*
  * 'mxmlGetInteger()' - Get the integer value from the specified node or its
  *                      first child.
@@ -148,28 +149,28 @@ mxmlGetFirstChild(mxml_node_t *node)	/* I - Node to get */
 int					/* O - Integer value or 0 */
 mxmlGetInteger(mxml_node_t *node)	/* I - Node to get */
 {
- /*
-  * Range check input...
-  */
-
-  if (!node)
-    return (0);
-
- /*
-  * Return the integer value...
-  */
-
-  if (node->type == MXML_INTEGER)
-    return (node->value.integer);
-  else if (node->type == MXML_ELEMENT &&
-           node->child &&
-	   node->child->type == MXML_INTEGER)
-    return (node->child->value.integer);
-  else
-    return (0);
+    /*
+     * Range check input...
+     */
+    
+    if (!node)
+        return (0);
+    
+    /*
+     * Return the integer value...
+     */
+    
+    if (node->type == MXML_INTEGER)
+        return (node->value.integer);
+    else if (node->type == MXML_ELEMENT &&
+             node->child &&
+             node->child->type == MXML_INTEGER)
+        return (node->child->value.integer);
+    else
+        return (0);
 }
 
-
+#pragma mark - ******************* 获取一个元素节点的最后一个子元素
 /*
  * 'mxmlGetLastChild()' - Get the last child of an element node.
  *
@@ -182,21 +183,22 @@ mxmlGetInteger(mxml_node_t *node)	/* I - Node to get */
 mxml_node_t *				/* O - Last child or NULL */
 mxmlGetLastChild(mxml_node_t *node)	/* I - Node to get */
 {
- /*
-  * Range check input...
-  */
-
-  if (!node || node->type != MXML_ELEMENT)
-    return (NULL);
-
- /*
-  * Return the node type...
-  */
-
-  return (node->last_child);
+    /*
+     * Range check input...
+     */
+    
+    if (!node || node->type != MXML_ELEMENT)
+        return (NULL);
+    
+    /*
+     * Return the node type...
+     */
+    
+    return (node->last_child);
 }
 
 
+#pragma mark - ******************* 获取当前父节点的下一个节点
 /*
  * 'mxmlGetNextSibling()' - Get the next node for the current parent.
  *
@@ -208,21 +210,21 @@ mxmlGetLastChild(mxml_node_t *node)	/* I - Node to get */
 mxml_node_t *
 mxmlGetNextSibling(mxml_node_t *node)	/* I - Node to get */
 {
- /*
-  * Range check input...
-  */
-
-  if (!node)
-    return (NULL);
-
- /*
-  * Return the node type...
-  */
-
-  return (node->next);
+    /*
+     * Range check input...
+     */
+    
+    if (!node)
+        return (NULL);
+    
+    /*
+     * Return the node type...
+     */
+    
+    return (node->next);
 }
 
-
+#pragma mark - ******************* 获取一个节点或其子节点的模糊字符串值
 /*
  * 'mxmlGetOpaque()' - Get an opaque string value for a node or its first child.
  *
@@ -235,28 +237,28 @@ mxmlGetNextSibling(mxml_node_t *node)	/* I - Node to get */
 const char *				/* O - Opaque string or NULL */
 mxmlGetOpaque(mxml_node_t *node)	/* I - Node to get */
 {
- /*
-  * Range check input...
-  */
-
-  if (!node)
-    return (NULL);
-
- /*
-  * Return the integer value...
-  */
-
-  if (node->type == MXML_OPAQUE)
-    return (node->value.opaque);
-  else if (node->type == MXML_ELEMENT &&
-           node->child &&
-	   node->child->type == MXML_OPAQUE)
-    return (node->child->value.opaque);
-  else
-    return (NULL);
+    /*
+     * Range check input...
+     */
+    
+    if (!node)
+        return (NULL);
+    
+    /*
+     * Return the integer value...
+     */
+    
+    if (node->type == MXML_OPAQUE)
+        return (node->value.opaque);
+    else if (node->type == MXML_ELEMENT &&
+             node->child &&
+             node->child->type == MXML_OPAQUE)
+        return (node->child->value.opaque);
+    else
+        return (NULL);
 }
 
-
+#pragma mark - ******************* 获取父节点
 /*
  * 'mxmlGetParent()' - Get the parent node.
  *
@@ -268,21 +270,21 @@ mxmlGetOpaque(mxml_node_t *node)	/* I - Node to get */
 mxml_node_t *				/* O - Parent node or NULL */
 mxmlGetParent(mxml_node_t *node)	/* I - Node to get */
 {
- /*
-  * Range check input...
-  */
-
-  if (!node)
-    return (NULL);
-
- /*
-  * Return the node type...
-  */
-
-  return (node->parent);
+    /*
+     * Range check input...
+     */
+    
+    if (!node)
+        return (NULL);
+    
+    /*
+     * Return the node type...
+     */
+    
+    return (node->parent);
 }
 
-
+#pragma mark - ******************* 获取当前父节点的前一个节点
 /*
  * 'mxmlGetPrevSibling()' - Get the previous node for the current parent.
  *
@@ -294,21 +296,21 @@ mxmlGetParent(mxml_node_t *node)	/* I - Node to get */
 mxml_node_t *				/* O - Previous node or NULL */
 mxmlGetPrevSibling(mxml_node_t *node)	/* I - Node to get */
 {
- /*
-  * Range check input...
-  */
-
-  if (!node)
-    return (NULL);
-
- /*
-  * Return the node type...
-  */
-
-  return (node->prev);
+    /*
+     * Range check input...
+     */
+    
+    if (!node)
+        return (NULL);
+    
+    /*
+     * Return the node type...
+     */
+    
+    return (node->prev);
 }
 
-
+#pragma mark - ******************* 获取一个节点或其子节点的实数值
 /*
  * 'mxmlGetReal()' - Get the real value for a node or its first child.
  *
@@ -320,28 +322,28 @@ mxmlGetPrevSibling(mxml_node_t *node)	/* I - Node to get */
 double					/* O - Real value or 0.0 */
 mxmlGetReal(mxml_node_t *node)		/* I - Node to get */
 {
- /*
-  * Range check input...
-  */
-
-  if (!node)
-    return (0.0);
-
- /*
-  * Return the integer value...
-  */
-
-  if (node->type == MXML_REAL)
-    return (node->value.real);
-  else if (node->type == MXML_ELEMENT &&
-           node->child &&
-	   node->child->type == MXML_REAL)
-    return (node->child->value.real);
-  else
-    return (0.0);
+    /*
+     * Range check input...
+     */
+    
+    if (!node)
+        return (0.0);
+    
+    /*
+     * Return the integer value...
+     */
+    
+    if (node->type == MXML_REAL)
+        return (node->value.real);
+    else if (node->type == MXML_ELEMENT &&
+             node->child &&
+             node->child->type == MXML_REAL)
+        return (node->child->value.real);
+    else
+        return (0.0);
 }
 
-
+#pragma mark - ******************* 获取节点或其子节点的文本值
 /*
  * 'mxmlGetText()' - Get the text value for a node or its first child.
  *
@@ -355,48 +357,48 @@ const char *				/* O - Text string or NULL */
 mxmlGetText(mxml_node_t *node,		/* I - Node to get */
             int         *whitespace)	/* O - 1 if string is preceded by whitespace, 0 otherwise */
 {
- /*
-  * Range check input...
-  */
-
-  if (!node)
-  {
-    if (whitespace)
-      *whitespace = 0;
-
-    return (NULL);
-  }
-
- /*
-  * Return the integer value...
-  */
-
-  if (node->type == MXML_TEXT)
-  {
-    if (whitespace)
-      *whitespace = node->value.text.whitespace;
-
-    return (node->value.text.string);
-  }
-  else if (node->type == MXML_ELEMENT &&
-           node->child &&
-	   node->child->type == MXML_TEXT)
-  {
-    if (whitespace)
-      *whitespace = node->child->value.text.whitespace;
-
-    return (node->child->value.text.string);
-  }
-  else
-  {
-    if (whitespace)
-      *whitespace = 0;
-
-    return (NULL);
-  }
+    /*
+     * Range check input...
+     */
+    
+    if (!node)
+    {
+        if (whitespace)
+            *whitespace = 0;
+        
+        return (NULL);
+    }
+    
+    /*
+     * Return the integer value...
+     */
+    
+    if (node->type == MXML_TEXT)
+    {
+        if (whitespace)
+            *whitespace = node->value.text.whitespace;
+        
+        return (node->value.text.string);
+    }
+    else if (node->type == MXML_ELEMENT &&
+             node->child &&
+             node->child->type == MXML_TEXT)
+    {
+        if (whitespace)
+            *whitespace = node->child->value.text.whitespace;
+        
+        return (node->child->value.text.string);
+    }
+    else
+    {
+        if (whitespace)
+            *whitespace = 0;
+        
+        return (NULL);
+    }
 }
 
-
+#pragma mark - ******************* 获取节点类型
 /*
  * 'mxmlGetType()' - Get the node type.
  *
@@ -408,21 +410,21 @@ mxmlGetText(mxml_node_t *node,		/* I - Node to get */
 mxml_type_t				/* O - Type of node */
 mxmlGetType(mxml_node_t *node)		/* I - Node to get */
 {
- /*
-  * Range check input...
-  */
-
-  if (!node)
-    return (MXML_IGNORE);
-
- /*
-  * Return the node type...
-  */
-
-  return (node->type);
+    /*
+     * Range check input...
+     */
+    
+    if (!node)
+        return (MXML_IGNORE);
+    
+    /*
+     * Return the node type...
+     */
+    
+    return (node->type);
 }
 
-
+#pragma mark - ******************* 获取节点的用户数据指针
 /*
  * 'mxmlGetUserData()' - Get the user data pointer for a node.
  *
@@ -432,18 +434,18 @@ mxmlGetType(mxml_node_t *node)		/* I - Node to get */
 void *					/* O - User data pointer */
 mxmlGetUserData(mxml_node_t *node)	/* I - Node to get */
 {
- /*
-  * Range check input...
-  */
-
-  if (!node)
-    return (NULL);
-
- /*
-  * Return the user data pointer...
-  */
-
-  return (node->user_data);
+    /*
+     * Range check input...
+     */
+    
+    if (!node)
+        return (NULL);
+    
+    /*
+     * Return the user data pointer...
+     */
+    
+    return (node->user_data);
 }
 
 

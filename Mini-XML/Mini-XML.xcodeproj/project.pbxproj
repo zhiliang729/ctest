@@ -19,14 +19,6 @@
 		C6F590B5191B91660011FDBE /* mxml-search.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590AA191B91660011FDBE /* mxml-search.c */; };
 		C6F590B6191B91660011FDBE /* mxml-set.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590AB191B91660011FDBE /* mxml-set.c */; };
 		C6F590B7191B91660011FDBE /* mxml-string.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590AC191B91660011FDBE /* mxml-string.c */; };
-		C6F590C1191B91CD0011FDBE /* class.cxx in Sources */ = {isa = PBXBuildFile; fileRef = C6F590B9191B91CD0011FDBE /* class.cxx */; };
-		C6F590C2191B91CD0011FDBE /* enum.cxx in Sources */ = {isa = PBXBuildFile; fileRef = C6F590BB191B91CD0011FDBE /* enum.cxx */; };
-		C6F590C3191B91CD0011FDBE /* function.cxx in Sources */ = {isa = PBXBuildFile; fileRef = C6F590BC191B91CD0011FDBE /* function.cxx */; };
-		C6F590C4191B91CD0011FDBE /* functype.cxx in Sources */ = {isa = PBXBuildFile; fileRef = C6F590BD191B91CD0011FDBE /* functype.cxx */; };
-		C6F590C5191B91CD0011FDBE /* struct.cxx in Sources */ = {isa = PBXBuildFile; fileRef = C6F590BE191B91CD0011FDBE /* struct.cxx */; };
-		C6F590C6191B91CD0011FDBE /* type.cxx in Sources */ = {isa = PBXBuildFile; fileRef = C6F590BF191B91CD0011FDBE /* type.cxx */; };
-		C6F590C7191B91CD0011FDBE /* testmxml.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590C0191B91CD0011FDBE /* testmxml.c */; };
-		C6F590CA191B92CD0011FDBE /* mxmldoc.c in Sources */ = {isa = PBXBuildFile; fileRef = C6F590C9191B92CD0011FDBE /* mxmldoc.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C6279495191CB50A004AA915 /* testxml.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testxml.xml; sourceTree = "<group>"; };
 		C6F5906B191B8D800011FDBE /* Mini-XML */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Mini-XML"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F5906E191B8D800011FDBE /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C6F59070191B8D800011FDBE /* Mini_XML.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Mini_XML.1; sourceTree = "<group>"; };
@@ -99,16 +92,7 @@
 		C6F590AB191B91660011FDBE /* mxml-set.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mxml-set.c"; sourceTree = "<group>"; };
 		C6F590AC191B91660011FDBE /* mxml-string.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mxml-string.c"; sourceTree = "<group>"; };
 		C6F590AD191B91660011FDBE /* mxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mxml.h; sourceTree = "<group>"; };
-		C6F590B9191B91CD0011FDBE /* class.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = class.cxx; sourceTree = "<group>"; };
-		C6F590BA191B91CD0011FDBE /* dotest.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dotest.sh; sourceTree = "<group>"; };
-		C6F590BB191B91CD0011FDBE /* enum.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = enum.cxx; sourceTree = "<group>"; };
-		C6F590BC191B91CD0011FDBE /* function.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = function.cxx; sourceTree = "<group>"; };
-		C6F590BD191B91CD0011FDBE /* functype.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = functype.cxx; sourceTree = "<group>"; };
-		C6F590BE191B91CD0011FDBE /* struct.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = struct.cxx; sourceTree = "<group>"; };
-		C6F590BF191B91CD0011FDBE /* type.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = type.cxx; sourceTree = "<group>"; };
-		C6F590C0191B91CD0011FDBE /* testmxml.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = testmxml.c; sourceTree = "<group>"; };
 		C6F590C8191B92A50011FDBE /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
-		C6F590C9191B92CD0011FDBE /* mxmldoc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mxmldoc.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,9 +125,6 @@
 		C6F5906D191B8D800011FDBE /* Mini-XML */ = {
 			isa = PBXGroup;
 			children = (
-				C6F590C9191B92CD0011FDBE /* mxmldoc.c */,
-				C6F590B8191B91CD0011FDBE /* test */,
-				C6F590C0191B91CD0011FDBE /* testmxml.c */,
 				C6F59078191B91660011FDBE /* doc */,
 				C6F590A1191B91660011FDBE /* src */,
 				C6F5906E191B8D800011FDBE /* main.c */,
@@ -216,22 +197,9 @@
 				C6F590AB191B91660011FDBE /* mxml-set.c */,
 				C6F590AC191B91660011FDBE /* mxml-string.c */,
 				C6F590AD191B91660011FDBE /* mxml.h */,
+				C6279495191CB50A004AA915 /* testxml.xml */,
 			);
 			path = src;
-			sourceTree = "<group>";
-		};
-		C6F590B8191B91CD0011FDBE /* test */ = {
-			isa = PBXGroup;
-			children = (
-				C6F590B9191B91CD0011FDBE /* class.cxx */,
-				C6F590BA191B91CD0011FDBE /* dotest.sh */,
-				C6F590BB191B91CD0011FDBE /* enum.cxx */,
-				C6F590BC191B91CD0011FDBE /* function.cxx */,
-				C6F590BD191B91CD0011FDBE /* functype.cxx */,
-				C6F590BE191B91CD0011FDBE /* struct.cxx */,
-				C6F590BF191B91CD0011FDBE /* type.cxx */,
-			);
-			path = test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,22 +253,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6F590C5191B91CD0011FDBE /* struct.cxx in Sources */,
-				C6F590C1191B91CD0011FDBE /* class.cxx in Sources */,
 				C6F590B6191B91660011FDBE /* mxml-set.c in Sources */,
-				C6F590CA191B92CD0011FDBE /* mxmldoc.c in Sources */,
-				C6F590C6191B91CD0011FDBE /* type.cxx in Sources */,
 				C6F590B2191B91660011FDBE /* mxml-index.c in Sources */,
 				C6F590B5191B91660011FDBE /* mxml-search.c in Sources */,
-				C6F590C2191B91CD0011FDBE /* enum.cxx in Sources */,
-				C6F590C7191B91CD0011FDBE /* testmxml.c in Sources */,
 				C6F590B1191B91660011FDBE /* mxml-get.c in Sources */,
 				C6F590AE191B91660011FDBE /* mxml-attr.c in Sources */,
 				C6F590B7191B91660011FDBE /* mxml-string.c in Sources */,
 				C6F5906F191B8D800011FDBE /* main.c in Sources */,
-				C6F590C3191B91CD0011FDBE /* function.cxx in Sources */,
 				C6F590B3191B91660011FDBE /* mxml-node.c in Sources */,
-				C6F590C4191B91CD0011FDBE /* functype.cxx in Sources */,
 				C6F590B4191B91660011FDBE /* mxml-private.c in Sources */,
 				C6F590AF191B91660011FDBE /* mxml-entity.c in Sources */,
 				C6F590B0191B91660011FDBE /* mxml-file.c in Sources */,
@@ -413,6 +373,7 @@
 				C6F59076191B8D800011FDBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
