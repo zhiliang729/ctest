@@ -67,7 +67,30 @@ int main(int argc, const char * argv[])
     node = mxmlNewElement(data, "node");
     mxmlNewText(node, 0, "val8");
     
-/*解析*/
+/*自动折行控制------似乎不顶用！！！！！！*/
+    mxmlSetWrapMargin(100);/*设置100列折行*/
+    mxmlSetWrapMargin(0);/*取消自动折行*/
+    
+/*保存*/
+    /*保存到文件*/
+    FILE * fp;
+    fp = fopen("/Users/zhangliang/Desktop/Project/C/Mini-XML/Mini-XML/testxml2.xml", "w");
+    mxmlSaveFile(xml, fp, MXML_NO_CALLBACK);
+    fclose(fp);
+    
+    
+    /*保存到字符串中*/
+    char buffer[4096];
+    char * ptr;
+    
+    mxmlSaveString(xml, buffer, sizeof(buffer), MXML_NO_CALLBACK);
+    
+    ptr = mxmlSaveAllocString(xml, MXML_NO_CALLBACK);
+    
+    printf("buffer: %s\n", buffer);
+    printf("alloc : %s\n", ptr);
+    free(ptr);
+    
     
     
     return 0;

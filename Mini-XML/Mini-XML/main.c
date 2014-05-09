@@ -10,12 +10,11 @@
 
 int main_1(int argc, const char * argv[])
 {
-    
     mxml_node_t *tree, *node;
     
     FILE *fp;
-    fp = fopen("/Users/zhangliang/Desktop/Project/C/Mini-XML/Mini-XML/src/testxml.xml", "r");/*打开xml文件*/
-    tree = mxmlLoadFile(NULL, fp,MXML_TEXT_CALLBACK);/*读取xml文件到xml树*/
+    fp = fopen("/Users/zhangliang/Desktop/Project/C/Mini-XML/Mini-XML/testxml.xml", "r");/*打开xml文件*/
+    tree = mxmlLoadFile(NULL, fp, MXML_TEXT_CALLBACK);/*读取xml文件到xml树*/
     fclose(fp);/*关闭文件*/
     
 /*解析xml文件*/

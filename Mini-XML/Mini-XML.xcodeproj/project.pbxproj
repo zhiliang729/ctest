@@ -36,8 +36,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C6279495191CB50A004AA915 /* testxml.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testxml.xml; sourceTree = "<group>"; };
 		C67C52A8191CC1AA00E4C850 /* createXMLtest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = createXMLtest.c; sourceTree = "<group>"; };
+		C6C436A8191CD935005549C2 /* testxml2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testxml2.xml; sourceTree = "<group>"; };
+		C6C436A9191CD959005549C2 /* testxml.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testxml.xml; sourceTree = "<group>"; };
 		C6F5906B191B8D800011FDBE /* Mini-XML */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Mini-XML"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F5906E191B8D800011FDBE /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C6F59070191B8D800011FDBE /* Mini_XML.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Mini_XML.1; sourceTree = "<group>"; };
@@ -133,6 +134,8 @@
 				C6F59070191B8D800011FDBE /* Mini_XML.1 */,
 				C6F59077191B8DD80011FDBE /* README */,
 				C67C52A8191CC1AA00E4C850 /* createXMLtest.c */,
+				C6C436A9191CD959005549C2 /* testxml.xml */,
+				C6C436A8191CD935005549C2 /* testxml2.xml */,
 			);
 			path = "Mini-XML";
 			sourceTree = "<group>";
@@ -200,7 +203,6 @@
 				C6F590AB191B91660011FDBE /* mxml-set.c */,
 				C6F590AC191B91660011FDBE /* mxml-string.c */,
 				C6F590AD191B91660011FDBE /* mxml.h */,
-				C6279495191CB50A004AA915 /* testxml.xml */,
 			);
 			path = src;
 			sourceTree = "<group>";
