@@ -12672,6 +12672,9 @@
       location = "group:popen system fork exec&#x7b49;&#x51fd;&#x6570;&#x7684;&#x533a;&#x522b;">
    </FileRef>
    <FileRef
+      location = "group:system&#x548c;popen&#x7684;&#x6d88;&#x8017;&#x6bd4;&#x8f83;">
+   </FileRef>
+   <FileRef
       location = "group:strcpy/strcpy.xcodeproj">
    </FileRef>
    <FileRef

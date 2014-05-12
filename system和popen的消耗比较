@@ -1,0 +1,82 @@
+ system与popen开销比较 2012-05-15 18:22:17
+分类： LINUX
+popen()  
+opens a process by creating a pipe, forking, and invoking the shell. 
+system()  
+executes  a  command  specified in command by calling /bin/sh -c command, and returns after the command has been completed.
+
+
+system的过程是:fork(),exec(),waitpid().
+popen的过程是：创建一个管道，fork一个子进程，关闭管道的不使用端，exec一个shell以运行命令，然后等待命令终止。
+
+没看出popen会比system开销小啊？倒是还多创建一个管道用来传递数据，开销应该还会大些吧。。。如果同样是用来执行shell指令的话.
+system() 调用 sh 解释器，popen() 则任意。popen() 打开管道，system() 往往设置一些信号处理方面的参数，二者皆有被调用进程外的开销。
+
+注意的地方：
+设置用户ID或者设置组ID的程序不应调用system函数，因为system经过fork、exec之后，权限会保留给运行的程序。应该直接用fork和exec，而且在exec之前要改回到普通权限。
+
+我的实验:
+点击(此处)折叠或打开
+#include "stdlib.h"
+#include "unistd.h"
+#include "stdio.h"
+
+int main()
+{
+    FILE * fp;
+    int i;
+    int j;
+    for(i = 0; i < 10000; i++ )
+    {
+        system("ls -l >/dev/null");
+        //fp = popen("ls -l >/dev/null","r");
+        //pclose(fp);
+    }
+    return 0;
+}
+/usr/bin/time测试
+system: 
+usr+sys = 0:53.05elapsed,  0:53.01elapsed
+popen:
+usr+sys = 0:53.61elapsed,  0:53.60elapsed
+
+有理由相信,我的推断是正确的.在都执行shell程序的基础上,system运行效率更高。
+
+TODO:运行其他程序的比较。
+代码其实差不多，不过我们现在不直接执行ls-l，而是调用一个执行ls-l的程序atest，这样，popen就会比system少fork一个shell，看看结果。
+
+点击(此处)折叠或打开
+#include "stdlib.h"
+#include "unistd.h"
+#include "stdio.h"
+
+int main()
+{
+    FILE * fp;
+    int i;
+    int j;
+
+    for(i = 0; i < 10000; i++ )
+    {
+        //system("./atest");
+        fp = popen("./atest","r");
+        pclose(fp);
+    }
+
+    return 0;
+
+    
+}
+system:
+usr+sys 1:20.34elapsed
+usr+sys 1:20.32elapsed
+popen:
+1:20.94elapsed
+1:20.86elapsed
+popen的开销还是会大一些
+
+TODO 执行更大型的程序
+
+参考资料：
+http://blog.johntechinfo.com/technology/212
+APUE,stevens
