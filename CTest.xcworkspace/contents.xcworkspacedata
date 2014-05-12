@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:remoteModel/remoteModel.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Mini-XML/Mini-XML.xcodeproj">
    </FileRef>
    <Group

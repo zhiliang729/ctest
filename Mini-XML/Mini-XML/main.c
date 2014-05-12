@@ -8,7 +8,7 @@
 
 #include "mxml.h"
 
-int main_1(int argc, const char * argv[])
+int main(int argc, const char * argv[])
 {
     mxml_node_t *tree, *node;
     
@@ -21,17 +21,17 @@ int main_1(int argc, const char * argv[])
     mxml_node_t *id,*password;
     /*解析note节点及属性*/
     node = mxmlFindElement(tree, tree, "note",NULL, NULL,MXML_DESCEND);
-    printf(" year:%s \n",mxmlElementGetAttr(node,"year"));
-    printf(" date:%s \n",mxmlElementGetAttr(node,"date"));
-    printf(" month:%s \n",mxmlElementGetAttr(node,"month"));
+//    printf(" year:%s \n",mxmlElementGetAttr(node,"year"));
+//    printf(" date:%s \n",mxmlElementGetAttr(node,"date"));
+//    printf(" month:%s \n",mxmlElementGetAttr(node,"month"));
     
     /*解析id节点*/
     id = mxmlFindElement(node, tree, "id",NULL, NULL,MXML_DESCEND);
-    printf("[%s]\n",id->child->value.text.string);
+    printf("[%s]\n",id->value.text.string);
     
     /*解析password节点*/
     password = mxmlFindElement(node, tree, "password",NULL, NULL,MXML_DESCEND);
-    printf("[%s]\n",password->child->value.text.string);
+    printf("[%s]\n",password->value.text.string);
     
 /*释放内存*/
     mxmlDelete(tree);
