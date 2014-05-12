@@ -12663,6 +12663,15 @@
       location = "group:&#x5957;&#x63a5;&#x5b57;">
    </FileRef>
    <FileRef
+      location = "group:&#x4ee3;&#x66ff;system&#x7684;&#x57fa;&#x4e8e;&#x7ba1;&#x9053;&#x7684;popen&#x548c;pclose&#x51fd;&#x6570;">
+   </FileRef>
+   <FileRef
+      location = "group:fork : system: popen :waitpid :setpgrp:exit:sighold:sigrelse:alarm:msgsnd:msgrcv:msgctl">
+   </FileRef>
+   <FileRef
+      location = "group:popen system fork exec&#x7b49;&#x51fd;&#x6570;&#x7684;&#x533a;&#x522b;">
+   </FileRef>
+   <FileRef
       location = "group:strcpy/strcpy.xcodeproj">
    </FileRef>
    <FileRef
