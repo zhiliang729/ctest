@@ -14,7 +14,7 @@
 
 #define INICONFIGFILEPATH "/Users/zhangliang/Desktop/Project/C/comlib/comlib/src/configINIParse/config.ini"
 
-int main(int argc, char * argv[])
+int main_conf(int argc, char * argv[])
 {
     int nNumber, i, nPort;
     char szRoot[100], szIp[100], szProtocol[100];

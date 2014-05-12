@@ -211,3 +211,13 @@ char * traceFile()
     return trace_file;
 }
 
+/*打印STRRESVAR到文件nfile中*/
+void strresLog(int nfile, PSTRRESVAR strStu)
+{
+    char buf[MAXBUF*2];
+    int i;
+    for (i = 0; i < strStu->nAmount; i++) {
+        
+    }
+}
+
