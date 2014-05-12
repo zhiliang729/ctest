@@ -80,3 +80,95 @@ TODO 执行更大型的程序
 参考资料：
 http://blog.johntechinfo.com/technology/212
 APUE,stevens
+
+
+
+
+system与popen函数的效率
+文章最新版链接地址
+http://blog.johntechinfo.com/technology/212
+
+我们在程序中希望执行shell命令的时候首先想到的system函数，这个函数很简单，但有一个严重的问题，就是他的执行方式，效率上可能不高。
+        system函数首先建立一个新的进程，然后在新的进程中执行exec函数去执行我们的shell命令，然后阻塞等待shell命令执行完后，返回到调用函数，system之所以要建立新的进程，是因为，exec函数的调用会结束调用进程，从调用exec函数开始，进程就切换到执行shell命令的进程，无法回到调用exec的进程继续执行程序的余下部分。所以system就会新建进程去执行exec，exec结束掉system创建进程，返回的时候，将返回值送给调用system的进程。换句话说，system建立的进程就是为了给exec函数结束用的。
+但我也查了相关资料，linux对system函数做了很好的优化，在system建立进程的时候，不会像建立普通进程那样消耗系统的资源，system进程只有用到数据的时候，系统才为其分配，如果只是单纯的执行shell命令，效率还是很高。
+但我总觉得，每次执行个shell命令都调用system很不舒服，尤其是在线程中建立一个新的进程更是感觉很怪。linux中存在另一种执行shell命令的方法，就是管道，我就想测试一下，popen与system的效率谁更高。
+小程序如下：使用system与popen都执行1000次ls -l 命令，并将输出指向 /dev/NULL(即不在控制台显示输出结果)。
+view plaincopy to clipboardprint?
+#include<iostream>   
+#include<stdio.h>   
+#include <stdlib.h>   
+#include<deque>   
+#include<sys/time.h>   
+using namespace std;   
+timeval start,end;   
+double timeuse;   
+void time()   
+{   
+gettimeofday( &end, NULL );   
+timeuse = (1000000 * ( end.tv_sec - start.tv_sec ) + end.tv_usec -\ start.tv_usec)/1000000;   
+printf("time used: %f s\n", timeuse);   
+}   
+int main(int argc, char** argv)   
+{   
+
+gettimeofday(&start,NULL);   
+for(int i=0;i<1000;i++)   
+{   
+//system("ls -l >/dev/null 2>&1 ");   
+popen( "ls -l >/dev/null 2>&1 ", "r" );   
+}   
+time();   
+return 0;   
+} 
+#include<iostream>
+#include<stdio.h>
+#include <stdlib.h>
+#include<deque>
+#include<sys/time.h>
+using namespace std;
+timeval start,end;
+double timeuse;
+void time()
+{
+gettimeofday( &end, NULL );
+timeuse = (1000000 * ( end.tv_sec - start.tv_sec ) + end.tv_usec -\ start.tv_usec)/1000000;
+printf("time used: %f s\n", timeuse);
+}
+int main(int argc, char** argv)
+{
+    gettimeofday(&start,NULL);
+for(int i=0;i<1000;i++)
+{
+//system("ls -l >/dev/null 2>&1 ");
+popen( "ls -l >/dev/null 2>&1 ", "r" );
+}
+time();
+return 0;
+}
+system函数执行结果：
+
+popen函数执行结果：
+
+        如图所示，当使用system函数的时候对cpu的占用很大，但对内存的消耗很少，执行时间是14秒左右，当使用popen的时候，对cpu的消耗很小，但内存的使用直线上升，执行时间是9秒左右，速度明显提升。我的测试很可能片面不准确，希望有时间再进行其他方面的比较。
+备注：popen与system
+popen 内存上升原因是因为我没有执行close函数，如果执行的话，内存上升应该不大，综上，还是使用popen效率跟高。
+popen() 可以在调用程序和POSIX shell /usr/bin/sh 要执行的命令之间创建一个管道（请参阅sh-posix(1) ）。 
+popen() 的参数是指向以空字符结尾的字符串的指针，这些字符串分别包含一个shell 命令行和一个I/O 模式，此 
+模式可以是进行读取的r ，或进行写入的w 。 
+popen() 可返回一个流指针，这样，当I/O 模式为w 时，便可以通过写入文件stream 来写入到命令的标准输入； 
+当I/O 模式为r 时，通过从文件stream 读取数据，从命令的标准输出读取数据。 
+popen() 打开的流应由pclose() 关闭，这需要等待终止关联的进程，然后返回命令的退出状态。 
+因为打开的文件是共享的，所以类型为r 的命令可用作输入过滤器，类型为w 的命令可用作输出过滤器。 
+
+system() 可执行由command 指向的字符串指定的命令。已执行命令的环境就如同使用fork() （请参阅fork(2) ） 
+创建了一个子进程，子进程按以下方式通过调用execl() （请参阅exec(2) ）来调用sh-posix(1) 实用程序： 
+execl("/usr/bin/sh", "sh", "-c", command, 0); 
+system() 在等待命令终止时将忽略SIGINT 和SIGQUIT 信号，同时阻塞SIGCHLD 信号。如果这会导致应用程 
+序错过一个终止它的信号，则应用程序应检查system() 的返回值；如果由于收到某个信号而终止了命令，应用程 
+序应采取一切适当的措施。 
+system() 不影响除自己创建的一个或多个进程以外的调用进程的任何子进程的终止状态。 
+在子进程终止之前， system() 不会返回。
+
+
+
+
