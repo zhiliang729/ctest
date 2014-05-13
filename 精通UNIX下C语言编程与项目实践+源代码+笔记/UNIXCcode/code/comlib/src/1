@@ -1,0 +1,6 @@
+cd ../libsrc
+make config
+cd ../src
+make con1
+cd ../bin
+./con1
