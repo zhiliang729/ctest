@@ -1,0 +1,285 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C6077A311922050A00E0DD0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6077A301922050A00E0DD0A /* Foundation.framework */; };
+		C6077A581922056000E0DD0A /* BlueTooth.m in Sources */ = {isa = PBXBuildFile; fileRef = C6077A571922056000E0DD0A /* BlueTooth.m */; };
+		C6A95A9C1923706E006E7A21 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A95A9B1923706E006E7A21 /* CoreBluetooth.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C6077A2B1922050A00E0DD0A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C6077A2D1922050A00E0DD0A /* libbluetooth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libbluetooth.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6077A301922050A00E0DD0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C6077A341922050A00E0DD0A /* bluetooth-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bluetooth-Prefix.pch"; sourceTree = "<group>"; };
+		C6077A561922056000E0DD0A /* BlueTooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueTooth.h; sourceTree = "<group>"; };
+		C6077A571922056000E0DD0A /* BlueTooth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueTooth.m; sourceTree = "<group>"; };
+		C669C7EF1922FE8000753520 /* bluetooth技术 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "bluetooth技术"; sourceTree = "<group>"; };
+		C6A95A9B1923706E006E7A21 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C6077A2A1922050A00E0DD0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6A95A9C1923706E006E7A21 /* CoreBluetooth.framework in Frameworks */,
+				C6077A311922050A00E0DD0A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C6077A241922050A00E0DD0A = {
+			isa = PBXGroup;
+			children = (
+				C6077A321922050A00E0DD0A /* bluetooth */,
+				C6077A2F1922050A00E0DD0A /* Frameworks */,
+				C6077A2E1922050A00E0DD0A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C6077A2E1922050A00E0DD0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C6077A2D1922050A00E0DD0A /* libbluetooth.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6077A2F1922050A00E0DD0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6A95A9B1923706E006E7A21 /* CoreBluetooth.framework */,
+				C6077A301922050A00E0DD0A /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C6077A321922050A00E0DD0A /* bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				C6077A59192206DC00E0DD0A /* include */,
+				C6077A5A192206DC00E0DD0A /* lib */,
+				C6077A331922050A00E0DD0A /* Supporting Files */,
+				C6077A561922056000E0DD0A /* BlueTooth.h */,
+				C6077A571922056000E0DD0A /* BlueTooth.m */,
+				C669C7EF1922FE8000753520 /* bluetooth技术 */,
+			);
+			path = bluetooth;
+			sourceTree = "<group>";
+		};
+		C6077A331922050A00E0DD0A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C6077A341922050A00E0DD0A /* bluetooth-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C6077A59192206DC00E0DD0A /* include */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		C6077A5A192206DC00E0DD0A /* lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C6077A2C1922050A00E0DD0A /* bluetooth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6077A501922050B00E0DD0A /* Build configuration list for PBXNativeTarget "bluetooth" */;
+			buildPhases = (
+				C6077A291922050A00E0DD0A /* Sources */,
+				C6077A2A1922050A00E0DD0A /* Frameworks */,
+				C6077A2B1922050A00E0DD0A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = bluetooth;
+			productName = bluetooth;
+			productReference = C6077A2D1922050A00E0DD0A /* libbluetooth.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C6077A251922050A00E0DD0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = com.yourcompany.orgnanization;
+			};
+			buildConfigurationList = C6077A281922050A00E0DD0A /* Build configuration list for PBXProject "bluetooth" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C6077A241922050A00E0DD0A;
+			productRefGroup = C6077A2E1922050A00E0DD0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C6077A2C1922050A00E0DD0A /* bluetooth */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C6077A291922050A00E0DD0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6077A581922056000E0DD0A /* BlueTooth.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C6077A4E1922050B00E0DD0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C6077A4F1922050B00E0DD0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C6077A511922050B00E0DD0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/bluetooth.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "bluetooth/bluetooth-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C6077A521922050B00E0DD0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/bluetooth.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "bluetooth/bluetooth-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C6077A281922050A00E0DD0A /* Build configuration list for PBXProject "bluetooth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6077A4E1922050B00E0DD0A /* Debug */,
+				C6077A4F1922050B00E0DD0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6077A501922050B00E0DD0A /* Build configuration list for PBXNativeTarget "bluetooth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6077A511922050B00E0DD0A /* Debug */,
+				C6077A521922050B00E0DD0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C6077A251922050A00E0DD0A /* Project object */;
+}
