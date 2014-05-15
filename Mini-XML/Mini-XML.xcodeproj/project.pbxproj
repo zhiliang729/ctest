@@ -39,7 +39,6 @@
 		C67C52A8191CC1AA00E4C850 /* createXMLtest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = createXMLtest.c; sourceTree = "<group>"; };
 		C6C436A8191CD935005549C2 /* testxml2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testxml2.xml; sourceTree = "<group>"; };
 		C6C436A9191CD959005549C2 /* testxml.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testxml.xml; sourceTree = "<group>"; };
-		C6C436AA191CE2D2005549C2 /* MiniXML中文文档.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MiniXML中文文档.doc"; sourceTree = "<group>"; };
 		C6F5906B191B8D800011FDBE /* Mini-XML */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Mini-XML"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F5906E191B8D800011FDBE /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C6F59070191B8D800011FDBE /* Mini_XML.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Mini_XML.1; sourceTree = "<group>"; };
@@ -137,7 +136,6 @@
 				C67C52A8191CC1AA00E4C850 /* createXMLtest.c */,
 				C6C436A9191CD959005549C2 /* testxml.xml */,
 				C6C436A8191CD935005549C2 /* testxml2.xml */,
-				C6C436AA191CE2D2005549C2 /* MiniXML中文文档.doc */,
 			);
 			path = "Mini-XML";
 			sourceTree = "<group>";
