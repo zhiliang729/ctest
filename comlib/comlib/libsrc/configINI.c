@@ -59,8 +59,8 @@ int GetINIConfigValue(char * szPath, char * szRoot, char * szName, void * pValue
      注意：读取时，连带行尾的'\n'也读入了，故若要进行字符串的比较等操作，必须检查最后一个字符，若为‘\n’，则替换为‘\0’;
      */
     while (feof(fp) == 0) {/*文件未结束*/
-        PrintLog(stderr, "len: %ld", strlen(buf));//strlen计算的是字符串的长度，长度有可能各种值。
-        PrintLog(stderr, "sizeof : %ld", sizeof(buf));//sizeof计算的事实数组的长度，故buf数组总为1024
+//        PrintLog(stderr, "len: %ld", strlen(buf));//strlen计算的是字符串的长度，长度有可能各种值。
+//        PrintLog(stderr, "sizeof : %ld", sizeof(buf));//sizeof计算的事实数组的长度，故buf数组总为1024
         memset(buf, 0, sizeof(buf));/*因为要清零整个缓冲区，所以用sizeof*/
         fgets(buf, sizeof(buf), fp);/*读取文件中的每一行字符串， 最多读取buf的长度个字符*/
         if (buf[strlen(buf) - 1] == '\n') {
