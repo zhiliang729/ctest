@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>UniversalLib.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
 		<key>bluetooth.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,11 +18,6 @@
 			<true/>
 		</dict>
 		<key>C6077A3C1922050A00E0DD0A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C6858A63192496A70066E187</key>
 		<dict>
 			<key>primary</key>
 			<true/>

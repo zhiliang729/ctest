@@ -6,20 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		C6858A63192496A70066E187 /* UniversalLib */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = C6858A66192496A70066E187 /* Build configuration list for PBXAggregateTarget "UniversalLib" */;
-			buildPhases = (
-				C6858A67192496BC0066E187 /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = UniversalLib;
-			productName = UniversalLib;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		C6077A311922050A00E0DD0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6077A301922050A00E0DD0A /* Foundation.framework */; };
 		C6077A581922056000E0DD0A /* BlueTooth.m in Sources */ = {isa = PBXBuildFile; fileRef = C6077A571922056000E0DD0A /* BlueTooth.m */; };
@@ -164,26 +150,9 @@
 			projectRoot = "";
 			targets = (
 				C6077A2C1922050A00E0DD0A /* bluetooth */,
-				C6858A63192496A70066E187 /* UniversalLib */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		C6858A67192496BC0066E187 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# define output folder environment variable\nUNIVERSAL_OUTPUTFOLDER=${PROJECT_DIR}/bluetooth/lib/${CONFIGURATION}-universal\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target bluetooth ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\nxcodebuild -target bluetooth -configuration ${CONFIGURATION} -sdk iphonesimulator -arch i386 BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 2. Create universal binary file using lipo\nlipo -create \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/lib${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/lib${PROJECT_NAME}.a\" -output \"${UNIVERSAL_OUTPUTFOLDER}/lib${PROJECT_NAME}.a\"\n\n#copy to ./bluetooth/include\ncp  \"${PROJECT_DIR}/bluetooth/BlueTooth.h\" \"${PROJECT_DIR}/bluetooth/include/BlueTooth.h\"\n\ncd \"${PROJECT_DIR}\"\ncd ..\n\n#rm \"./BlueToothDemo/BlueToothDemo/bluetooth/lib/${CONFIGURATION}-universal/lib${PROJECT_NAME}.a\"\n\nmkdir -p \"./BlueToothDemo/BlueToothDemo/bluetooth/lib/${CONFIGURATION}-universal/\"\n\ncp \"${PROJECT_DIR}/bluetooth/BlueTooth.h\" ./BlueToothDemo/BlueToothDemo/bluetooth/include/BlueTooth.h\ncp \"${UNIVERSAL_OUTPUTFOLDER}/lib${PROJECT_NAME}.a\" \"./BlueToothDemo/BlueToothDemo/bluetooth/lib/${CONFIGURATION}-universal/lib${PROJECT_NAME}.a\"";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C6077A291922050A00E0DD0A /* Sources */ = {
@@ -289,20 +258,6 @@
 			};
 			name = Release;
 		};
-		C6858A64192496A70066E187 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		C6858A65192496A70066E187 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -320,15 +275,6 @@
 			buildConfigurations = (
 				C6077A511922050B00E0DD0A /* Debug */,
 				C6077A521922050B00E0DD0A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C6858A66192496A70066E187 /* Build configuration list for PBXAggregateTarget "UniversalLib" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C6858A64192496A70066E187 /* Debug */,
-				C6858A65192496A70066E187 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
