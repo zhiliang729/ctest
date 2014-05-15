@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C6077A6B19220A5000E0DD0A /* libbluetooth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6077A6919220A5000E0DD0A /* libbluetooth.a */; };
+		C6062A2E1924A56300BE9BA6 /* libbluetooth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6062A2D1924A56300BE9BA6 /* libbluetooth.a */; };
 		C6077A721922100800E0DD0A /* ZLTwinklingLight.m in Sources */ = {isa = PBXBuildFile; fileRef = C6077A711922100800E0DD0A /* ZLTwinklingLight.m */; };
 		C6DB36BB1921F761004DA806 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DB36BA1921F761004DA806 /* Foundation.framework */; };
 		C6DB36BD1921F761004DA806 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DB36BC1921F761004DA806 /* CoreGraphics.framework */; };
@@ -22,8 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C6062A2D1924A56300BE9BA6 /* libbluetooth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbluetooth.a; sourceTree = "<group>"; };
 		C6077A621922080A00E0DD0A /* BlueTooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueTooth.h; sourceTree = "<group>"; };
-		C6077A6919220A5000E0DD0A /* libbluetooth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbluetooth.a; sourceTree = "<group>"; };
 		C6077A701922100800E0DD0A /* ZLTwinklingLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLTwinklingLight.h; sourceTree = "<group>"; };
 		C6077A711922100800E0DD0A /* ZLTwinklingLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLTwinklingLight.m; sourceTree = "<group>"; };
 		C6DB36B71921F761004DA806 /* BluetoothDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +50,7 @@
 			files = (
 				C6DB36EC1921FB59004DA806 /* libAWDProtobufBluetooth.dylib in Frameworks */,
 				C6DB36EA1921FB4B004DA806 /* CoreBluetooth.framework in Frameworks */,
-				C6077A6B19220A5000E0DD0A /* libbluetooth.a in Frameworks */,
+				C6062A2E1924A56300BE9BA6 /* libbluetooth.a in Frameworks */,
 				C6DB36BD1921F761004DA806 /* CoreGraphics.framework in Frameworks */,
 				C6DB36BF1921F761004DA806 /* UIKit.framework in Frameworks */,
 				C6DB36BB1921F761004DA806 /* Foundation.framework in Frameworks */,
@@ -60,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C6062A2C1924A56300BE9BA6 /* Debug-universal */ = {
+			isa = PBXGroup;
+			children = (
+				C6062A2D1924A56300BE9BA6 /* libbluetooth.a */,
+			);
+			path = "Debug-universal";
+			sourceTree = "<group>";
+		};
 		C6077A601922080A00E0DD0A /* bluetooth */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,17 +88,9 @@
 		C6077A631922080A00E0DD0A /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				C6077A6819220A5000E0DD0A /* Debug-iphonesimulator */,
+				C6062A2C1924A56300BE9BA6 /* Debug-universal */,
 			);
 			path = lib;
-			sourceTree = "<group>";
-		};
-		C6077A6819220A5000E0DD0A /* Debug-iphonesimulator */ = {
-			isa = PBXGroup;
-			children = (
-				C6077A6919220A5000E0DD0A /* libbluetooth.a */,
-			);
-			path = "Debug-iphonesimulator";
 			sourceTree = "<group>";
 		};
 		C6077A6F1922100800E0DD0A /* Views */ = {
@@ -359,6 +359,7 @@
 					"$(PROJECT_DIR)/BluetoothDemo/bluetooth/lib",
 					"$(PROJECT_DIR)/BluetoothDemo/bluetooth/lib/Debug-iphoneos",
 					"$(PROJECT_DIR)/BluetoothDemo/bluetooth/lib/Debug-iphonesimulator",
+					"$(PROJECT_DIR)/BluetoothDemo/bluetooth/lib/Debug-universal",
 				);
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -385,6 +386,7 @@
 					"$(PROJECT_DIR)/BluetoothDemo/bluetooth/lib",
 					"$(PROJECT_DIR)/BluetoothDemo/bluetooth/lib/Debug-iphoneos",
 					"$(PROJECT_DIR)/BluetoothDemo/bluetooth/lib/Debug-iphonesimulator",
+					"$(PROJECT_DIR)/BluetoothDemo/bluetooth/lib/Debug-universal",
 				);
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
